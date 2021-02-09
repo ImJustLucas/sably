@@ -70,6 +70,8 @@ function sably_scripts() {
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', get_template_directory_uri() . './assets/js/jquery-3.5.1.min.js', array(), null, true);
 
+	//Main js
+	wp_enqueue_script('main-js', get_template_directory_uri() . './assets/js/main.js', array(), null, true);
 
 	wp_enqueue_style( 'sably-style', get_stylesheet_uri(), array(), _S_VERSION );
 }
