@@ -61,6 +61,12 @@ function sably_widgets_init() {
 }
 add_action( 'widgets_init', 'sably_widgets_init' );
 
+//Custom redirect on logout
+function redirect_to_custom_login_page() {
+	wp_redirect(site_url . "/login");
+}
+add_action('wp_logout', 'redirect_to_custom_login_page');
+
 /**
  * Enqueue scripts and styles.
  */

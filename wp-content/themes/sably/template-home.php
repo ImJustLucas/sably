@@ -18,9 +18,25 @@ get_header();
 </section>
 <div class="wrap-sheet">
     <div id="sheet" class="sheet">
-        <section id="home"></section>
-        <section id="about"></section>
-        <section id="contact"></section>
+        <section id="home" class="tab tab-1">
+            <h2>Home</h2>
+        </section>
+        <section id="about" class="tab tab-2 hidden">
+            <h2>About us</h2>
+        </section>
+        <section id="contact" class="tab tab-3 hidden">
+            <h2>Contact</h2>
+        </section>
+        <section id="login" class="tab tab-4 hidden">
+            <h2>Login</h2>
+            <div class="buttonForSignin">
+                <p>Pas encore de compte ? Inscrivez-vous dès maintenant !</p>
+                <button class="tabButton button-signin">S'inscrire</button>
+            </div>
+        </section>
+        <section id="signin" class="tab tab-5 hidden">
+            <h2>Signin</h2>
+        </section>
 
     </div>
 </div>

@@ -3,13 +3,38 @@
 Template Name: login
 */
 
-// REGISTER PROCESS
+//CONNEXION :
 
+if(!empty($_POST['submitted'])){
+
+    $username = cleanXSS($_POST['use']);
+    $password = cleanXSS($_POST['password-login']);
+
+    $user_data = array();
+    $user_data['user_login'] = $username;
+    $user_data['user_password'] = $password;
+
+}
+
+
+// REGISTER PROCESS
+$errors = array();
 if (!empty($_POST['submitted-reg'])) {
-  $errors = array();
   $username = cleanXss($_POST['username-signin']);
-  $username = cleanXss($_POST['email-signin']);
+  $email = cleanXss($_POST['email-signin']);
   $password = cleanXss($_POST['password-signin']);
+  $password2 = cleanXss($_POST['password2-signin']);
+
+  $errors = validText($errors,$username,'username-signin', 3,10);
+  $errors = validMail($errors,$email,'email-signin');
+  $errors = validPass($errors,$password,'password-signin',$password2,3,10);
+  debug($errors);
+
+  if (empty($errors)) {
+
+    echo 'bravo';
+
+  }
 }
 
 get_header();
@@ -24,8 +49,8 @@ get_header();
         <section id="login">
             <h2 class="titleSection">Connexion</h2>
 
-            <form action="" id="fromLogin">
-
+            <form method="post" action="template-login.php" id="fromLogin">
+            
             <div class="input-area">
                 <label for="username-login">Votre nom d'utilisateur :</label>
                 <input type="text" name="username-login" id="username-login" placeholder="Username">
@@ -69,7 +94,13 @@ get_header();
                 <!-- MOT DE PASSE -->
                 <div class="input-area">
                     <label for="username-signin">Mot de passe</label>
-                    <input type="text" name="username-signin" id="username-signin" placeholder="Password">
+                    <input type="text" name="password-signin" id="password-signin" placeholder="Password">
+                    <span class="error-password-signin"></span>
+                </div>
+                <!-- MOT DE PASSE -->
+                <div class="input-area">
+                    <label for="username-signin">Confirmer mot de passe</label>
+                    <input type="text" name="password2-signin" id="password2-signin" placeholder="Confirmer password">
                     <span class="error-password-signin"></span>
                 </div>
                 <!-- SUBMIT -->
