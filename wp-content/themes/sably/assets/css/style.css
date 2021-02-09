@@ -224,5 +224,22 @@ header a:hover {
 #sheet {
   background-color: var(--blanc);
   width: 90%;
-  height: 200px;
+  height: 1000px;
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.rights{
+    text-decoration: underline;
+    color: black;
+}
+
+.rights:hover{
+    font-weight: bold;
 }
