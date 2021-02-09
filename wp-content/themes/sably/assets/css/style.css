@@ -120,6 +120,7 @@ header a:hover{
 /* intro */
 
 #intro {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +129,6 @@ header a:hover{
     text-align: center;
 }
 #intro .petite-boite{
-    border: lime 1px solid;
     font-size: 1.7em;
     margin-bottom: 50px;
 }
@@ -152,5 +152,15 @@ header a:hover{
 #sheet {
     background-color: var(--blanc);
     width: 90%;
-    height: 200px;
+    height: 1000px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#sheet .logo-seul{
+    width: 60px;
+    position: absolute;
+    top: -48px;
+    right: -10px;
+    transform: rotate(-12deg);
 }
