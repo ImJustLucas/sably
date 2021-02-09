@@ -20,13 +20,15 @@
 			<header id="masthead" class="site-header">
 				<div class="header-wrap">
 					<div class="nav_logo">
-						<a class="logobutton" href="#">
-							<img class="logo1" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="Logo Sably 1">
-						</a>
+						<div class="logoSably">
+							<a class="logobutton" href="#">
+								<img class="logo1" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="Logo Sably 1">
+							</a>
+						</div>
 					</div>
 					<div class="nav_buttons">
-						<a class="aboutbutton" href="#">A propos</a>
-						<a class="contactbutton" href="#">Contact</a>
+						<div><a class="aboutbutton" href="#">A propos</a></div>
+						<div><a class="contactbutton" href="#">Contact</a></div>
 					</div>
 					<div class="nav_login">
 						<a class="loginbutton" href="#">Connexion/Inscription </a>
