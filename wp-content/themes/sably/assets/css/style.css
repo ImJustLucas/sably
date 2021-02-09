@@ -66,12 +66,39 @@ body {
 
 
 
-/* About */
-#About .petite-boite{
+/* intro */
+
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: column;
     text-align: center;
 }
-#About .fas{
-    background-color: var(--noir);
-    border-radius: 55%;
-    color:var(--blanc);
+#intro .petite-boite{
+    font-size: 1.7em;
+    margin-bottom: 50px;
+}
+
+#intro .logo-play .fas{
+ background-color: var(--blanc);
+ border-radius: 50%;
+ padding: 20px;
+}
+
+/* Sheet */
+
+.wrap-sheet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    margin-top: 50px;
+}
+
+#sheet {
+    background-color: var(--blanc);
+    width: 90%;
+    height: 200px;
 }
