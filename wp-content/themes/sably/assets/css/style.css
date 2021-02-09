@@ -139,6 +139,10 @@ body {
   background-color: var(--jaune);
 }
 
+.hidden {
+  display: none;
+}
+
 /* Header */
 
 header {
@@ -187,6 +191,12 @@ header a:hover {
   background-color: #ffc045;
   padding: 10px;
   border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.nav_login a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* intro */
@@ -225,4 +235,5 @@ header a:hover {
   background-color: var(--blanc);
   width: 90%;
   height: 200px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }

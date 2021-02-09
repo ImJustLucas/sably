@@ -3,6 +3,20 @@
 Template Name: login
 */
 
+//CONNEXION :
+
+if(!empty($_POST['submitted'])){
+
+    $username = cleanXSS($_POST['use']);
+    $password = cleanXSS($_POST['password-login']);
+
+    $user_data = array();
+    $user_data['user_login'] = $username;
+    $user_data['user_password'] = $password;
+
+}
+
+
 get_header();
 ?>
 
@@ -15,7 +29,7 @@ get_header();
         <section id="login">
             <h2 class="titleSection">Connexion</h2>
 
-            <form action="" id="fromLogin">
+            <form method="post" action="template-login.php" id="fromLogin">
             
             <div class="input-area">
                 <label for="username-login">Votre nom d'utilisateur :</label>
@@ -50,6 +64,7 @@ get_header();
                     <input type="text" name="username-signin" id="username-signin" placeholder="Username">
                     <span class="error-username-signin"></span>
                 </div>
+
             
             </form>
         </section>
