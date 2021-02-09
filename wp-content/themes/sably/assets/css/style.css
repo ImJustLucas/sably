@@ -162,6 +162,10 @@ header a:hover {
   align-items: center;
 }
 
+.nav_logo .logoSably img {
+  width: 80%;
+}
+
 .header-wrap div {
   width: 30%;
 }
