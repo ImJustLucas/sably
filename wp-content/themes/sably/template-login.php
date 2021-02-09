@@ -40,7 +40,19 @@ get_header();
             </div>
         </section>
 
-        <section id="signin"></section>
+        <section id="signin">
+            <h2>S'inscrire</h2>
+
+            <form id="fromSignin" action="" method="post">
+            
+                <div class="input-area">
+                    <label for="username-signin">Votre nom d'utilisateur :</label>
+                    <input type="text" name="username-signin" id="username-signin" placeholder="Username">
+                    <span class="error-username-signin"></span>
+                </div>
+            
+            </form>
+        </section>
     </div>
 </div>
 
