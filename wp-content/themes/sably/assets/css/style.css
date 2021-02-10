@@ -250,9 +250,11 @@ header a:hover {
 #sheet {
   background-color: var(--blanc);
   width: 90%;
-  height: 1000px;
+  height: auto;
   position: relative;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  padding: 0 10px;
+  z-index: 999;
 }
 
 #sheet .logo-seul {
@@ -292,6 +294,8 @@ footer {
   display: flex;
   background-color: var(--belge);
   text-align: center;
+  padding-top: 100px;
+  height: 300px;
 }
 
 .rights {
@@ -301,4 +305,24 @@ footer {
 
 .rights:hover {
   font-weight: bold;
+}
+
+/*HOME*/
+
+.titleSection {
+  text-align: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.blocHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.boxHome {
+  width: 45%;
 }
