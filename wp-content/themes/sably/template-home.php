@@ -26,12 +26,12 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Selectionnez les meilleurs candidats parmis de nombreux profils. Une liste de candidats dévoués et prêt à travailler.</p>
+                    <p>Selectionnez les candidats qui correspondent le mieux à vos attentes parmis de nombreux profils. Un catalogue de candidats dévoués et prêt à travailler.</p>
                 </div>
             </div>
             <div class="blocHome textHome2">
                 <div class="boxHome descriptionHome2">
-                    <p>Notre plateforme est recommandée et appréciée pas de nombreux utilisateurs. Les candidats comme les recruteurs approuve ce site.
+                    <p>La plateforme SABLY est recommandée et appréciée pas de nombreux utilisateurs. Les candidats comme les recruteurs approuvent ce site.
                     </p>
                 </div>
                 <div class="boxHome imageHome">
@@ -43,7 +43,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Un site made in france pensé et créé par nos développeurs locaux !</p>
+                    <p>Notre site made in france a été pensé et créé par nos développeurs et designers locaux !</p>
                 </div>
             </div>
         </section>
