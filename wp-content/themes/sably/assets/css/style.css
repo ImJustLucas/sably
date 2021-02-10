@@ -47,6 +47,7 @@ table {
     --jaune: #ffc045;
     --blanc: #fff;
     --noir: #000;
+    --belge:#F8F8FF;
 }
 
 body {
@@ -150,7 +151,7 @@ header a:hover {
 #sheet {
     background-color: var(--blanc);
     width: 90%;
-    height: 1000px;
+    height: auto;
     position: relative;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -164,11 +165,36 @@ header a:hover {
 
 }
 
+/* Legal */
+#sheet .legal {
+    line-height: 1.5em;
+    margin-left: 5px;
+}
+
+#sheet .legal strong{
+    font-size: 1.3em;
+}
+
+#sheet .legal h2{
+    font-size: 1.3em;
+    margin: 7px 0px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+#sheet .legal h3{
+    font-size: 1.3em;
+    margin: 10px 0px;
+    text-decoration: underline;
+}
+
+
 /* Footer */
 
 footer {
     display: flex;
-    background-color: white;
+    background-color:var(--belge);
     text-align: center;
 }
 
@@ -180,3 +206,4 @@ footer {
 .rights:hover {
     font-weight: bold;
 }
+
