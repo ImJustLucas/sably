@@ -24,7 +24,7 @@ if ( ! function_exists( 'sably_setup' ) ) :
 				'menu-1' => esc_html__( 'Primary', 'sably' ),
 			)
 		);
-		add_theme_support( 'customize-selective-refresh-widgets' );	
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 endif;
 add_action( 'after_setup_theme', 'sably_setup' );

@@ -21,17 +21,18 @@
 				<div class="header-wrap">
 					<div class="nav_logo">
 						<div class="logoSably">
-							<a class="logobutton" href="#">
+							<a class="logobutton" hr ef="<?php echo esc_url(home_url('home')) ?>">
 								<img class="logo1" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="Logo Sably 1">
 							</a>
 						</div>
 					</div>
 					<div class="nav_buttons">
+						<div><a class="homebutton" href="#">Accueil</a></div>
 						<div><a class="aboutbutton" href="#">A propos</a></div>
 						<div><a class="contactbutton" href="#">Contact</a></div>
 					</div>
 					<div class="nav_login">
-						<a class="loginbutton" href="#">Connexion/Inscription </a>
+						<a class="loginbutton" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription </a>
 					</div>
 				</div>
 			</header><!-- #masthead -->
