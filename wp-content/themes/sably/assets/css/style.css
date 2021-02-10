@@ -208,9 +208,10 @@ header a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
 }
 #intro .petite-boite {
-  border: lime 1px solid;
   font-size: 1.7em;
   margin-bottom: 50px;
 }

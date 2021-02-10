@@ -4,8 +4,6 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://kit.fontawesome.com/ceee3d5b7f.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/style.css">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
