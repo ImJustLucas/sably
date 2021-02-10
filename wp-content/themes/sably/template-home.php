@@ -11,7 +11,7 @@ get_header();
             <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue sur Sably", "CV-thèque en ligne", "100% gratuit"]'></span>|</h1>
         </div>
         <div class="logo-play">
-            <a href="https://www.youtube.com/watch?v=oUhWsKMcoKY"> <i class="fas fa-play" style="color: #000;"></i> </a>
+            <a href="https://www.youtube.com/watch?v=oUhWsKMcoKY"><i class="fas fa-play" style="color: #000;"></i></a>
         </div>
     </div>
 
@@ -38,13 +38,8 @@ get_header();
                 </div>
             </div>
             <div class="blocHome textHome3">
-<<<<<<< HEAD
-            <div class="boxHome imageHome">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
-=======
                 <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?> /assets/img/svg/Eiffel_tower.svg" alt="image CV">
->>>>>>> 9b092d0ee787231c8241a1ef45f1c34a2e360a3c
                 </div>
                 <div class="boxHome descriptionHome1">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>

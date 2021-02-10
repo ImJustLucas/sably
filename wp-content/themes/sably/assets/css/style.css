@@ -229,12 +229,15 @@ form input[type="submit"]{
 form input[type="submit"]:hover{
   background-color: #FFF;
   color: #ffc045;
-  border: none;
+  border: 1px solid #ffc045;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
   background-color: var(--blanc);
   position: relative;
   border-radius: 10px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25)
+  -webkit-transition: .3s;
+	-o-transition: .3s;
+    transition: .3s;
 }
 
 
