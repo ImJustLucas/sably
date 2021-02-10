@@ -18,10 +18,10 @@ get_header();
 </section>
 <div class="wrap-sheet">
     <div id="sheet" class="sheet">
-        <div class="logo-seul" ><img src="<?php echo get_template_directory_uri() ?>/assets/img/pelican_seul.png" ></div>
+        <div class="logo-seul"><img src="<?php echo get_template_directory_uri() ?>/assets/img/pelican_seul.png"></div>
         <section id="home" class="tab tab-1">
             <h2 class="titleSection">sably</h2>
-            <div class="blocHome textHome1">     
+            <div class="blocHome textHome1">
                 <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?> /assets/img/svg/sub.svg" alt="image CV">
                 </div>
@@ -38,7 +38,7 @@ get_header();
                 </div>
             </div>
             <div class="blocHome textHome3">
-            <div class="boxHome imageHome">
+                <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?> /assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
@@ -50,7 +50,7 @@ get_header();
             <h2 class="titleSection">About us</h2>
         </section>
         <section id="contact" class="tab tab-3 hidden">
-            <h2>Contact</h2>
+            <h2 class="titleSection">Contact</h2>
             <div class="form">
                 <form action="" method="POST">
                     <div class="inputs-container">
@@ -65,7 +65,7 @@ get_header();
                     <input type="submit" name="submit" class="btn btn-purple" value="Envoyer">
                 </form>
             </div>
-            <h2 class="titleSection">Contact</h2>
+
         </section>
         <section id="login" class="tab tab-4 hidden">
             <h2 class="titleSection">Login</h2>
