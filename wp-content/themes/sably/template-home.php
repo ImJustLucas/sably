@@ -48,6 +48,29 @@ get_header();
         </section>
         <section id="about" class="tab tab-2 hidden">
             <h2 class="titleSection">About us</h2>
+            <h2>SABLY, QU'EST-CE QUE C'EST ?</h2>
+            <p>SABLY est une CVthèque, une base de données en ligne contenant le Curriculum vitae des candidats à la recherche d’un emploi. Nous permettons à ces candidats de créer ou de déposer eux-mêmes leurs CV sur la plateforme via un outil dédié et nous donnons ensuite la possibilité aux recruteurs d'effectuer des recherches dans notre base de données dans le cadre de leur sourcing.</p>
+
+            <h2>NOTRE PRIORITE: OPTIMISER LE TEMPS DE RECRUTEMENT</h2>
+            <p>Optimiser ce temps est notre priorité. Nous sommes conscient que le processus de recrutement peut-être chronophage.
+                C'est pourquoi, en tant que développeurs, nous nous engageons à vous fournir un outil qui améliorera significativement la gestion des CVs au sein de votre entreprise.
+            </p>
+
+            <h2>SIMPLIFICATION DU SUIVI DES CV:</h2>
+            <p>SABLY deviendra rapidement la solution incontournable à votre service ou dans votre entreprise pour simplifier le suivi des CV et pour établir une base de données de vos candidats.
+            </p>
+
+            <h2>CONTACTEZ-NOUS:</h2>
+            <p>Totalement personnalisable, SABLY permet de doter votre entreprise d’un outil de communication professionnel vers le marché de l’emploi et un pilotage complet de votre plateforme.
+            </p>
+
+            <h2>TÉLÉPHONE ET MAIL:</h2>
+            <p>Tél: +33(0)1.35.28.31.61
+                Email: contact@sably.com
+                ADRESSE
+                Siège social :
+                24 Place Saint-Marc, 76000 Rouen, France
+            </p>
         </section>
         <section id="contact" class="tab tab-3 hidden">
             <h2 class="titleSection">Contact</h2>
