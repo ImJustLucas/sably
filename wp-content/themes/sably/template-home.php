@@ -18,6 +18,7 @@ get_header();
 </section>
 <div class="wrap-sheet">
     <div id="sheet" class="sheet">
+        <div class="logo-seul" ><img src="<?php echo get_template_directory_uri() ?>/assets/img/pelican_seul.png" ></div>
         <section id="home" class="tab tab-1">
             <h2>Home</h2>
         </section>

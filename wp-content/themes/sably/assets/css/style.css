@@ -3,255 +3,181 @@
    License: none (public domain)
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
+
 body {
-  line-height: 1;
+    line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
+
+ol, ul {
+    list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+
+blockquote, q {
+    quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
 }
+
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* main */
+
 :root {
-  --vert: #1dd1a1;
-  --jaune: #ffc045;
-  --blanc: #fff;
-  --noir: #000;
+    --vert: #1dd1a1;
+    --jaune: #ffc045;
+    --blanc: #fff;
+    --noir: #000;
 }
+
 body {
-  background-color: var(--jaune);
+    background-color: var(--jaune);
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 /* Header */
 
 header {
-  display: flex;
-  background-color: var(--blanc);
+    display: flex;
+    background-color: var(--blanc);
 }
 
 header a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 header a:hover {
-  text-decoration: underline;
-  font-weight: bold;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .header-wrap {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .nav_logo .logoSably img {
-  width: 80%;
+    width: 80%;
 }
 
 .header-wrap div {
-  width: 30%;
+    width: 30%;
 }
 
 .nav_buttons {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .nav_buttons div {
-  text-align: center;
+    text-align: center;
 }
 
 .nav_login {
-  text-align: right;
+    text-align: right;
 }
 
 .nav_login a {
-  background-color: #ffc045;
-  padding: 10px;
-  border-radius: 20px;
-  transition: all 0.3s;
+    background-color: #ffc045;
+    padding: 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
 }
 
 .nav_login a:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* intro */
 
 #intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 40px;
-  text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    text-transform: uppercase;
 }
+
 #intro .petite-boite {
-  font-size: 1.7em;
-  margin-bottom: 50px;
+    font-size: 1.7em;
+    margin-bottom: 50px;
 }
 
 #intro .logo-play .fas {
-  background-color: var(--blanc);
-  border-radius: 50%;
-  padding: 20px;
+    background-color: var(--blanc);
+    border-radius: 50%;
+    padding: 20px;
 }
 
 /* Sheet */
 
 .wrap-sheet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 #sheet {
-  background-color: var(--blanc);
-  width: 90%;
-  height: 1000px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: var(--blanc);
+    width: 90%;
+    height: 1000px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+#sheet .logo-seul {
+    width: 60px;
+    position: absolute;
+    top: -48px;
+    right: -10px;
+    transform: rotate(-12deg);
+
 }
 
 /* Footer */
 
-footer{
+footer {
     display: flex;
     background-color: white;
     text-align: center;
 }
 
-.rights{
+.rights {
     text-decoration: underline;
     color: black;
 }
 
-.rights:hover{
+.rights:hover {
     font-weight: bold;
 }
