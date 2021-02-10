@@ -11,7 +11,7 @@ get_header();
             <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue sur Sably", "CV-thèque en ligne", "100% gratuit"]'></span>|</h1>
         </div>
         <div class="logo-play">
-            <a href="https://www.youtube.com/watch?v=0hLxDYmuYw4"> <i class="fas fa-play" style="color: #000;"></i> </a>
+            <a href="https://www.youtube.com/watch?v=oUhWsKMcoKY"> <i class="fas fa-play" style="color: #000;"></i> </a>
         </div>
     </div>
 
