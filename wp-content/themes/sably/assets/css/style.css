@@ -235,6 +235,23 @@ header a:hover {
 #sheet {
   background-color: var(--blanc);
   width: 90%;
-  height: 200px;
+  height: 1000px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    background-color: white;
+    text-align: center;
+}
+
+.rights{
+    text-decoration: underline;
+    color: black;
+}
+
+.rights:hover{
+    font-weight: bold;
 }
