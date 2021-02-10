@@ -1,0 +1,261 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* main */
+
+:root {
+    --vert: #1dd1a1;
+    --jaune: #ffc045;
+    --blanc: #fff;
+    --noir: #000;
+}
+
+body {
+    background-color: var(--jaune);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    background-color: var(--blanc);
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_logo .logoSably img {
+    width: 80%;
+}
+.image_off, #home:hover .image_on{
+   display:none
+}
+.image_on, #home:hover .image_off{
+   display:block
+}
+
+.header-wrap div {
+    width: 30%;
+}
+
+.nav_buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_buttons div {
+    text-align: center;
+}
+
+.nav_login {
+    text-align: right;
+}
+
+.nav_login a {
+    background-color: #ffc045;
+    padding: 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.nav_login a:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* intro */
+
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+#intro .petite-boite {
+    font-size: 1.7em;
+    margin-bottom: 50px;
+}
+
+#intro .logo-play .fas {
+    background-color: var(--blanc);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* Sheet */
+
+.wrap-sheet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#sheet {
+    background-color: var(--blanc);
+    width: 90%;
+    height: auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+#sheet .logo-seul {
+    width: 60px;
+    position: absolute;
+    top: -48px;
+    right: -10px;
+    transform: rotate(-12deg);
+}
+
+/* FORMULAIRE==================CONTACT */
+.contact{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+form{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+	margin-bottom: 40px;
+}
+
+form input{
+  margin: 20px 10px;
+  padding-left: 20px;
+  width: 300px;
+  height: 50px;
+  font-size: 100%;
+  border-radius: 80px;
+  border: 1px solid black;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+	outline: none;
+	-webkit-transition: .7s;
+	-o-transition: .7s;
+    transition: .7s;
+}
+
+form textarea{
+  width: 400px;
+  height: 150px;
+	border-radius: 10px;
+  border: 1px solid black;
+	margin-bottom: 30px;
+	resize: none;
+	text-align:center;
+	outline: none;
+	-webkit-transition: .7s;
+	-o-transition: .7s;
+	transition: .7s;
+  height: 200px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+form input[type="submit"]{
+ cursor:pointer;
+ background-color: #ffc045;
+ color: #fff;
+ text-transform: uppercase;
+ border: none;
+}
+
+form input[type="submit"]:hover{
+  background-color: #FFF;
+  color: #ffc045;
+  border: none;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  background-color: var(--blanc);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25)
+}
+
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    background-color: white;
+    text-align: center;
+}
+
+.rights {
+    text-decoration: underline;
+    color: black;
+}
+
+.rights:hover {
+    font-weight: bold;
+}
+
