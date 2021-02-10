@@ -8,7 +8,7 @@ get_header();
 <section id="intro" class="middle">
     <div class="boite">
         <div class="petite-boite">
-            <h1>bienvenue sur Sably</h1>
+            <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue sur Sably", "CV-thèque en ligne", "100% gratuit"]'></span>|</h1>
         </div>
         <div class="logo-play">
             <a href="https://www.youtube.com/watch?v=0hLxDYmuYw4"> <i class="fas fa-play" style="color: #000;"></i> </a>
