@@ -26,6 +26,7 @@ global $post;
 					</div>
 					<div class="nav_buttons">
 						<?php if($post->post_name === 'home') {?>
+						<div><a class="tabButton button-home" href="#">Accueil</a></div>
 						<div><a class="tabButton button-about" href="#">A propos</a></div>
 						<div><a class="tabButton button-contact" href="#">Contact</a></div>
 						<?php } else {?>

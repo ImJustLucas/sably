@@ -26,12 +26,13 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>Selectionnez les meilleurs candidats parmis de nombreux profils. Une liste de candidats dévoués et prêt à travailler.</p>
                 </div>
             </div>
             <div class="blocHome textHome2">
                 <div class="boxHome descriptionHome2">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>Notre plateforme est recommandée et appréciée pas de nombreux utilisateurs. Les candidats comme les recruteurs approuve ce site.
+                    </p>
                 </div>
                 <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/review.svg" alt="image CV">
@@ -39,10 +40,10 @@ get_header();
             </div>
             <div class="blocHome textHome3">
                 <div class="boxHome imageHome">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/img/svg/Eiffel_tower.svg" alt="image CV">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>Un site made in france pensé et créé par nos développeurs locaux !</p>
                 </div>
             </div>
         </section>
