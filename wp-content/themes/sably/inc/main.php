@@ -85,6 +85,10 @@ function sably_scripts()
 	//font awesome
 	wp_enqueue_script('fontAwesome-js', 'https://kit.fontawesome.com/ceee3d5b7f.js', array(), null, true);
 
+	//Magnific popup
+	wp_enqueue_script('magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array(), null, true);
+	wp_enqueue_style('magnific-popup-style', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '');
+
 	//Main js
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
 

@@ -56,16 +56,24 @@ $(document).ready(function () {
     }, 500);
   });
 
+  //--------------------
+  //Popup plugin
+  //--------------------
+
+  $(".logo-play a").magnificPopup({
+    type: "iframe",
+    src: "https://www.youtube.com/watch?v=oUhWsKMcoKY",
+    // other options
+  });
+
   //------------------
   //FIN JQUERY
   //------------------
 });
 
-//
-//
-//
-
+//--------------------
 //Animation home page
+//--------------------
 
 class TypeWriter {
   constructor(txtElement, words, wait = 4000) {
