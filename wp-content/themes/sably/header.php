@@ -19,7 +19,7 @@
 				<div class="header-wrap">
 					<div class="nav_logo">
 						<div class="logoSably tabButton button-home">
-							
+							<a id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune2.png" alt="logo" /></a>
 						</div>
 					</div>
 					<div class="nav_buttons">

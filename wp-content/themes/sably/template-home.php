@@ -10,6 +10,7 @@ get_header();
         <div class="petite-boite">
             <h1>bienvenue sur Sably</h1>
             <!-- <p class="accueil">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span>, vous pouvez accéder à vos CV en cliquant sur le bouton "Mon profil" ! En cas de question, rendez-vous sur la page "contact".</p> -->
+            <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue sur Sably", "CV-thèque en ligne", "100% gratuit"]'></span>|</h1>
         </div>
         <div class="logo-play">
             <a href="https://www.youtube.com/watch?v=0hLxDYmuYw4"> <i class="fas fa-play" style="color: #000;"></i> </a>

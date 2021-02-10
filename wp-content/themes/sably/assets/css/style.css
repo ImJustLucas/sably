@@ -43,18 +43,19 @@ table {
 /* main */
 
 :root {
-    --vert: #1dd1a1;
-    --jaune: #ffc045;
-    --blanc: #fff;
-    --noir: #000;
+  --vert: #1dd1a1;
+  --jaune: #ffc045;
+  --blanc: #fff;
+  --noir: #000;
+  --belge: #f8f8ff;
 }
 
 body {
-    background-color: var(--jaune);
+  background-color: var(--jaune);
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Header */
@@ -122,25 +123,25 @@ header a:hover {
 /* intro */
 
 #intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 40px;
-    text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
 }
 
 #intro .petite-boite {
-    font-size: 1.7em;
-    margin-bottom: 50px;
+  font-size: 1.7em;
+  margin-bottom: 50px;
 }
 
 #intro .logo-play .fas {
-    background-color: var(--blanc);
-    border-radius: 50%;
-    padding: 20px;
+  background-color: var(--blanc);
+  border-radius: 50%;
+  padding: 20px;
 }
 
 /* Sheet */
@@ -241,21 +242,57 @@ form input[type="submit"]:hover{
 }
 
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+#sheet {
+  background-color: var(--blanc);
+  width: 90%;
+  height: auto;
+  position: relative;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Legal */
+#sheet .legal {
+  line-height: 1.5em;
+  margin-left: 5px;
+}
+
+#sheet .legal strong {
+  font-size: 1.3em;
+}
+
+#sheet .legal h2 {
+  font-size: 1.3em;
+  margin: 7px 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#sheet .legal h3 {
+  font-size: 1.3em;
+  margin: 10px 0px;
+  text-decoration: underline;
+}
 
 /* Footer */
 
 footer {
-    display: flex;
-    background-color: white;
-    text-align: center;
+  display: flex;
+  background-color: var(--belge);
+  text-align: center;
 }
 
 .rights {
-    text-decoration: underline;
-    color: black;
+  text-decoration: underline;
+  color: black;
 }
 
 .rights:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
-
