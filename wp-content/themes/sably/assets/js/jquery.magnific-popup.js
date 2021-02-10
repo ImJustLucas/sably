@@ -4,8 +4,8 @@
   typeof define == "function" && define.amd
     ? define(["jquery"], a)
     : typeof exports == "object"
-    ? a(require("jquery"))
-    : a(window.jQuery || window.Zepto);
+      ? a(require("jquery"))
+      : a(window.jQuery || window.Zepto);
 })(function (a) {
   var b = "Close",
     c = "BeforeClose",
@@ -20,7 +20,7 @@
     l = "mfp-removing",
     m = "mfp-prevent-close",
     n,
-    o = function () {},
+    o = function () { },
     p = !!window.jQuery,
     q,
     r = a(window),
@@ -43,9 +43,9 @@
     y = function (b, c) {
       n.ev.triggerHandler(i + b, c),
         n.st.callbacks &&
-          ((b = b.charAt(0).toLowerCase() + b.slice(1)),
+        ((b = b.charAt(0).toLowerCase() + b.slice(1)),
           n.st.callbacks[b] &&
-            n.st.callbacks[b].apply(n, a.isArray(c) ? c : [c]));
+          n.st.callbacks[b].apply(n, a.isArray(c) ? c : [c]));
     },
     z = function (b) {
       if (b !== v || !n.currTemplate.closeBtn)
@@ -116,14 +116,14 @@
             ? !n.probablyMobile
             : n.st.fixedContentPos),
         n.st.modal &&
-          ((n.st.closeOnContentClick = !1),
+        ((n.st.closeOnContentClick = !1),
           (n.st.closeOnBgClick = !1),
           (n.st.showCloseBtn = !1),
           (n.st.enableEscapeKey = !1)),
         n.bgOverlay ||
-          ((n.bgOverlay = x("bg").on("click" + j, function () {
-            n.close();
-          })),
+        ((n.bgOverlay = x("bg").on("click" + j, function () {
+          n.close();
+        })),
           (n.wrap = x("wrap")
             .attr("tabindex", -1)
             .on("click" + j, function (a) {
@@ -132,7 +132,7 @@
           (n.container = x("container", n.wrap))),
         (n.contentContainer = x("content")),
         n.st.preloader &&
-          (n.preloader = x("preloader", n.container, n.st.tLoading));
+        (n.preloader = x("preloader", n.container, n.st.tLoading));
       var h = a.magnificPopup.modules;
       for (c = 0; c < h.length; c++) {
         var i = h[c];
@@ -140,27 +140,27 @@
       }
       y("BeforeOpen"),
         n.st.showCloseBtn &&
-          (n.st.closeBtnInside
-            ? (w(f, function (a, b, c, d) {
-                c.close_replaceWith = z(d.type);
-              }),
-              (u += " mfp-close-btn-in"))
-            : n.wrap.append(z())),
+        (n.st.closeBtnInside
+          ? (w(f, function (a, b, c, d) {
+            c.close_replaceWith = z(d.type);
+          }),
+            (u += " mfp-close-btn-in"))
+          : n.wrap.append(z())),
         n.st.alignTop && (u += " mfp-align-top"),
         n.fixedContentPos
           ? n.wrap.css({
-              overflow: n.st.overflowY,
-              overflowX: "hidden",
-              overflowY: n.st.overflowY,
-            })
+            overflow: n.st.overflowY,
+            overflowX: "hidden",
+            overflowY: n.st.overflowY,
+          })
           : n.wrap.css({ top: r.scrollTop(), position: "absolute" }),
         (n.st.fixedBgPos === !1 ||
           (n.st.fixedBgPos === "auto" && !n.fixedContentPos)) &&
-          n.bgOverlay.css({ height: s.height(), position: "absolute" }),
+        n.bgOverlay.css({ height: s.height(), position: "absolute" }),
         n.st.enableEscapeKey &&
-          s.on("keyup" + j, function (a) {
-            a.keyCode === 27 && n.close();
-          }),
+        s.on("keyup" + j, function (a) {
+          a.keyCode === 27 && n.close();
+        }),
         r.on("resize" + j, function () {
           n.updateSize();
         }),
@@ -227,9 +227,9 @@
         n.bgOverlay.attr("class", "mfp-bg"),
         n.container.attr("class", "mfp-container"),
         n.st.showCloseBtn &&
-          (!n.st.closeBtnInside || n.currTemplate[n.currItem.type] === !0) &&
-          n.currTemplate.closeBtn &&
-          n.currTemplate.closeBtn.detach(),
+        (!n.st.closeBtnInside || n.currTemplate[n.currItem.type] === !0) &&
+        n.currTemplate.closeBtn &&
+        n.currTemplate.closeBtn.detach(),
         n.st.autoFocusLast && n._lastFocusedEl && a(n._lastFocusedEl).focus(),
         (n.currItem = null),
         (n.content = null),
@@ -407,12 +407,12 @@
               g === "replaceWith"
                 ? f[0] !== d[0] && f.replaceWith(d)
                 : g === "img"
-                ? f.is("img")
-                  ? f.attr("src", d)
-                  : f.replaceWith(
+                  ? f.is("img")
+                    ? f.attr("src", d)
+                    : f.replaceWith(
                       a("<img>").attr("src", d).attr("class", f.attr("class"))
                     )
-                : f.attr(e[1], d);
+                  : f.attr(e[1], d);
             }
           } else b.find(j + "-" + c).html(d);
         });
@@ -500,7 +500,7 @@
     D = function () {
       return (
         C === undefined &&
-          (C = document.createElement("p").style.MozTransform !== undefined),
+        (C = document.createElement("p").style.MozTransform !== undefined),
         C
       );
     };
@@ -522,10 +522,10 @@
         var f = a.duration,
           g = function (b) {
             var c = b
-                .clone()
-                .removeAttr("style")
-                .removeAttr("class")
-                .addClass("mfp-animated-image"),
+              .clone()
+              .removeAttr("style")
+              .removeAttr("class")
+              .addClass("mfp-animated-image"),
               d = "all " + a.duration / 1e3 + "s " + a.easing,
               e = {
                 position: "fixed",
@@ -611,7 +611,7 @@
         return (
           D()
             ? (g["-moz-transform"] = g.transform =
-                "translate(" + d.left + "px," + d.top + "px)")
+              "translate(" + d.left + "px," + d.top + "px)")
             : ((g.left = d.left), (g.top = d.top)),
           g
         );
@@ -625,7 +625,7 @@
         var b = n.currTemplate[E].find("iframe");
         b.length &&
           (a || (b[0].src = F),
-          n.isIE8 && b.css("display", a ? "block" : "none"));
+            n.isIE8 && b.css("display", a ? "block" : "none"));
       }
     };
   a.magnificPopup.registerModule(E, {
@@ -664,12 +664,12 @@
           if (d.indexOf(this.index) > -1)
             return (
               this.id &&
-                (typeof this.id == "string"
-                  ? (d = d.substr(
-                      d.lastIndexOf(this.id) + this.id.length,
-                      d.length
-                    ))
-                  : (d = this.id.call(this, d))),
+              (typeof this.id == "string"
+                ? (d = d.substr(
+                  d.lastIndexOf(this.id) + this.id.length,
+                  d.length
+                ))
+                : (d = this.id.call(this, d))),
               (d = this.src.replace("%id%", d)),
               !1
             );
