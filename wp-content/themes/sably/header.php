@@ -1,5 +1,7 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); 
+global $post;
+?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -25,11 +27,21 @@
 						</div>
 					</div>
 					<div class="nav_buttons">
+						<?php if($post->post_name === 'home') {?>
 						<div><a class="tabButton button-about" href="#">A propos</a></div>
 						<div><a class="tabButton button-contact" href="#">Contact</a></div>
+						<?php } else {?>
+						<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
+						<?php }?>
 					</div>
 					<div class="nav_login">
-						<a class="tabButton button-login" href="#">Connexion/Inscription</a>
+						<?php
+						if(is_user_logged_in()){?>
+							<a class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
+						<?php } else {
+						?>
+						<a class="tabButton button-login" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription</a>
+						<?php }; ?>
 					</div>
 				</div>
 			</header><!-- #masthead -->
