@@ -61,6 +61,12 @@ function sably_widgets_init() {
 }
 add_action( 'widgets_init', 'sably_widgets_init' );
 
+//Custom redirect on logout
+function redirect_to_custom_login_page() {
+	wp_redirect(site_url (). "/login");
+}
+add_action('wp_logout', 'redirect_to_custom_login_page');
+
 /**
  * Enqueue scripts and styles.
  */
@@ -73,6 +79,7 @@ function sably_scripts() {
 	//Main js
 	wp_enqueue_script('main-js', get_template_directory_uri() . './assets/js/main.js', array(), null, true);
 
+	wp_enqueue_style('sably-style-2', get_template_directory_uri() . './assets/css/style.css', array(), '' );
 	wp_enqueue_style( 'sably-style', get_stylesheet_uri(), array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'sably_scripts' );
