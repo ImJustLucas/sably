@@ -81,8 +81,6 @@ function sably_scripts()
 	//Include custom Jquery
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.1.min.js', array(), null, true);
-	//font awesome
-	wp_enqueue_script('fontAwesome-js', 'https://kit.fontawesome.com/ceee3d5b7f.js', array(), null, true);
 
 	//font awesome
 	wp_enqueue_script('fontAwesome-js', 'https://kit.fontawesome.com/ceee3d5b7f.js', array(), null, true);
