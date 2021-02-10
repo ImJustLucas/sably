@@ -2,7 +2,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-	Copyright 2021 | SABLY. Tous droits réservés. <a class="rights" href="Mentions legales">Mentions légales</a>
+		<p>Copyright 2021 | SABLY. Tous droits réservés. <a class="rights" href="Mentions legales">Mentions légales</a></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 </div><!-- END WRAP-->
