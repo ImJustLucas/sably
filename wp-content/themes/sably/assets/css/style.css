@@ -169,7 +169,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: black;
+  color: var(--noir);
 }
 
 header a:hover {
@@ -447,6 +447,9 @@ footer {
   width: 45%;
 }
 
+.pad{
+  padding-bottom: 10px;
+}
 /* page 404 */
 
 .error-404 .not-found {
