@@ -81,14 +81,20 @@ header a:hover {
     align-items: center;
 }
 
+a.tabButton:hover {
+    cursor: pointer;
+}
+
 .nav_logo .logoSably img {
     width: 80%;
 }
-.image_off, #home:hover .image_on{
-   display:none
+
+.image_off, #home:hover .image_on {
+    display: none;
 }
-.image_on, #home:hover .image_off{
-   display:block
+
+.image_on, #home:hover .image_off {
+    display: block;
 }
 
 .header-wrap div {
@@ -174,79 +180,87 @@ header a:hover {
     transform: rotate(-12deg);
 }
 
-#sheet #about .about3 h2{
+#sheet .about3 {
+    line-height: 1.5em;
+    margin-left: 5px;
+}
+
+#sheet .about3 .titleSection{
+    text-decoration: underline;
+}
+
+#sheet #about .about3 h2 {
     font-size: 1.3em;
     margin: 7px 0px;
-    text-align: center;
-    text-decoration: underline;
+
 }
 
 
 /* FORMULAIRE==================CONTACT */
-form{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-	margin-bottom: 40px;
+
+form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-form input{
-  margin: 20px 10px;
-  padding-left: 20px;
-  width: 300px;
-  height: 50px;
-  font-size: 100%;
-  border-radius: 80px;
-  border: 1px solid black;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
-	outline: none;
-	-webkit-transition: .7s;
-	-o-transition: .7s;
-    transition: .7s;
+form input {
+    margin: 20px 10px;
+    padding-left: 20px;
+    width: 300px;
+    height: 50px;
+    font-size: 100%;
+    border-radius: 80px;
+    border: 1px solid black;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+    outline: none;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
 }
 
-form textarea{
-  width: 400px;
-  height: 150px;
-	border-radius: 10px;
-  border: 1px solid black;
-	margin-bottom: 30px;
-	resize: none;
-	text-align:center;
-	outline: none;
-	-webkit-transition: .7s;
-	-o-transition: .7s;
-	transition: .7s;
-  height: 200px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+form textarea {
+    width: 400px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    resize: none;
+    text-align: center;
+    outline: none;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+    height: 200px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form input[type="submit"]{
- cursor:pointer;
- background-color: #ffc045;
- color: #fff;
- text-transform: uppercase;
- border: none;
+form input[type="submit"] {
+    cursor: pointer;
+    background-color: #ffc045;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
 }
 
-form input[type="submit"]:hover{
-  background-color: #FFF;
-  color: #ffc045;
-  border: none;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
-  background-color: var(--blanc);
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25)
+form input[type="submit"]:hover {
+    background-color: #fff;
+    color: #ffc045;
+    border: none;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: var(--blanc);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
-
 
 /* Legal */
 
@@ -275,11 +289,11 @@ form input[type="submit"]:hover{
 /* Footer */
 
 footer {
-  display: flex;
-  background-color: var(--belge);
-  text-align: center;
-  padding-top: 100px;
-  height: 300px;
+    display: flex;
+    background-color: var(--belge);
+    text-align: center;
+    padding-top: 100px;
+    height: 300px;
 }
 
 .rights {
@@ -288,25 +302,25 @@ footer {
 }
 
 .rights:hover {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /*HOME*/
 
 .titleSection {
-  text-align: center;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  margin-top: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-top: 20px;
 }
 
 .blocHome {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
 }
 
 .boxHome {
-  width: 45%;
+    width: 45%;
 }

@@ -68,10 +68,20 @@ add_action('widgets_init', 'sably_widgets_init');
 //Custom redirect on logout
 function redirect_to_custom_login_page()
 {
-	wp_redirect(site_url() . "/login");
+	wp_redirect(site_url());
+	exit();
 }
 add_action('wp_logout', 'redirect_to_custom_login_page');
 
+function fn_redirect_wp_admin()
+{
+	global $pagenow;
+	if ($pagenow == 'wp-login.php' && $_GET['action'] != "logout"){
+		wp_redirect(site_url() . "/login");
+		exit();
+	}
+}
+add_action('init', 'fn_redirect_wp_admin');
 /**
  * Enqueue scripts and styles.
  */

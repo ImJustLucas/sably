@@ -38,7 +38,7 @@ get_header();
                 </div>
             </div>
             <div class="blocHome textHome3">
-                <div class="boxHome imageHome">
+            <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
@@ -91,16 +91,6 @@ get_header();
                 </form>
             </div>
 
-        </section>
-        <section id="login" class="tab tab-4 hidden">
-            <h2 class="titleSection">Login</h2>
-            <div class="buttonForSignin">
-                <p>Pas encore de compte ? Inscrivez-vous dès maintenant !</p>
-                <button class="tabButton button-signin">S'inscrire</button>
-            </div>
-        </section>
-        <section id="signin" class="tab tab-5 hidden">
-            <h2 class="titleSection">Signin</h2>
         </section>
 
     </div>
