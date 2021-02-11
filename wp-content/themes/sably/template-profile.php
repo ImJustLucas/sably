@@ -13,18 +13,18 @@ if(!empty($_POST['submittedInfoUser'])){
 
     $preDataUser = array();
     if(!empty($_POST['name-infoUser'])){
-        $preDataUser['name'] = cleanXSS($_POST['name-infoUser']);
-        $errors = validText($errors, $preDataUser['name'] , 'name-infoUser' , 2 , 30);
+        $preDataUser['last_name'] = cleanXSS($_POST['name-infoUser']);
+        $errors = validText($errors, $preDataUser['last_name'] , 'name-infoUser' , 2 , 30);
     }
 
     if(!empty($_POST['email-infoUser'])){
-        $preDataUser['firstname'] = cleanXSS($_POST['firstname-infoUser']);
-        $errors = validText($errors, $preDataUser['firstname'] , 'firstname-infoUser' , 2 , 30);
+        $preDataUser['first_name'] = cleanXSS($_POST['firstname-infoUser']);
+        $errors = validText($errors, $preDataUser['first_name'] , 'firstname-infoUser' , 2 , 30);
     }
 
     if(!empty($_POST['email-infoUser'])){
-        $preDataUser['email'] = cleanXSS($_POST['email-infoUser']);
-        $errors = validMail($errors, $preDataUser['email'], 'email-infoUser');
+        $preDataUser['user_email'] = cleanXSS($_POST['email-infoUser']);
+        $errors = validMail($errors, $preDataUser['user_email'], 'email-infoUser');
     }
 
     if(!empty($_POST['age-infoUser'])){
@@ -64,7 +64,7 @@ get_header();
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?> ! ", "Voici votre profil", "retrouvez votre cv plus bas"]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
     </div>
     <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
 </section>
