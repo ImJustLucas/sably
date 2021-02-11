@@ -194,13 +194,13 @@ get_header();
                 <!-- MOT DE PASSE -->
                 <div class="input-area">
                     <label for="username-signin">Mot de passe</label>
-                    <input type="password" name="password-signin" id="password-signin" placeholder="Password" value="<?php if(!empty($_POST['password-signin'])) { echo $_POST['password-signin']; } ?>">
+                    <input type="password" name="password-signin" id="password-signin" placeholder="Password">
                     <span class="error-password-signin"><?php if(!empty($errors['password-signin'])) { echo $errors['password-signin']; } ?></span>
                 </div>
                 <!-- MOT DE PASSE -->
                 <div class="input-area">
                     <label for="password2-signin">Confirmer mot de passe</label>
-                    <input type="password" name="password2-signin" id="password2-signin" placeholder="Confirmer password" value="<?php if(!empty($_POST['password2-signin'])) { echo $_POST['password2-signin']; } ?>">
+                    <input type="password" name="password2-signin" id="password2-signin" placeholder="Confirmer password">
                 </div>
                 <!-- SUBMIT -->
                 <div class="input-area">
