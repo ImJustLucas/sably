@@ -280,7 +280,7 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-form {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,7 +294,7 @@ form {
   margin-bottom: 40px;
 }
 
-form input {
+.form .input {
   margin: 20px 10px;
   padding-left: 20px;
   width: 300px;
@@ -309,7 +309,7 @@ form input {
   transition: 0.7s;
 }
 
-form textarea {
+.form .text {
   width: 400px;
   height: 150px;
   border-radius: 10px;
@@ -325,7 +325,7 @@ form textarea {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form input[type="submit"] {
+.form .input[type="submit"] {
   cursor: pointer;
   background-color: #ffc045;
   color: #fff;
@@ -333,7 +333,7 @@ form input[type="submit"] {
   border: none;
 }
 
-form input[type="submit"]:hover {
+.form .input[type="submit"]:hover {
   background-color: #fff;
   color: #ffc045;
   border: 1px solid #ffc045;
@@ -341,7 +341,7 @@ form input[type="submit"]:hover {
   background-color: var(--blanc);
   position: relative;
   border-radius: 10px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.25)
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
   -webkit-transition: .3s;
 	-o-transition: .3s;
     transition: .3s;
