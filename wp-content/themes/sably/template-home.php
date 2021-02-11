@@ -75,8 +75,8 @@ get_header();
         </section>
         <section id="contact" class="tab tab-3 hidden">
             <h2 class="titleSection">Contact</h2>
-            <div class="formulaire">
-                <form class="form" action="" method="POST">
+            <div class="form">
+                <form id="formContact" action="" method="POST">
                     <div class="inputs-container">
                         <input class="input" type="text" name="lastname" placeholder="Nom" value="">
                         <input class="input" type="text" name="firstname" placeholder="Prénom" value="">

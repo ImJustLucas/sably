@@ -57,7 +57,7 @@ get_header();
         <section id="login">
             <h2 class="titleSection">Connexion</h2>
 
-            <form method="post" action="" id="fromLogin">
+            <form method="post" action="" id="formLogin">
             
             <div class="input-area">
                 <label for="username-login">Votre nom d'utilisateur :</label>
@@ -85,7 +85,7 @@ get_header();
         <section id="signin" class="hidden">
             <h2 class="titleSection">S'inscrire</h2>
 
-            <form id="fromSignin" action="" method="post">
+            <form id="formSignin" action="" method="post">
 
                 <!-- USERNAME -->
                 <div class="input-area">

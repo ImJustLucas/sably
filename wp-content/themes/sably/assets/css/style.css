@@ -153,6 +153,11 @@ body {
   display: none;
 }
 
+.greenName {
+  color: var(--vert);
+  font-weight: bold;
+}
+
 /* Header */
 
 header {
@@ -234,7 +239,8 @@ a.tabButton:hover {
   text-transform: uppercase;
 }
 
-#intro .petite-boite {
+#intro .petite-boite,
+.titleWebSite {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
@@ -280,7 +286,9 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-.form {
+form#formContact,
+form#formLogin,
+form#formSignin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,7 +302,9 @@ a.tabButton:hover {
   margin-bottom: 40px;
 }
 
-.form .input {
+form#formContact input,
+form#formLogin input,
+form#formSignin input {
   margin: 20px 10px;
   padding-left: 20px;
   width: 300px;
@@ -309,7 +319,9 @@ a.tabButton:hover {
   transition: 0.7s;
 }
 
-.form .text {
+form#formContact textarea,
+form#formLogin textarea,
+form#formSignin textarea {
   width: 400px;
   height: 150px;
   border-radius: 10px;
@@ -325,7 +337,9 @@ a.tabButton:hover {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-.form .input[type="submit"] {
+form#formContact input[type="submit"],
+form#formLogin input[type="submit"],
+form#formSignin input[type="submit"] {
   cursor: pointer;
   background-color: #ffc045;
   color: #fff;
@@ -333,7 +347,9 @@ a.tabButton:hover {
   border: none;
 }
 
-.form .input[type="submit"]:hover {
+form#formContact input[type="submit"]:hover,
+form#formLogin input[type="submit"]:hover,
+form#formSignin input[type="submit"]:hover {
   background-color: #fff;
   color: #ffc045;
   border: 1px solid #ffc045;
@@ -407,4 +423,70 @@ footer {
 
 .boxHome {
   width: 45%;
+}
+
+/*INFO USER*/
+
+#infoUser {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 98%;
+}
+
+#infoUser .dividerUser {
+  width: 2px;
+  height: auto;
+  background-color: #bdc3c7;
+}
+
+#infoUser .leftColumnUser,
+#infoUser .rightColumnUser {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredInformation {
+  text-align: center;
+  margin-top: 40px;
+}
+
+div.input-area-infoUser {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+form#formInfoUser input {
+  border: none;
+  border-bottom: #ffc045 1px solid;
+  border-radius: 5px;
+  transition: all 0.1s;
+  color: #000;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding-left: 1%;
+  width: 60%;
+}
+
+form#formInfoUser input:focus {
+  outline: none;
+  border-bottom: #ffc045 4px solid;
+}
+
+form#formInfoUser input::placeholder {
+  color: #000;
+  text-transform: uppercase;
+}
+
+form#formInfoUser label {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  width: 25%;
+}
+
+.input-area-infoUser i {
+  margin: 0 3% 0 3%;
 }
