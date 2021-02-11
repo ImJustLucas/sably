@@ -8,7 +8,7 @@ get_header();
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?>", "Voici votre profil", "retrouvez votre cv plus bas !"]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?> ! ", "Voici votre profil", "retrouvez votre cv plus bas"]'></span>|</h1>
     </div>
     <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
 </section>
@@ -17,7 +17,7 @@ get_header();
     <div id="sheet">
         <h2 class="titleSection">Mon profil</h2>
         <h3 class="featuredInformation">Informations complémentaires</h3>
-        <form id="formInfoUser" method="" action="">
+        <form id="formInfoUser" method="post" action="">
             <section id="infoUser">
                 <div class="leftColumnUser">
 
@@ -48,7 +48,7 @@ get_header();
                     <div class="input-area-infoUser">
                         <label for="age-infoUser">age</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="number" name="age-infoUser" id="age-infoUser" placeholder="age">
+                        <input type="number" name="age-infoUser" id="age-infoUser" <?php if(!empty($current_user->age) && $current_user->age != ''){ echo 'value="' . $current_user->age . '"';} else { echo 'placeholder="Votre age"' ;}?>>
                     </div>
                     <span class="error-infoUser error-age-infoUser"></span>
 
@@ -62,14 +62,14 @@ get_header();
                     <div class="input-area-infoUser">
                         <label for="adresse-infoUser">adresse</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="adresse-infoUser" id="adresse-infoUser" placeholder="Doe">
+                        <input type="text" name="adresse-infoUser" id="adresse-infoUser" <?php if(!empty($current_user->adresse) && $current_user->adresse != ''){ echo 'value="' . $current_user->adresse . '"';} else { echo 'placeholder="Votre email"' ;}?>>
                     </div>
                     <span class="error-infoUser error-adresse-infoUser"></span>
 
                     <div class="input-area-infoUser">
                         <label for="telNumber-infoUser">Téléphone</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="tel" name="telNumber-infoUser" id="telNumber-infoUser" placeholder="0102030405">
+                        <input type="tel" name="telNumber-infoUser" id="telNumber-infoUser" <?php if(!empty($current_user->telephone) && $current_user->telephone != ''){ echo 'value="' . $current_user->telephone . '"';} else { echo 'placeholder="Votre numéro téléphone"' ;}?>>
                     </div>
                     <span class="error-infoUser error-telNumber-infoUser"></span>
 
