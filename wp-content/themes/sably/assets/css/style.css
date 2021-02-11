@@ -194,6 +194,10 @@ a.tabButton:hover {
 .nav_logo .logoSably img {
   width: 80%;
 }
+.nav_logo .logoSably img:hover {
+  cursor: pointer;
+}
+
 .image_off,
 #home:hover .image_on {
   display: none;
@@ -580,4 +584,9 @@ form#formInfoUser input[type="submit"]:hover {
 
 .error-infoUser {
   color: var(--error);
+}
+
+/* RESPONSIVE=============== */
+@media only screen and(max-width: 990px ){
+
 }
