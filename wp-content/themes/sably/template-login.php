@@ -10,6 +10,7 @@ if(is_user_logged_in()){
 require get_template_directory() . '/inc/function_mail.php';
 global $wpdb;
 
+
 //CONNEXION :
 
 if(!empty($_POST['submitted'])){
@@ -52,6 +53,10 @@ get_header();
 
 <section id="intro">
     <p>Se connecter</p>
+    <?php
+    if(!empty($_GET['id']) && $_GET['id'] == 'new'){ ?>
+    <p class="welcome">Vous venez de valider votre compte</p>
+    <?php } ?>
 </section>
 
 <div class="wrap-sheet">

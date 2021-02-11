@@ -451,6 +451,9 @@ footer {
   width: 45%;
 }
 
+.pad{
+  padding-bottom: 10px;
+}
 /* page 404 */
 
 .error-404 .not-found {
