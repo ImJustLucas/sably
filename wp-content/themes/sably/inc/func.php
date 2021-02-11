@@ -12,8 +12,6 @@ function cleanXSS($notSafe)
     return trim(strip_tags($notSafe));
 }
 
-
-
 function emptyError($errors,$value,$key){
   if(empty($value)){
     $errors[$key] = 'Ce champ ne doit pas être vide.';
