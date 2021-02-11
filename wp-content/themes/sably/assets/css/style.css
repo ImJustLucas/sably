@@ -169,7 +169,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: black;
+  color: var(--noir);
 }
 
 header a:hover {
