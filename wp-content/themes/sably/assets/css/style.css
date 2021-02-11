@@ -149,6 +149,7 @@ table {
 
 body {
   background-color: var(--jaune);
+  font-family: "Dosis", sans-serif;
 }
 
 .hidden {
