@@ -11,7 +11,7 @@ get_header();
             <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bienvenue sur Sably", "CV-thèque en ligne", "100% gratuit"]'></span>|</h1>
         </div>
         <div class="logo-play">
-            <a href="https://www.youtube.com/watch?v=oUhWsKMcoKY"> <i class="fas fa-play" style="color: #000;"></i> </a>
+            <a href="https://www.youtube.com/watch?v=oUhWsKMcoKY"><i class="fas fa-play" style="color: #000;"></i></a>
         </div>
     </div>
 
@@ -26,23 +26,24 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>Selectionnez les candidats qui correspondent le mieux à vos attentes parmis de nombreux profils. Un catalogue de candidats dévoués et prêt à travailler. Inscrivez-vous et créez, importez ou modifiez votre CV.</p>
                 </div>
             </div>
             <div class="blocHome textHome2">
                 <div class="boxHome descriptionHome2">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>La plateforme SABLY est recommandée et appréciée pas de nombreux utilisateurs. Les candidats comme les recruteurs approuvent ce site.
+                    </p>
                 </div>
                 <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/review.svg" alt="image CV">
                 </div>
             </div>
             <div class="blocHome textHome3">
-            <div class="boxHome imageHome">
+                <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad inventore expedita? Officiis fuga architecto accusamus dolorem id reiciendis velit perspiciatis mollitia, dolor fugiat cum odio, totam ipsa dolore tenetur!</p>
+                    <p>Notre site SABLY a été pensé et créé par notre équipe de développeurs et designers français !</p>
                 </div>
             </div>
         </section>
@@ -77,16 +78,16 @@ get_header();
         <section id="contact" class="tab tab-3 hidden">
             <h2 class="titleSection">Contact</h2>
             <div class="form">
-                <form action="" method="POST">
+                <form id="formContact" action="" method="POST">
                     <div class="inputs-container">
-                        <input class="name" type="text" name="lastname" placeholder="Nom" value="">
-                        <input type="text" name="firstname" placeholder="Prénom" value="">
+                        <input class="input" type="text" name="lastname" placeholder="Nom" value="">
+                        <input class="input" type="text" name="firstname" placeholder="Prénom" value="">
                     </div>
                     <div class="inputs-container">
-                        <input type="mail" name="mail" placeholder="Mail" value="">
-                        <input type="text" name="subject" placeholder="Objet" value="">
+                        <input class="input" type="mail" name="mail" placeholder="Mail" value="">
+                        <input class="input" type="text" name="subject" placeholder="Objet" value="">
                     </div>
-                    <textarea name="message" placeholder="Message"></textarea>
+                    <textarea class="text" name="message" placeholder="Message"></textarea>
                     <input type="submit" name="submit" class="btn btn-purple" value="Envoyer">
                 </form>
             </div>
