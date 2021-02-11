@@ -88,7 +88,7 @@ get_header();
                     <span class="error-infoUser error-newPasswordConfirm-infoUser"></span>
 
                 </div>
-              
+
             </section>
 
             <div class="submitButtonInfoUser">

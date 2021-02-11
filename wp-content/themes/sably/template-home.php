@@ -26,12 +26,12 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Selectionnez les candidats qui correspondent le mieux à vos attentes parmis de nombreux profils. Un catalogue de candidats dévoués et prêt à travailler. Inscrivez-vous et créez, importez ou modifiez votre CV.</p>
+                    <p>Vous êtes recruteur ?💼 <br> Nous mettons à votre disposition un catalogue de candidats dévoués et prêts à travailler. <br> Selectionnez les profils qui correspondent à vos attentes.🎯 <br><br><br>Vous recherchez un emploi ? 👔<br>Alors, n'attendez plus ! <br>Inscrivez-vous et créez, importez ou modifiez votre CV. 📝</h1>
                 </div>
             </div>
             <div class="blocHome textHome2">
                 <div class="boxHome descriptionHome2">
-                    <p>La plateforme SABLY est recommandée et appréciée pas de nombreux utilisateurs. Les candidats comme les recruteurs approuvent ce site.
+                    <p>La plateforme SABLY est recommandée et appréciée pas de nombreux utilisateurs. 👍 <br><br> Les candidats comme les recruteurs approuvent ce site. <br> ⭐⭐⭐⭐⭐
                     </p>
                 </div>
                 <div class="boxHome imageHome">
@@ -43,7 +43,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Notre site SABLY a été pensé et créé par notre équipe de développeurs et designers français !</p>
+                    <p>SABLY a été pensé et créé par notre équipe de développeurs et designers français ! 🇫🇷 </p>
                 </div>
             </div>
         </section>

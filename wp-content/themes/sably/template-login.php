@@ -3,6 +3,7 @@
 Template Name: login
 */
 require get_template_directory() . '/inc/function_mail.php';
+global $wpdb;
 
 //CONNEXION :
 
@@ -17,9 +18,25 @@ if(!empty($_POST['submitted'])){
 
     $verify_user = wp_signon($user_data, true);
 
-    
+
     if (!is_wp_error($verify_user)) {
-        wp_redirect(site_url() . "/profile");
+        $email = $verify_user->user_email;
+        $wpdb_prefix = $wpdb->prefix;
+        $wpdb_tablename = $wpdb_prefix.'users';
+        $sql = "SELECT ID FROM $wpdb_tablename WHERE user_email = %s";
+        $id_user = $wpdb->get_var( $wpdb->prepare( $sql, $email ) );
+        $wpdb_tablename = $wpdb_prefix.'usermeta';
+        $sql = "SELECT user_id FROM $wpdb_tablename WHERE user_id = %d AND meta_key = %s AND meta_value = %s";
+        $user_valid = $wpdb->get_var($wpdb->prepare($sql, $id_user, 'valid_mail' ,'valid'));
+
+        if(!empty($user_valid)){
+          wp_redirect(site_url() . "/profile");
+        }
+        else {
+          $_POST['error-login'] = 'Veuillez valider votre compte';
+        }
+
+
     } else {
         $_POST['error-login'] = 'Identifiant ou mot de passe invalide';
    }
@@ -40,7 +57,7 @@ if (!empty($_POST['submitted-reg'])) {
 
   if (empty($errors)) {
 
-    global $wpdb;
+
     $wpdb_prefix = $wpdb->prefix;
     $wpdb_tablename = $wpdb_prefix.'users';
     //$result = $wpdb->get_results(sprintf('SELECT `ID` FROM `%2$s` WHERE user_email = %s LIMIT 1', $email, $wpdb_tablename));
@@ -84,6 +101,9 @@ if (!empty($_POST['submitted-reg'])) {
       update_user_meta($id, 'token', $token);
       $date = New DateTime("now");
       update_user_meta($id, 'token_at', $date);
+      update_user_meta($id, 'age', 'default');
+      update_user_meta($id, 'adresse', 'default');
+      update_user_meta($id, 'telephone', 'default');
 
 
       $wpdb_tablename = $wpdb_prefix.'usermeta';
@@ -130,7 +150,7 @@ get_header();
             <h2 class="titleSection">Connexion</h2>
 
             <form method="post" action="" id="formLogin">
-            
+
             <div class="input-area">
                 <label for="username-login">Votre nom d'utilisateur :</label>
                 <input type="text" name="username-login" id="username-login" placeholder="Username">
