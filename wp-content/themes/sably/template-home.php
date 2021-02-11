@@ -26,7 +26,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Selectionnez les candidats qui correspondent le mieux à vos attentes parmis de nombreux profils. Un catalogue de candidats dévoués et prêt à travailler.</p>
+                    <p>Selectionnez les candidats qui correspondent le mieux à vos attentes parmis de nombreux profils. Un catalogue de candidats dévoués et prêt à travailler. Inscrivez-vous et créez, importez ou modifiez votre CV.</p>
                 </div>
             </div>
             <div class="blocHome textHome2">
@@ -43,7 +43,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/Eiffel_tower.svg" alt="image CV">
                 </div>
                 <div class="boxHome descriptionHome1">
-                    <p>Notre site made in france a été pensé et créé par nos développeurs et designers locaux !</p>
+                    <p>Notre site SABLY a été pensé et créé par notre équipe de développeurs et designers français !</p>
                 </div>
             </div>
         </section>
