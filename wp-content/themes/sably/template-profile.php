@@ -52,7 +52,7 @@ get_header();
                 </div>
 
                 <div class="dividerUser"></div>
-                
+
                 <div class="rightColumnUser">
 
                   <div class="input-area-infoUser">
@@ -62,7 +62,7 @@ get_header();
                         <span class="error-adresse-infoUser"></span>
                     </div>
                 </div>
-              
+
             </section>
 
             <input class="btn-submit-userInfo loginbutton" type="submit" name="submitted" value="Sauvegarder">
