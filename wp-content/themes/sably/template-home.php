@@ -20,7 +20,7 @@ get_header();
     <div id="sheet" class="sheet">
         <div class="logo-seul"><img src="<?php echo get_template_directory_uri() ?>/assets/img/pelican_seul.png"></div>
         <section id="home" class="tab tab-1">
-            <h2 class="titleSection">sably</h2>
+            <h2 class="titleSection">accueil</h2>
             <div class="blocHome textHome1">
                 <div class="boxHome imageHome">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/svg/sub.svg" alt="image CV">
@@ -48,7 +48,7 @@ get_header();
             </div>
         </section>
         <section id="about" class="tab tab-2 hidden">
-            <h2 class="titleSection">About us</h2>
+            <h2 class="titleSection">à propos de nous</h2>
             <h2>SABLY, QU'EST-CE QUE C'EST ?</h2>
             <p>SABLY est une CVthèque, une base de données en ligne contenant le Curriculum vitae des candidats à la recherche d’un emploi. Nous permettons à ces candidats de créer ou de déposer eux-mêmes leurs CV sur la plateforme via un outil dédié et nous donnons ensuite la possibilité aux recruteurs d'effectuer des recherches dans notre base de données dans le cadre de leur sourcing.</p>
 
