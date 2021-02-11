@@ -142,7 +142,7 @@ table {
   --jaune: #ffc045;
   --blanc: #fff;
   --noir: #000;
-  --belge: #f8f8ff;
+  --beige: beige;
 }
 
 body {
@@ -380,11 +380,29 @@ form#formSignin input[type="submit"]:hover {
 /* Footer */
 
 footer {
-  display: flex;
-  background-color: var(--belge);
-  text-align: center;
-  padding-top: 100px;
-  height: 300px;
+    background-color: var(--beige);
+}
+
+.footerwrap {
+    position: relative;
+    height: 200px;
+    top: -200px;
+    background-color: var(--beige);
+}
+
+.contentfooter{
+    display: flex;
+    position: relative;
+    background-color: var(--beige);
+    text-align: center;
+    height: 10px;
+    top: -200px;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.copyrights {
+    margin-top: 78px;
 }
 
 .rights {
@@ -416,6 +434,39 @@ footer {
   width: 45%;
 }
 
+/* page 404 */
+
+.error-404 .not-found{
+display: flex;
+}
+
+.notfoundsvg{
+    width:45%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.introuvable{
+display: flex;
+font-size: 50px;
+}
+
+.page-content-404 h1{
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.page-content-404 img{
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.page-content-404 div{
+    width: 100%;
+}
 /*INFO USER*/
 
 #infoUser {
