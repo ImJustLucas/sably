@@ -16,7 +16,7 @@ get_header();
 <div class="wrap-sheet">
     <div id="sheet">
         <h2 class="titleSection">Mon profil</h2>
-        <h3 class="featuredInformation">Informations complémentaire</h3>
+        <h3 class="featuredInformation">Informations complémentaires</h3>
         <form id="formInfoUser" method="" action="">
             <section id="infoUser">
                 <div class="leftColumnUser">
