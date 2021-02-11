@@ -15,7 +15,11 @@ global $post;
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<?php if($post->post_name === 'recruiter') {?>
+	<div class="wrap-recruiter">
+	<?php } else { ?>
 	<div class="wrap">
+	<?php } ?>
 		<div id="page" class="site">
 			<header id="masthead" class="site-header">
 				<div class="header-wrap">

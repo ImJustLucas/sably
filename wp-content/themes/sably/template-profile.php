@@ -7,34 +7,55 @@ if(!is_user_logged_in()){
     wp_redirect(site_url() . "/profile");
 }
 $errors = array();
+$postDateUser = array();
 
 if(!empty($_POST['submittedInfoUser'])){
 
     $preDataUser = array();
-    $preDataUser['name'] = cleanXSS($_POST['name-infoUser']);
-    $preDataUser['firstname'] = cleanXSS($_POST['firstname-infoUser']);
-    $preDataUser['email'] = cleanXSS($_POST['email-infoUser']);
-    $preDataUser['age'] = cleanXSS($_POST['age-infoUser']);
-    $preDataUser['adresse'] = cleanXSS($_POST['adresse-infoUser']);
-    $preDataUser['telephone'] = cleanXSS($_POST['telephone-infoUser']);
-    $preDataUser['newPassword'] = cleanXSS($_POST['newPassword-infoUser']);
-    $preDataUser['newPasswordConfirm'] = cleanXSS($_POST['newPasswordConfirm-infoUser']);
-
-    $errors = validText($errors, $preDataUser['name'] , 'name-infoUser' , 2 , 30);
-    $errors = validText($errors, $preDataUser['firstname'] , 'firstname-infoUser' , 2 , 30);
-    $errors = validMail($errors, $preDataUser['email'], 'email-infoUser');
-
-    if(!is_int($preDataUser['age'])){
-        $errors['age-infoUser'] = 'Veuillez saisir un chiffre';
+    if(!empty($_POST['name-infoUser'])){
+        $preDataUser['name'] = cleanXSS($_POST['name-infoUser']);
+        $errors = validText($errors, $preDataUser['name'] , 'name-infoUser' , 2 , 30);
     }
 
-    $errors = validText($errors, $preDataUser['adresse'] , 'adresse-infoUser' , 2 , 60);
-
-    if(!is_int($preDataUser['telephone'])){
-        $errors['telephone-infoUser'] = 'Veuillez saisir un chiffre';
+    if(!empty($_POST['email-infoUser'])){
+        $preDataUser['firstname'] = cleanXSS($_POST['firstname-infoUser']);
+        $errors = validText($errors, $preDataUser['firstname'] , 'firstname-infoUser' , 2 , 30);
     }
 
-    $errors = validPass($errors, $preDataUser['newPassword'], 'newPassword', $preDataUser['newPasswordConfirm'], 4, 30);
+    if(!empty($_POST['email-infoUser'])){
+        $preDataUser['email'] = cleanXSS($_POST['email-infoUser']);
+        $errors = validMail($errors, $preDataUser['email'], 'email-infoUser');
+    }
+
+    if(!empty($_POST['age-infoUser'])){
+        $preDataUser['age'] = cleanXSS($_POST['age-infoUser']);
+        if(!is_int($preDataUser['age'])){
+            $errors['age-infoUser'] = 'Veuillez saisir un chiffre';
+        }
+    }
+
+    if(!empty($_POST['adresse-infoUser'])){
+        $preDataUser['adresse'] = cleanXSS($_POST['adresse-infoUser']);
+        $errors = validText($errors, $preDataUser['adresse'] , 'adresse-infoUser' , 2 , 60);
+    }
+    
+    if(!empty($_POST['telephone-infoUser'])){
+        $preDataUser['telephone'] = cleanXSS($_POST['telephone-infoUser']);
+        if(!is_int($preDataUser['telephone'])){
+            $errors['telephone-infoUser'] = 'Veuillez saisir un chiffre';
+        }
+    }
+
+    if(!empty($_POST['newPassword-infoUser'])){
+        $preDataUser['newPassword'] = cleanXSS($_POST['newPassword-infoUser']);
+        if(!empty($_POST['newPasswordConfirm-infoUser'])){
+            $preDataUser['newPasswordConfirm'] = cleanXSS($_POST['newPasswordConfirm-infoUser']);
+            $errors = validPass($errors, $preDataUser['newPassword'], 'newPassword', $preDataUser['newPasswordConfirm'], 4, 30);
+        }
+    }
+
+    die(debug($preDataUser));
+    //die(debug(array_filter($preDataUser)));
 
 }
 
