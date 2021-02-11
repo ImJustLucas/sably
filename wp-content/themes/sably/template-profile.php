@@ -24,14 +24,14 @@ get_header();
                     <div class="input-area-infoUser">
                         <label for="name-infoUser">nom</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="name-infoUser" id="name-infoUser" placeholder="Doe">
+                        <input type="text" name="name-infoUser" id="name-infoUser" <?php if(!empty($current_user->last_name) && $current_user->last_name != ''){ echo 'value="' . $current_user->last_name . '"';} else { echo 'placeholder="Doe"' ;}?>>
                         <span class="error-name-infoUser"></span>
                     </div>
 
                     <div class="input-area-infoUser">
                         <label for="firstname-infoUser">prénom</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="firstname-infoUser" id="firstname-infoUser" placeholder="John">
+                        <input type="text" name="firstname-infoUser" id="firstname-infoUser" <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo 'value="' . $current_user->first_name . '"';} else { echo 'placeholder="John"' ;}?>>
                         <span class="error-firstname-infoUser"></span>
                     </div>
 
@@ -50,7 +50,9 @@ get_header();
                     </div>
 
                 </div>
+
                 <div class="dividerUser"></div>
+                
                 <div class="rightColumnUser">
 
                   <div class="input-area-infoUser">
@@ -60,7 +62,10 @@ get_header();
                         <span class="error-adresse-infoUser"></span>
                     </div>
                 </div>
+              
             </section>
+
+            <input class="btn-submit-userInfo loginbutton" type="submit" name="submitted" value="Sauvegarder">
         </form>
 
         <section id="myCV"></section>

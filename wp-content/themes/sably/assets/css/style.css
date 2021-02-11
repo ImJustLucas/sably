@@ -468,7 +468,6 @@ form#formInfoUser input:focus {
 }
 
 form#formInfoUser input::placeholder {
-  color: #000;
   text-transform: uppercase;
 }
 
