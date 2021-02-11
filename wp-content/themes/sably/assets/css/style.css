@@ -91,7 +91,9 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -105,17 +107,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,20 +129,33 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* main */
+
 :root {
   --vert: #1dd1a1;
   --jaune: #ffc045;
   --blanc: #fff;
   --noir: #000;
+  --beige: beige;
 }
+
 body {
   background-color: var(--jaune);
+}
+
+.hidden {
+  display: none;
+}
+
+.greenName {
+  color: var(--vert);
+  font-weight: bold;
 }
 
 /* Header */
@@ -162,8 +181,20 @@ header a:hover {
   align-items: center;
 }
 
+a.tabButton:hover {
+  cursor: pointer;
+}
+
 .nav_logo .logoSably img {
   width: 80%;
+}
+.image_off,
+#home:hover .image_on {
+  display: none;
+}
+.image_on,
+#home:hover .image_off {
+  display: block;
 }
 
 .header-wrap div {
@@ -187,6 +218,12 @@ header a:hover {
   background-color: #ffc045;
   padding: 10px;
   border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.nav_login a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* intro */
@@ -198,9 +235,12 @@ header a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
 }
-#intro .petite-boite {
-  border: lime 1px solid;
+
+#intro .petite-boite,
+.titleWebSite {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
@@ -224,5 +264,271 @@ header a:hover {
 #sheet {
   background-color: var(--blanc);
   width: 90%;
+  height: auto;
+  position: relative;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  padding: 0 10px;
+  z-index: 999;
+}
+
+#sheet .logo-seul {
+  width: 60px;
+  position: absolute;
+  top: -48px;
+  right: -10px;
+  transform: rotate(-12deg);
+}
+
+/* FORMULAIRE==================CONTACT */
+form#formContact,
+form#formLogin,
+form#formSignin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+form#formContact input,
+form#formLogin input,
+form#formSignin input {
+  margin: 20px 10px;
+  padding-left: 20px;
+  width: 300px;
+  height: 50px;
+  font-size: 100%;
+  border-radius: 80px;
+  border: 1px solid black;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  outline: none;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+}
+
+form#formContact textarea,
+form#formLogin textarea,
+form#formSignin textarea {
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+  resize: none;
+  text-align: center;
+  outline: none;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
   height: 200px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+form#formContact input[type="submit"],
+form#formLogin input[type="submit"],
+form#formSignin input[type="submit"] {
+  cursor: pointer;
+  background-color: #ffc045;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+}
+
+form#formContact input[type="submit"]:hover,
+form#formLogin input[type="submit"]:hover,
+form#formSignin input[type="submit"]:hover {
+  background-color: #fff;
+  color: #ffc045;
+  border: none;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+  background-color: var(--blanc);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Legal */
+#sheet .legal {
+  line-height: 1.5em;
+  margin-left: 5px;
+}
+
+#sheet .legal strong {
+  font-size: 1.3em;
+}
+
+#sheet .legal h2 {
+  font-size: 1.3em;
+  margin: 7px 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#sheet .legal h3 {
+  font-size: 1.3em;
+  margin: 10px 0px;
+  text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--beige);
+}
+
+.footerwrap {
+    position: relative;
+    height: 200px;
+    top: -200px;
+    background-color: var(--beige);
+}
+
+.contentfooter{
+    display: flex;
+    position: relative;
+    background-color: var(--beige);
+    text-align: center;
+    height: 10px;
+    top: -200px;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.copyrights {
+    margin-top: 78px;
+}
+
+.rights {
+  text-decoration: underline;
+  color: black;
+}
+
+.rights:hover {
+  font-weight: bold;
+}
+
+/*HOME*/
+
+.titleSection {
+  text-align: center;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.blocHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.boxHome {
+  width: 45%;
+}
+
+/* page 404 */
+
+.error-404 .not-found{
+display: flex;
+}
+
+.notfoundsvg{
+    width:45%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.introuvable{
+display: flex;
+font-size: 50px;
+}
+
+.page-content-404 h1{
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.page-content-404 img{
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.page-content-404 div{
+    width: 100%;
+}
+/*INFO USER*/
+
+#infoUser {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 98%;
+}
+
+#infoUser .dividerUser {
+  width: 2px;
+  height: auto;
+  background-color: #bdc3c7;
+}
+
+#infoUser .leftColumnUser,
+#infoUser .rightColumnUser {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredInformation {
+  text-align: center;
+  margin-top: 40px;
+}
+
+div.input-area-infoUser {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+form#formInfoUser input {
+  border: none;
+  border-bottom: #ffc045 1px solid;
+  border-radius: 5px;
+  transition: all 0.1s;
+  color: #000;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding-left: 1%;
+  width: 60%;
+}
+
+form#formInfoUser input:focus {
+  outline: none;
+  border-bottom: #ffc045 4px solid;
+}
+
+form#formInfoUser input::placeholder {
+  color: #000;
+  text-transform: uppercase;
+}
+
+form#formInfoUser label {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  width: 25%;
+}
+
+.input-area-infoUser i {
+  margin: 0 3% 0 3%;
 }

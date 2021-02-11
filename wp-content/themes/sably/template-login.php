@@ -4,6 +4,28 @@ Template Name: login
 */
 require get_template_directory() . '/inc/function_mail.php';
 
+//CONNEXION :
+
+if(!empty($_POST['submitted'])){
+
+    $username = cleanXSS($_POST['username-login']);
+    $password = cleanXSS($_POST['password-login']);
+
+    $user_data = array();
+    $user_data['user_login'] = $username;
+    $user_data['user_password'] = $password;
+
+    $verify_user = wp_signon($user_data, true);
+
+    
+    if (!is_wp_error($verify_user)) {
+        wp_redirect(site_url() . "/profile");
+    } else {
+        $_POST['error-login'] = 'Identifiant ou mot de passe invalide';
+   }
+}
+
+
 // REGISTER PROCESS
 $errors = array();
 if (!empty($_POST['submitted-reg'])) {
@@ -107,12 +129,12 @@ get_header();
         <section id="login">
             <h2 class="titleSection">Connexion</h2>
 
-            <form action="" id="fromLogin">
-
+            <form method="post" action="" id="formLogin">
+            
             <div class="input-area">
                 <label for="username-login">Votre nom d'utilisateur :</label>
                 <input type="text" name="username-login" id="username-login" placeholder="Username">
-                <span class="error-username-login"></span>
+                <span class="error-username-login"><?php if(!empty($_POST['error-login']) && $_POST['error-login'] != ''){echo $_POST['error-login'];} ?></span>
             </div>
 
             <div class="input-area">
@@ -128,14 +150,14 @@ get_header();
 
             <div class="buttonForSignin">
                 <p>Pas encore de compte ? Inscrivez-vous dès maintenant !</p>
-                <button class="loginbutton">S'inscrire</button>
+                <button class="button-signin">S'inscrire</button>
             </div>
         </section>
 
-        <section id="signin">
-            <h2>S'inscrire</h2>
+        <section id="signin" class="hidden">
+            <h2 class="titleSection">S'inscrire</h2>
 
-            <form id="fromSignin" action="" method="post">
+            <form id="formSignin" action="" method="post">
 
                 <!-- USERNAME -->
                 <div class="input-area">

@@ -1,11 +1,11 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); 
+global $post;
+?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://kit.fontawesome.com/ceee3d5b7f.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/style.css">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -20,19 +20,30 @@
 			<header id="masthead" class="site-header">
 				<div class="header-wrap">
 					<div class="nav_logo">
-						<div class="logoSably">
-							<a class="logobutton" href="<?php echo esc_url(home_url('home')) ?>">
-								<img class="logo1" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="Logo Sably 1">
-							</a>
+						<div class="logoSably tabButton button-home">
+							<a id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune2.png" alt="logo" /></a>
 						</div>
 					</div>
 					<div class="nav_buttons">
-						<div><a class="homebutton" href="#">Accueil</a></div>
-						<div><a class="aboutbutton" href="#">A propos</a></div>
-						<div><a class="contactbutton" href="#">Contact</a></div>
+						<?php if($post->post_name === 'home') {?>
+						<div><a class="tabButton button-home" >Accueil</a></div>
+						<div><a class="tabButton button-about" >A propos</a></div>
+						<div><a class="tabButton button-contact" >Contact</a></div>
+						<?php } else {?>
+						<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
+						<?php }
+						if(is_user_logged_in()){?>
+						<div><a class="tabButton button-logout" href="<?php echo wp_logout_url( home_url() ); ?>">Deconnexion</a></div>
+						<?php }; ?>
 					</div>
 					<div class="nav_login">
-						<a class="loginbutton" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription </a>
+						<?php
+						if(is_user_logged_in()){?>
+							<a class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
+						<?php } else {
+						?>
+						<a class="tabButton button-login" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription</a>
+						<?php }; ?>
 					</div>
 				</div>
 			</header><!-- #masthead -->
