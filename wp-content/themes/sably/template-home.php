@@ -55,13 +55,13 @@ get_header();
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/selection.svg" alt="">
                 </div>
                 <div class="boxHome">
-                    <h2>SABLY, QU'EST-CE QUE C'EST ?</h2><br><br>
+                    <h2 class="souligne">SABLY, QU'EST-CE QUE C'EST ?</h2><br><br>
                     <p>SABLY est une CVthèque, une base de données en ligne contenant le Curriculum vitae des candidats à la recherche d’un emploi.<br><br>Nous permettons à ces candidats de créer ou de déposer eux-mêmes leurs CV sur la plateforme via un outil dédié et nous donnons ensuite la possibilité aux recruteurs d'effectuer des recherches dans notre base de données dans le cadre de leur sourcing.</p>
                 </div>
             </div>
             <div class="blocHome">
                 <div class="boxHome">
-                    <h2>NOTRE PRIORITE : OPTIMISER LE TEMPS DE RECRUTEMENT</h2><br>
+                    <h2 class="souligne">NOTRE PRIORITE : OPTIMISER LE TEMPS DE RECRUTEMENT</h2><br>
                     <p>Optimiser ce temps est notre priorité. Nous sommes conscient que le processus de recrutement peut-être chronophage.<br><br>
                         C'est pourquoi, en tant que développeurs, nous nous engageons à vous fournir un outil qui améliorera significativement la gestion des CVs au sein de votre entreprise.
                     </p>
@@ -76,14 +76,14 @@ get_header();
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recrutement.svg" alt="">
                 </div>
                 <div class="boxHome">
-                    <h2>SIMPLIFICATION DU SUIVI DES CV :</h2><br>
+                    <h2 class="souligne">SIMPLIFICATION DU SUIVI DES CV :</h2><br>
                     <p>SABLY deviendra rapidement la solution incontournable à votre service ou dans votre entreprise pour simplifier le suivi des CV et pour établir une base de données de vos candidats.
                     </p>
                 </div>
             </div>
             <div class="blocHome">
                 <div class="boxHome">
-                    <h2>CONTACTEZ-NOUS :</h2><br>
+                    <h2 class="souligne">CONTACTEZ-NOUS :</h2><br>
                     <p>Totalement personnalisable, SABLY permet de doter votre entreprise d’un outil de communication professionnel vers le marché de l’emploi et un pilotage complet de votre plateforme.
                     </p>
                 </div>
@@ -97,10 +97,9 @@ get_header();
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/place.svg" alt="">
                     </div>
                     <div class="boxHome">
-                        <h2>TÉLÉPHONE ET MAIL :</h2><br>
+                        <h2 class="souligne">TÉLÉPHONE ET MAIL :</h2><br>
                         <p>Tél: +33(0)1.35.28.31.61 <br>
                             Email: contact@sably.com <br>
-                            ADRESSE
                             Siège social :<br>
                             24 Place Saint-Marc, 76000 Rouen, France
                         </p>

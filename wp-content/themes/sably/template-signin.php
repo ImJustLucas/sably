@@ -107,18 +107,18 @@ get_header();
     <div class="petite-boite">
         <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["rejoingnez nous !", "tout est gratuit"]'></span>|</h1>
     </div>
-    <p class="subTitleWebSite">Inscription sur SABLY</p>
+    <!-- <p class="subTitleWebSite">Inscription sur SABLY</p> -->
 </section>
 
 <div class="wrap-sheet">
     <div id="sheet">
-        <form id="formInfoUser" action="" method="post">
+        <form id="formsignin" action="" method="post">
             <h2 class="titleSection">Inscription</h2>
-            <section class="infoUser">
+            <section id="signin">
                 <div class="columnUser">
 
                     <!-- USERNAME -->
-                    <div class="input-area-infoUser">
+                    <div class="input-area-signin">
                         <label for="username-signin">Nom d'utilisateur</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="text" name="username-signin" id="username-signin" value="<?php if (!empty($_POST['username-signin'])) {
@@ -130,7 +130,7 @@ get_header();
                     </div>
 
                     <!-- EMAIL -->
-                    <div class="input-area-infoUser">
+                    <div class="input-area-signin">
                         <label for="username-signin">Email</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="email" name="email-signin" id="email-signin" value="<?php if (!empty($_POST['email-signin'])) {
@@ -142,7 +142,7 @@ get_header();
                     </div>
 
                     <!-- MOT DE PASSE -->
-                    <div class="input-area-infoUser">
+                    <div class="input-area-signin">
                         <label for="username-signin">Mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password-signin" id="password-signin">
@@ -152,14 +152,14 @@ get_header();
                     </div>
 
                     <!-- CONFIRAMATION DE MOT DE PASSE -->
-                    <div class="input-area-infoUser">
+                    <div class="input-area-signin">
                         <label for="password2-signin">Confirmer mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password2-signin" id="password2-signin">
                     </div>
 
                     <!-- SUBMIT -->
-                    <div class="submitButtonInfoUser">
+                    <div class="submitButtonsignin">
                         <input type="submit" name="submitted-reg" id="submitted-reg" value="S'inscrire">
                         <!-- <label for="username-signin">S'inscrire</label> -->
                     </div>
