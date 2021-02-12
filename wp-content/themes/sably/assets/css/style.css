@@ -3,87 +3,7 @@
    License: none (public domain)
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -94,17 +14,7 @@ video {
 
 /* HTML5 display-role reset for older browsers */
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -112,20 +22,15 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -194,16 +99,16 @@ a.tabButton:hover {
 .nav_logo .logoSably img {
   width: 80%;
 }
+
 .nav_logo .logoSably img:hover {
   cursor: pointer;
 }
 
-.image_off,
-#home:hover .image_on {
+.image_off, #home:hover .image_on {
   display: none;
 }
-.image_on,
-#home:hover .image_off {
+
+.image_on, #home:hover .image_off {
   display: block;
 }
 
@@ -249,8 +154,7 @@ a.tabButton:hover {
   text-transform: uppercase;
 }
 
-#intro .petite-boite,
-.titleWebSite {
+#intro .petite-boite, .titleWebSite {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
@@ -260,6 +164,7 @@ a.tabButton:hover {
   border-radius: 50%;
   padding: 20px;
 }
+
 #intro .logo-play .fas:hover {
   background-color: var(--blanc);
   border-radius: 50%;
@@ -296,9 +201,8 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-form#formContact,
-form#formLogin,
-form#formSignin {
+
+form#formContact, form#formLogin, form#formSignin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,9 +216,7 @@ form#formSignin {
   margin-bottom: 40px;
 }
 
-form#formContact input,
-form#formLogin input,
-form#formSignin input {
+form#formContact input, form#formLogin input, form#formSignin input {
   margin: 20px 10px;
   padding-left: 20px;
   width: 300px;
@@ -329,9 +231,7 @@ form#formSignin input {
   transition: 0.7s;
 }
 
-form#formContact textarea,
-form#formLogin textarea,
-form#formSignin textarea {
+form#formContact textarea, form#formLogin textarea, form#formSignin textarea {
   width: 400px;
   height: 150px;
   border-radius: 10px;
@@ -347,9 +247,7 @@ form#formSignin textarea {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form#formContact input[type="submit"],
-form#formLogin input[type="submit"],
-form#formSignin input[type="submit"] {
+form#formContact input[type="submit"], form#formLogin input[type="submit"], form#formSignin input[type="submit"] {
   cursor: pointer;
   background-color: #ffc045;
   color: #fff;
@@ -357,9 +255,7 @@ form#formSignin input[type="submit"] {
   border: none;
 }
 
-form#formContact input[type="submit"]:hover,
-form#formLogin input[type="submit"]:hover,
-form#formSignin input[type="submit"]:hover {
+form#formContact input[type="submit"]:hover, form#formLogin input[type="submit"]:hover, form#formSignin input[type="submit"]:hover {
   background-color: #fff;
   color: #ffc045;
   border: 1px solid #ffc045;
@@ -374,6 +270,7 @@ form#formSignin input[type="submit"]:hover {
 }
 
 /* Legal */
+
 #sheet .legal {
   line-height: 1.5em;
   margin-left: 5px;
@@ -395,20 +292,7 @@ form#formSignin input[type="submit"]:hover {
   margin: 10px 0px;
   text-decoration: underline;
 }
-#sheet .about3 {
-    line-height: 1.5em;
-    margin-left: 5px;
-}
 
-#sheet .about3 .titleSection{
-    text-decoration: underline;
-}
-
-#sheet #about .about3 h2 {
-    font-size: 1.3em;
-    margin: 7px 0px;
-
-}
 /* Footer */
 
 footer {
@@ -468,9 +352,10 @@ footer {
   width: 45%;
 }
 
-.pad{
+.pad {
   padding-bottom: 10px;
 }
+
 /* page 404 */
 
 .error-404 .not-found {
@@ -504,6 +389,7 @@ footer {
 .page-content-404 div {
   width: 100%;
 }
+
 /*INFO USER*/
 
 #infoUser {
@@ -520,8 +406,7 @@ footer {
   background-color: #bdc3c7;
 }
 
-#infoUser .leftColumnUser,
-#infoUser .rightColumnUser {
+#infoUser .leftColumnUser, #infoUser .rightColumnUser {
   width: 48%;
   display: flex;
   flex-direction: column;
@@ -572,6 +457,7 @@ form#formInfoUser label {
 .input-area-infoUser i {
   margin: 0 3% 0 3%;
 }
+
 form#formInfoUser input[type="submit"] {
   width: auto;
   padding: 10px 10px;
@@ -600,6 +486,5 @@ form#formInfoUser input[type="submit"]:hover {
 }
 
 /* RESPONSIVE=============== */
-@media only screen and(max-width: 990px ){
 
-}
+@media only screen and(max-width: 990px) {}
