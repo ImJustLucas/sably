@@ -15,14 +15,24 @@ global $post;
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<?php if($post->post_name === 'recruiter') {?>
+	<div class="wrap-recruiter">
+	<?php } else { ?>
 	<div class="wrap">
+	<?php } ?>
 		<div id="page" class="site">
 			<header id="masthead" class="site-header">
 				<div class="header-wrap">
 					<div class="nav_logo">
-						<div class="logoSably tabButton button-home">
+					<?php if($post->post_name === 'home') {?>
+						<div class="logoSably tabButton">
 							<a id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune2.png" alt="logo" /></a>
 						</div>
+					<?php } else {?>
+						<div class="logoSably tabButton button-home">
+							<a href="<?php echo esc_url(home_url('home')) ?>" id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_jaune2.png" alt="logo" /></a>
+						</div>
+					<?php } ?>
 					</div>
 					<div class="nav_buttons">
 						<?php if($post->post_name === 'home') {?>
