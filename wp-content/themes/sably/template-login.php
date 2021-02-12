@@ -91,6 +91,7 @@ get_header();
                     </div>
                 </div>
             </section>
+        </form>
     </div>
 </div>
 
