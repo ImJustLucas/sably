@@ -49,7 +49,6 @@ get_header();
 ?>
 
 <section id="intro">
-    <p>Se connecter</p>
     <?php
     if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
         <p class="welcome">Vous venez de valider votre compte</p>
@@ -58,31 +57,31 @@ get_header();
 
 <div class="wrap-sheet">
     <div id="sheet">
-        <form id="formInfoUser" method="post" action="">
-            <section id="connexionUser">
+        <form id="formlogin" method="post" action="">
+            <section id="login">
                 <div class="columnUser">
                     <h2 class="titleSection">Connexion</h2>
 
-                    <div class="input-area-infoUser">
-                        <label for="name-infoUser">Username</label>
+                    <div class="input-area-login">
+                        <label for="name-login">Username</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') {
-                                                                                        echo 'value="' . $current_user->last_name . '"';
-                                                                                    } else {
-                                                                                        echo 'placeholder="Doe"';
-                                                                                    } ?>>
+                        <input type="text" name="name-login" id="name-login" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') {
+                            echo 'value="' . $current_user->last_name . '"';
+                        } else {
+                            echo 'user';
+                        } ?> >
                     </div>
-                    <span class="error-infoUser error-name-infoUser"></span>
+                    <span class="error-login error-name-login"></span>
 
-                    <div class="input-area-infoUser">
-                        <label for="newPassword-infoUser">Mot de passe</label>
+                    <div class="input-area-login">
+                        <label for="newPassword-login">Mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="password" name="newPassword-infoUser" id="newPassword-infoUser">
+                        <input type="password" name="newPassword-login" id="newPassword-login">
                     </div>
-                    <span class="error-infoUser error-newPassword-infoUser"></span>
+                    <span class="error-login error-newPassword-login"></span>
 
-                    <div class="submitButtonInfoUser">
-                        <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedInfoUser" value="Se connecter">
+                    <div class="submitButtonlogin">
+                        <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
                     </div>
 
                     <div class="buttonForSignin">
