@@ -122,11 +122,11 @@ get_header();
                         <label for="username-signin">Nom d'utilisateur</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="text" name="username-signin" id="username-signin" value="<?php if (!empty($_POST['username-signin'])) {
-                                                                                                    echo $_POST['username-signin'];
-                                                                                                } ?>">
+                            echo $_POST['username-signin'];
+                        } ?>">
                         <span class="error-username-signin"><?php if (!empty($errors['username-signin'])) {
-                                                                echo $errors['username-signin'];
-                                                            } ?></span>
+                            echo $errors['username-signin'];
+                        } ?></span>
                     </div>
 
                     <!-- EMAIL -->
@@ -134,11 +134,11 @@ get_header();
                         <label for="username-signin">Email</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="email" name="email-signin" id="email-signin" value="<?php if (!empty($_POST['email-signin'])) {
-                                                                                                echo $_POST['email-signin'];
-                                                                                            } ?>">
+                            echo $_POST['email-signin'];
+                        } ?>">
                         <span class="error-email-signin"><?php if (!empty($errors['email-signin'])) {
-                                                                echo $errors['email-signin'];
-                                                            } ?></span>
+                            echo $errors['email-signin'];
+                        } ?></span>
                     </div>
 
                     <!-- MOT DE PASSE -->
@@ -147,13 +147,13 @@ get_header();
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password-signin" id="password-signin">
                         <span class="error-password-signin"><?php if (!empty($errors['password-signin'])) {
-                                                                echo $errors['password-signin'];
-                                                            } ?></span>
+                            echo $errors['password-signin'];
+                        } ?></span>
                     </div>
 
                     <!-- CONFIRAMATION DE MOT DE PASSE -->
                     <div class="input-area-infoUser">
-                        <label for="password2-signin">Confirmer </label>
+                        <label for="password2-signin">Confirmer mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password2-signin" id="password2-signin">
                     </div>

@@ -524,9 +524,9 @@ footer {
   justify-content: center;
 }
 .buttonForSignin{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: flex;
-  justify-content: baseline;
+  justify-content: center;
 }
 .featuredInformation {
   text-align: center;
@@ -536,7 +536,7 @@ footer {
 div.input-area-infoUser {
   margin-top: 6%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 form#formInfoUser {
