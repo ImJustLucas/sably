@@ -97,3 +97,61 @@ function sably_scripts()
 }
 add_action('wp_enqueue_scripts', 'sably_scripts');
 
+
+
+
+//// CUSTOM ADMIN ////
+
+
+/**
+ * Register a custom menu page.
+ */
+function wpdocs_register_my_custom_menu_page(){
+    add_menu_page(
+        __( 'Custom Menu Title', 'textdomain' ),
+        'Contact',
+        'manage_options',
+        'custompage',
+        'my_custom_menu_page',
+        'images/marker.png',
+        6
+    );
+}
+add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
+
+/**
+ * Display a custom menu page
+ */
+function my_custom_menu_page(){
+    esc_html_e( 'Admin Page Test', 'textdomain' );
+		$email = 'basile@gmail.com';
+		global $wpdb;
+		$wpdb_prefix = $wpdb->prefix;
+		$wpdb_tablename = $wpdb_prefix.'contact';
+		$sql = "SELECT * FROM $wpdb_tablename";
+		$users = $wpdb->get_results($sql);
+		?>
+			<table>
+				<tr>
+					<td>Nom</td>
+					<td>Prenom</td>
+					<td>Email</td>
+					<td>Subject</td>
+					<td>Message</td>
+				</tr>
+
+
+		<?php
+		foreach ($users as $user) { ?>
+			<tr>
+				<td><?= $user->lastname ?></td>
+				<td><?= $user->firstname ?></td>
+				<td><?= $user->email ?></td>
+				<td><?= $user->subject ?></td>
+				<td><?= $user->message ?></td>
+			</tr>
+		<?php }
+		?>
+			</table>
+		<?php
+}
