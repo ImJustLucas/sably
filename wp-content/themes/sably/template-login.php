@@ -13,7 +13,7 @@ global $wpdb;
 
 //CONNEXION :
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['submittedlogin'])) {
 
     $username = cleanXSS($_POST['username-login']);
     $password = cleanXSS($_POST['password-login']);
@@ -59,35 +59,29 @@ get_header();
     <div id="sheet">
         <form id="formlogin" method="post" action="">
             <section id="login">
-                <div class="columnUser">
-                    <h2 class="titleSection">Connexion</h2>
+                <h2 class="titleSection">Connexion</h2>
 
-                    <div class="input-area-login">
-                        <label for="name-login">Username</label>
-                        <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="name-login" id="name-login" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') {
-                            echo 'value="' . $current_user->last_name . '"';
-                        } else {
-                            echo 'user';
-                        } ?> >
-                    </div>
-                    <span class="error-login error-name-login"></span>
+                <div class="input-area-login">
+                    <label for="username-login">Username</label>
+                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                    <input type="text" name="username-login" id="username-login">
+                </div>
+                <span class="error-login error-username-login"></span>
 
-                    <div class="input-area-login">
-                        <label for="newPassword-login">Mot de passe</label>
-                        <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="password" name="newPassword-login" id="newPassword-login">
-                    </div>
-                    <span class="error-login error-newPassword-login"></span>
+                <div class="input-area-login">
+                    <label for="password-login">Mot de passe</label>
+                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                    <input type="password" name="password-login" id="password-login">
+                </div>
+                <span class="error-login error-password-login"></span>
 
-                    <div class="submitButtonlogin">
-                        <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
-                    </div>
+                <div class="submitButtonlogin">
+                    <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
+                </div>
 
-                    <div class="buttonForSignin">
-                        <p>Pas encore de compte ? Inscrivez-vous dès maintenant ! </p>
-                        <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> S'inscrire</a>
-                    </div>
+                <div class="buttonForSignin">
+                    <p>Pas encore de compte ? Inscrivez-vous dès maintenant ! </p>
+                    <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> S'inscrire</a>
                 </div>
             </section>
         </form>

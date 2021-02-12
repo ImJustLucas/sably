@@ -131,7 +131,7 @@ get_header();
 
                     <!-- EMAIL -->
                     <div class="input-area-signin">
-                        <label for="username-signin">Email</label>
+                        <label for="email-signin">Email</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="email" name="email-signin" id="email-signin" value="<?php if (!empty($_POST['email-signin'])) {
                             echo $_POST['email-signin'];
@@ -143,7 +143,7 @@ get_header();
 
                     <!-- MOT DE PASSE -->
                     <div class="input-area-signin">
-                        <label for="username-signin">Mot de passe</label>
+                        <label for="password-signin">Mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password-signin" id="password-signin">
                         <span class="error-password-signin"><?php if (!empty($errors['password-signin'])) {
