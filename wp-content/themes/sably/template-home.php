@@ -108,25 +108,6 @@ get_header();
                 </div>
             </div>
         </section>
-        <section id="contact" class="tab tab-3 hidden">
-            <h2 class="titleSection">Contact</h2>
-            <div class="form">
-                <form id="formContact" action="" method="POST">
-                    <div class="inputs-container">
-                        <input class="input" type="text" name="lastname" placeholder="Nom" value="">
-                        <input class="input" type="text" name="firstname" placeholder="Prénom" value="">
-                    </div>
-                    <div class="inputs-container">
-                        <input class="input" type="mail" name="mail" placeholder="Mail" value="">
-                        <input class="input" type="text" name="subject" placeholder="Objet" value="">
-                    </div>
-                    <textarea class="text" name="message" placeholder="Message"></textarea>
-                    <input type="submit" name="submit" class="btn btn-purple" value="Envoyer">
-                </form>
-            </div>
-
-        </section>
-
     </div>
 </div>
 
