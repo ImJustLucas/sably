@@ -200,7 +200,13 @@ get_header();
             </div>
         </form>
 
-        <section id="myCV"></section>
+        <section class="divider">
+            <div class="dividerHorizontale"></div>
+        </section>
+
+        <section id="myCV">
+            <h2 class="titleSection">Mon CV</h2>
+        </section>
     </div>
 </div>
 

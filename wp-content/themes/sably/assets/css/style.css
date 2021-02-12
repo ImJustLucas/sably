@@ -455,7 +455,6 @@ footer {
   width: 45%;
 }
 
-
 /* page 404 */
 
 .error-404 .not-found {
@@ -505,6 +504,18 @@ footer {
   background-color: #bdc3c7;
 }
 
+section.divider {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.dividerHorizontale {
+  width: 80%;
+  height: 1px;
+  background-color: #bdc3c7;
+}
+
 #infoUser .leftColumnUser,
 #infoUser .rightColumnUser,
 #connexionUser .columnUser {
@@ -512,18 +523,18 @@ footer {
   display: flex;
   flex-direction: column;
 }
-#connexionUser{
+#connexionUser {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 30px;
   width: 100%;
 }
-#connexionUser .columnUser{
+#connexionUser .columnUser {
   display: flex;
   justify-content: center;
 }
-.buttonForSignin{
+.buttonForSignin {
   /* margin-top: 20px; */
   display: flex;
   justify-content: center;
@@ -573,6 +584,7 @@ form#formInfoUser label {
 .input-area-infoUser i {
   margin: 0 3% 0 3%;
 }
+
 form#formInfoUser input[type="submit"] {
   width: auto;
   margin-top: 30px;
@@ -598,7 +610,7 @@ form#formInfoUser input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
-.button-signin{
+.button-signin {
   color: var(--jaune);
   font-weight: bold;
 }
@@ -608,6 +620,5 @@ form#formInfoUser input[type="submit"]:hover {
 }
 
 /* RESPONSIVE=============== */
-@media only screen and(max-width: 990px ){
-
+@media only screen and(max-width: 990px ) {
 }
