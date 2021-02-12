@@ -169,7 +169,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: black;
+  color: var(--noir);
 }
 
 header a:hover {
@@ -452,12 +452,17 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 60px;
+  line-height: 30px;
+  font-size: x-large;
 }
 
 .boxHome {
   width: 45%;
 }
 
+.pad{
+  padding-bottom: 10px;
+}
 /* page 404 */
 
 .error-404 .not-found {

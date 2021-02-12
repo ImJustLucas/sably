@@ -29,21 +29,6 @@ $(document).ready(function () {
       $("section#contact").fadeIn("");
     }, 500);
   });
-
-  $(".button-login").on("click", function () {
-    $("section#signin").fadeOut("");
-    setTimeout(function () {
-      $("section#login").fadeIn("");
-    }, 500);
-  });
-
-  $(".button-signin").on("click", function () {
-    $("section#login").fadeOut("");
-    setTimeout(function () {
-      $("section#signin").fadeIn("");
-    }, 500);
-  });
-
   //--------------------
   //Popup plugin
   //--------------------
