@@ -386,7 +386,7 @@ get_header();
         <section id="myCV">
             <h2 class="titleSection">Mon CV</h2>
             <?php if($userHasCV) { ?>
-                <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p>
+                <!-- <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p> -->
 
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
