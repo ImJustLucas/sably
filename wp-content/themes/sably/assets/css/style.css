@@ -910,3 +910,26 @@ form.formSlideEffect .textArea textarea:focus {
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 .table .cellule{text-align:center;vertical-align:top}
 
+.modal__title{padding-top:5px;margin-left: 25px;}
+
+.boutonsupprimer{
+  margin-left: 45px;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffc045;
+  border: #ffc045 1px solid;
+  border-radius: 30px;
+  color: #fff;
+  transition: all 0.4s;
+padding: 10px 10px;}
+
+.boutonsupprimer:hover{
+  background-color: #fff;
+  color: var(--jaune);
+  font-weight: bold;
+  cursor: pointer;
+  transform: scale(1.05);
+}

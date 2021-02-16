@@ -6,7 +6,7 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-delete">
         <header class="modal__header">
           <h2 class="modal__title" id="modal-1-delete">
-            Vous êtes sûr ? 
+            Êtes-vous sûr ? 
           </h2>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
@@ -14,7 +14,7 @@
           <form action="<?php echo esc_url(home_url('profile'))?>" method="post">
             <input id="deleteDataInCv1" class="hidden" name="data-delete-type" type="text" value="">
             <input id="deleteDataInCv2" class="hidden" name="data-delete-id" type="text" value="">
-            <input type="submit" name="delete-data-cv" value="Supprimer">
+            <input class="boutonsupprimer" type="submit" name="delete-data-cv" value="Supprimer">
           </form>
         </main>
       </div>
@@ -26,7 +26,7 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-edit">
         <header class="modal__header">
           <h2 class="modal__title" id="modal-1-edit">
-            Vous êtes sûr ? 
+            Êtes-vous sûr ? 
           </h2>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
