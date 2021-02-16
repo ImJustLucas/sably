@@ -352,7 +352,6 @@ footer {
   width: 45%;
 }
 
-
 /* page 404 */
 
 .error-404 .not-found {
@@ -387,6 +386,8 @@ footer {
   width: 100%;
 }
 
+/* RECRUTER */
+
 /*INFO USER*/
 
 #infoUser {
@@ -403,29 +404,31 @@ footer {
   background-color: #bdc3c7;
 }
 
-#infoUser .leftColumnUser,
-#infoUser .rightColumnUser,
-#connexionUser .columnUser {
+#infoUser .leftColumnUser, #infoUser .rightColumnUser, #connexionUser .columnUser {
   width: 48%;
   display: flex;
   flex-direction: column;
 }
-#connexionUser{
+
+#connexionUser {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 30px;
   width: 100%;
 }
-#connexionUser .columnUser{
+
+#connexionUser .columnUser {
   display: flex;
   justify-content: center;
 }
-.buttonForSignin{
+
+.buttonForSignin {
   /* margin-top: 20px; */
   display: flex;
   justify-content: center;
 }
+
 .featuredInformation {
   text-align: center;
   margin-top: 40px;
@@ -497,7 +500,8 @@ form#formInfoUser input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
-.button-signin{
+
+.button-signin {
   color: var(--jaune);
   font-weight: bold;
 }
