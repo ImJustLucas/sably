@@ -6,7 +6,7 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-delete">
         <header class="modal__header">
           <h2 class="modal__title" id="modal-1-delete">
-            Vous etes sur ? 
+            Vous êtes sûr ? 
           </h2>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
@@ -26,7 +26,7 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-edit">
         <header class="modal__header">
           <h2 class="modal__title" id="modal-1-edit">
-            Vous etes sur ? 
+            Vous êtes sûr ? 
           </h2>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
