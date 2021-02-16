@@ -833,161 +833,6 @@ form.formSlideEffect .textArea textarea:focus {
   }
 }
 
-
-/* RESPONSIVE=============== */
-@media screen and (max-width:1000px) {
-  #infoUser{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-@media screen and (max-width:800px) {
-  .nav_buttons{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .blocHome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
-    line-height: 30px;
-    font-size: medium;
-  }
-}
-@media screen and (max-width:790px){
-  form#formInfoUser input{
-    display: flex;
-    justify-content: space-between;
-    font-size: .5em;
-  }
-  form#formInfoUser label,
-  #formlogin label,
-  #formsignin label{
-    font-size: 10px;
-  }
-  #infoUser{
-    display: flex;
-    justify-content: space-between;
-  }
-  .fa-arrow-right{
-    font-size: 10px;
-  }
-  .showFormButton{
-    font-size: 10px;
-  }
-  .row{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 10px;
-  }
-    form.formSlideEffect .textArea .titleTextArea {
-      font-size: 1em;
-  }
-  #intro .petite-boite,
-  .titleWebSite {
-    font-size: 1.5em;
-    margin-bottom: 50px;
-  }
-  .titleSection{
-    font-size: 2em;
-  }
-}
-@media only screen and (max-width: 730px){
-  .introuvable {
-    font-size: 30px;
-  }
-}
-@media screen and (max-width:620px){
-  .button-login{
-    font-size: 10px;
-  }
-  .nav_logo .logoSably img {
-    width: 150%;
-  }
-}
-@media screen and (max-width:470px){
-  .input-area-infoUser{
-    /* display: flex;
-    justify-content: space-between; */
-    font-size: 12px;
-  }
-  form#formInfoUser label,
-  #formlogin label,
-  #formsignin label{
-    font-size: 8px;
-  }
-  
-  /* #infoUser {
-    margin-top: 0;
-    margin-bottom: 0;
-  } */
-  
-}
-@media screen and (max-width:465px){
-  .titleSection{
-    font-size: 1.5em;
-  }
-  /* .fa-arrow-right{
-    font-size: 10px;
-  } */
-}
-@media screen and (max-width:450px){
-  .introuvable {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width:410px){
-  .nav_buttons{
-    margin: 20px 0 20px 0;
-  }
-  .button-home{
-    margin-bottom: 20px;
-  }
-  .button-logout{
-    margin-bottom: 20px;
-  }
-  #intro .petite-boite,
-  .titleWebSite {
-    font-size: 1.3em;
-    margin-bottom: 20px;
-  }
-  .showFormButton{
-    font-size: 8px;
-  }
-}
-
-@media screen and (max-width: 395px){
- .row{
-    font-size: 8px;
-  }
-}
-
-@media screen and (max-width:350px){
-  .header-wrap{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .image_off, .image_on {
-    display: none;
-  }
-  .infoUser{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 290px){
-  .introuvable {
-    font-size: 18px;
-  }
-}
 /*-------------HOVER CSS------------------*/
 
 .hvr-underline-from-left {
@@ -1054,3 +899,186 @@ form.formSlideEffect .textArea textarea:focus {
 .hvr-underline-from-right:active:before {
   left: 0;
 }
+
+
+/* RESPONSIVE=============== */
+@media screen and (max-width:1200px) {
+  .singleContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #infoUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width:800px) {
+  .nav_buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .blocHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    line-height: 30px;
+    font-size: medium;
+  }
+  
+}
+@media screen and (max-width:790px){
+  form#formInfoUser input{
+    display: flex;
+    justify-content: space-between;
+    font-size: .5em;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 10px;
+  }
+  #infoUser{
+    display: flex;
+    justify-content: space-between;
+  }
+  .fa-arrow-right{
+    font-size: 10px;
+  }
+  .showFormButton{
+    font-size: 10px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+  }
+    form.formSlideEffect .textArea .titleTextArea {
+      font-size: 1em;
+  }
+  #intro .petite-boite,
+  .titleWebSite {
+    font-size: 1.5em;
+    margin-bottom: 50px;
+  }
+  .titleSection{
+    font-size: 2em;
+  }
+  .submitButtonsignin{
+    font-size: 10px;
+  }
+  .submitButtonlogin{
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 730px){
+  .introuvable {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width:620px){
+  .button-login{
+    font-size: 10px;
+  }
+  .nav_logo .logoSably img {
+    width: 150%;
+  }
+}
+@media screen and (max-width:470px){
+  .input-area-infoUser{
+    /* display: flex;
+    justify-content: space-between; */
+    font-size: 12px;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 8px;
+  }
+  
+  /* #infoUser {
+    margin-top: 0;
+    margin-bottom: 0;
+  } */
+  
+}
+@media screen and (max-width:465px){
+  .titleSection{
+    font-size: 1.5em;
+  }
+  /* .fa-arrow-right{
+    font-size: 10px;
+  } */
+  .buttonForSignin{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:450px){
+  .introuvable {
+    font-size: 20px;
+  }
+  .singleContent{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width:410px){
+  .nav_buttons{
+    margin: 20px 0 20px 0;
+  }
+  .button-home{
+    margin-bottom: 20px;
+  }
+  .button-logout{
+    margin-bottom: 20px;
+  }
+  #intro .petite-boite,
+  .titleWebSite {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+  .showFormButton{
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 395px){
+ .row{
+    font-size: 8px;
+  }
+  /* .input-area-login{
+    margin-top: 50px;
+  } */
+}
+
+@media screen and (max-width:350px){
+  .header-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image_off, .image_on {
+    display: none;
+  }
+  .infoUser{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 290px){
+  .introuvable {
+    font-size: 18px;
+  }
+}
+
