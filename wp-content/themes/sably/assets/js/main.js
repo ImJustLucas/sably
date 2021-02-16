@@ -22,6 +22,23 @@ $(document).ready(function () {
     }, 500);
   });
 
+  //------------------------
+  //Micromodal
+  //------------------------
+
+  MicroModal.init({
+    onShow: (modal) => console.info(`${modal.id} is shown`),
+    onClose: (modal) => console.info(`${modal.id} is hidden`),
+    openTrigger: "data-custom-open",
+    closeTrigger: "data-custom-close",
+    openClass: "is-open",
+    disableScroll: true,
+    disableFocus: false,
+    awaitOpenAnimation: false,
+    awaitCloseAnimation: false,
+    debugMode: true,
+  });
+
   //--------------------
   //Popup plugin
   //--------------------
@@ -128,3 +145,24 @@ function init() {
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
 }
+
+//-------------------------------
+//Open delete modal
+//-------------------------------
+
+$(".deleteButton").on("click", function () {
+  getId = $(this).parent().parent().attr("data-id");
+  getType = $(this).parent().parent().attr("data-type");
+  $("#deleteDataInCv1").attr("value", getId);
+  $("#deleteDataInCv2").attr("value", getType);
+  MicroModal.show("modal-delete");
+});
+
+$("#deleteDataInCv").on("click", function () {
+  console.log("yes");
+  data = {
+    id: $(this).attr("data-delete-id"),
+    typeData: $(this).attr("data-delete-type"),
+    action: "delete_data_CV",
+  };
+});
