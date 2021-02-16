@@ -901,7 +901,17 @@ form.formSlideEffect .textArea textarea:focus {
 }
 
 
-/* RESPONSIVE=============== */
+/* TABLEAU============================== */
+.table  {border-collapse:collapse;border-spacing:0;margin: 0 auto;margin-top: 50px;background-color: #1dd1a1;}
+.table td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.table .cellule{text-align:center;vertical-align:top}
+
+
+/* RESPONSIVE============================== */
+
 @media screen and (max-width:1200px) {
   .singleContent{
     display: flex;
@@ -1064,7 +1074,7 @@ form.formSlideEffect .textArea textarea:focus {
   .header-wrap{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   .image_off, .image_on {
     display: none;
@@ -1081,4 +1091,5 @@ form.formSlideEffect .textArea textarea:focus {
     font-size: 18px;
   }
 }
+
 

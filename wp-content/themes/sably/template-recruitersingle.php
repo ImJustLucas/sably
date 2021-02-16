@@ -50,7 +50,6 @@ get_header();
               $user_login = $wpdb->get_var($sql); echo $user_login ?></p>
             <?php }
 
-            $cvid = $_GET['id'];
             $wpdb_experience = 'sbl_experience';
             $wpdb_formation = 'sbl_formation';
             $wpdb_loisir = 'sbl_loisir';
@@ -138,7 +137,7 @@ get_header();
         </div>
 
 
-        </div>
+      </div>
 </div>
 
 
