@@ -285,7 +285,7 @@ a.tabButton:hover {
   position: relative;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
   padding: 20px 20px;
-  z-index: 999;
+  z-index: 97;
 }
 
 #sheet .logo-seul {
@@ -652,6 +652,38 @@ form#formsignin input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+/* -----------LISTING DATA CV--------------- */
+
+.titleCvSection {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.listing {
+  width: 100%;
+}
+
+.singleContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin: 10px 0;
+}
+
+.parametreButton {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.parametreButton div {
+  padding-bottom: 10px;
+}
+
+.parametreButton div:hover {
+  cursor: pointer;
+}
 /*------------ADD DATA IN CV---------------*/
 
 #MyExperience,
@@ -661,11 +693,13 @@ form#formsignin input[type="submit"]:hover {
 #MyReward {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 div.formContainer {
-  /* border: 1px solid lime;*/
   width: 80%;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -693,20 +727,12 @@ div.showFormButton:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-/*
-form.formSlideEffect {
-  border: 1px solid red;
-}
-*/
 form.formSlideEffect .row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
 }
-/*
-form.formSlideEffect .row .dividerUser {
-}
-*/
+
 form.formSlideEffect i {
   margin: 0 3%;
 }
@@ -961,4 +987,70 @@ form.formSlideEffect .textArea textarea:focus {
   .introuvable {
     font-size: 18px;
   }
+}
+/*-------------HOVER CSS------------------*/
+
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: var(--jaune);
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+/* Underline From Right */
+.hvr-underline-from-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  background: var(--error);
+  height: 4px;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-right:hover:before,
+.hvr-underline-from-right:focus:before,
+.hvr-underline-from-right:active:before {
+  left: 0;
 }

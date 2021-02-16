@@ -140,8 +140,24 @@ if(!empty($userCV)){
 if($userHasCV){
 
     //Get experience
-    $sql = "SELECT * FROM sbl_experience WHERE id_cv = $userCV->id; ";
+    $sql = "SELECT * FROM sbl_experience WHERE id_cv = $userCV->id AND status = 1; ";
     $userCvExperiences = $wpdb->get_results($sql);
+
+    //Get formation
+    $sql = "SELECT * FROM sbl_formation WHERE id_cv = $userCV->id AND status = 1;";
+    $userCvFormations = $wpdb->get_results($sql);
+
+    //Get skill
+    $sql = "SELECT * FROM sbl_skill WHERE id_cv = $userCV->id AND status = 1;";
+    $userCvSkills = $wpdb->get_results($sql);
+
+    //Get loisir
+    $sql = "SELECT * FROM sbl_loisir WHERE id_cv = $userCV->id AND status = 1;";
+    $userCvLoisirs = $wpdb->get_results($sql);
+
+    //Get reward
+    $sql = "SELECT * FROM sbl_reward WHERE id_cv = $userCV->id AND status = 1;";
+    $userCvRewards = $wpdb->get_results($sql);
 }
 
 //---------------------------
@@ -287,6 +303,23 @@ if(!empty($_POST['submitted-addReward'])){
     }
 }
 
+//Delete data 
+if(!empty($_POST['delete-data-cv'])){
+
+    $id = cleanXSS($_POST['data-delete-type']);
+    $type = cleanXSS($_POST['data-delete-id']);
+
+    if(is_int(intval($id))){
+        $data = ['status' => '0'];
+        $where = ['id' => $id];
+        $wpdb->update('sbl_' . $type, $data, $where);
+        wp_redirect(site_url() . "/profile");
+    } else {
+        wp_redirect(site_url() . "/profile");
+    }
+
+}
+
 get_header();
 ?>
 
@@ -397,7 +430,24 @@ get_header();
                 <section id="MyExperience">
                     
                     <!--LISTING DES EXPERIENCES-->
-
+                    <div class="listingExperience listing">
+                        <?php foreach($userCvExperiences as $experience) { ?>
+                        <div class="singleContent singleExperience" data-type="experience" data-id="<?php echo $experience->id; ?>">
+                            <div class="titleContent titleExperience">
+                                <?php echo $experience->title ; ?>
+                            </div>
+                            <div class="subtitleContent titleExperience">
+                                <?php echo $experience->subtitle ; ?>
+                            </div>
+                            <div class="descContent titleExperience">
+                                <?php echo $experience->description ; ?>
+                            </div>
+                            <div class="parametreButton">
+                                <div class="deleteButton hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
                     <!-- AJOUTER DES EXPERIENCES-->
                     <div class="addExperienceContainer formContainer">
 
@@ -446,8 +496,27 @@ get_header();
                 
                 <!--  FORMATION-->
                 <h3 class="titleCvSection">Ma Formation :</h3>
-                <section id="MyFormation">                    
+                <section id="MyFormation">    
+
                     <!--LISTING DES FORMATIONS-->
+                    <div class="listingFormation listing">
+                        <?php foreach($userCvFormations as $formation) { ?>
+                        <div class="singleContent singleFormation" data-type="formation" data-id="<?php echo $formation->id; ?>">
+                            <div class="titleContent titleFormation">
+                                <?php echo $formation->title ; ?>
+                            </div>
+                            <div class="subtitleContent subtitleFormation">
+                                <?php echo $formation->subtitle ; ?>
+                            </div>
+                            <div class="descContent descFormation">
+                                <?php echo $formation->description ; ?>
+                            </div>
+                            <div class="parametreButton">
+                                <div class="deleteButton hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
 
                     <!-- AJOUTER DES FORMATIONS-->
                     <div class="addFormation-Container formContainer">
@@ -500,6 +569,28 @@ get_header();
                 <section id="MySkill">
                     
                     <!--LISTING DES SKILLS-->
+                    <div class="listingSkill listing">
+                        <?php foreach($userCvSkills as $skill) { ?>
+                        <div class="singleContent singleSkill" data-type="skill" data-id="<?php echo $skill->id; ?>">
+                            <div class="titleContent titleSkill">
+                                <?php echo $skill->title ; ?>
+                            </div>
+                            <?php if(!empty($skill->subtitle) && $skill->subtitle != ''){ ?>
+                                <div class="subtitleContent subtitleSkill">
+                                    <?php echo $skill->subtitle ; ?>
+                                </div>
+                            <?php }; ?>
+                            <?php if(!empty($skill->description) && $skill->description != ''){ ?>
+                                <div class="descContent descSkill">
+                                    <?php echo $skill->description ; ?>
+                                </div>
+                            <?php }; ?>
+                            <div class="parametreButton">
+                                <div class="deleteButton hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
 
                     <!-- AJOUTER DES SKILLS-->
                     <div class="addSkillContainer formContainer">
@@ -552,6 +643,23 @@ get_header();
                 <section id="MyLoisir">
                     
                     <!--LISTING DES LOISIRS-->
+                    <div class="listingLoisir listing">
+                        <?php foreach($userCvLoisirs as $loisir) { ?>
+                        <div class="singleContent singleLoisir" data-type="loisir" data-id="<?php echo $loisir->id; ?>">
+                            <div class="titleContent titleLoisir">
+                                <?php echo $loisir->title ; ?>
+                            </div>
+                            <?php if(!empty($loisir->subtitle) && $loisir->subtitle != ''){ ?>
+                                <div class="subtitleContent subtitleLoisir">
+                                    <?php echo $loisir->subtitle ; ?>
+                                </div>
+                            <?php }; ?>
+                            <div class="parametreButton">
+                                <div class="deleteButton hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
 
                     <!-- AJOUTER DES LOISIRS-->
                     <div class="addLoisirContainer formContainer">
@@ -598,6 +706,26 @@ get_header();
                 <section id="MyReward">
                     
                     <!--LISTING DES REWARDS-->
+                    <div class="listingReward listing">
+                        <?php foreach($userCvRewards as $reward) { ?>
+                        <div class="singleContent singleReward" data-type="reward" data-id="<?php echo $reward->id; ?>">
+                            <div class="titleContent titleReward">
+                                <?php echo $reward->title ; ?>
+                            </div>
+                            <div class="dateContent dateReward">
+                                <?php echo $reward->date ; ?>
+                            </div>
+                            <?php if(!empty($reward->description) && $reward->description != ''){ ?>
+                                <div class="descContent descReward">
+                                    <?php echo $reward->description ; ?>
+                                </div>
+                            <?php }; ?>
+                            <div class="parametreButton">
+                                <div class="deleteButton hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
 
                     <!-- AJOUTER DES REWARDS-->
                     <div class="addRewardContainer formContainer">
