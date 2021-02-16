@@ -19,6 +19,7 @@ get_header();
         <div id="sheet">
             <h2 class="titleSection">Detail CV</h2>
             <?php
+            global $wpdb;
             // id user
             if(empty($_GET['id'])) {
               die('404');
@@ -45,12 +46,11 @@ get_header();
               <p><?= $user_prenom[0]->meta_value ;  ?></p>
               <p><?= $user_nom[0]->meta_value ;  ?></p>
             <?php  } else { ?>
-              <p><?php $wpdb_tablename = 'wp_sbl_users'; $sql = "SELECT user_login FROM $wpdb_tablename WHERE ID = $id";
+              <p><?php $wpdb_tablename = 'wp_sbl_users'; $sql = "SELECT user_login FROM $wpdb_tablename WHERE ID = $cvuser";
               $user_login = $wpdb->get_var($sql); echo $user_login ?></p>
             <?php }
 
             $cvid = $_GET['id'];
-            global $wpdb;
             $wpdb_experience = 'sbl_experience';
             $wpdb_formation = 'sbl_formation';
             $wpdb_loisir = 'sbl_loisir';
@@ -80,9 +80,9 @@ get_header();
             <?php
             foreach ($user_experiences as $user_experience) {
                 ?>
-                <p><?= $user_experience->title; ?></p>
-                <p><?= $user_experience->subtitle; ?></p>
-                <p><?= $user_experience->description; ?></p>
+                <p><?php if(!empty($user_experience->title)) { echo $user_experience->title; }  ?></p>
+                <p><?php if(!empty($user_experience->subtitle)) { echo $user_experience->subtitle; }  ?></p>
+                <p><?php if(!empty($user_experience->description)) { echo $user_experience->description; }  ?></p>
             <?php }
 
             ?>
@@ -92,9 +92,9 @@ get_header();
             <?php
             foreach ($user_formations as $user_formation) {
                 ?>
-                <p><?= $user_formation->title; ?></p>
-                <p><?= $user_formation->subtitle; ?></p>
-                <p><?= $user_formation->description; ?></p>
+                <p><?php if(!empty($user_formation->title)) { echo $user_formation->title; }  ?></p>
+                <p><?php if(!empty($user_formation->subtitle)) { echo $user_formation->subtitle; }  ?></p>
+                <p><?php if(!empty($user_formation->description)) { echo $user_formation->description; }  ?></p>
             <?php }
 
             ?>
@@ -104,8 +104,8 @@ get_header();
             <?php
             foreach ($user_loisirs as $user_loisir) {
                 ?>
-                <p><?= $user_loisir->title; ?></p>
-                <p><?= $user_loisir->subtitle; ?></p>
+                <p><?php if(!empty($user_loisir->title)) { echo $user_loisir->title; }  ?></p>
+                <p><?php if(!empty($user_loisir->subtitle)) { echo $user_loisir->subtitle; }  ?></p>
             <?php }
 
             ?>
@@ -115,9 +115,9 @@ get_header();
             <?php
             foreach ($user_rewards as $user_reward) {
                 ?>
-                <p><?= $user_reward->title; ?></p>
-                <p><?= $user_reward->date; ?></p>
-                <p><?= $user_reward->description; ?></p>
+                <p><?php if(!empty($user_reward->title)) {echo $user_reward->title;} ?></p>
+                <p><?php if(!empty($user_reward->date)) {echo $user_reward->date;} ?></p>
+                <p><?php if(!empty($user_reward->description)) { echo $user_reward->description;} ?></p>
             <?php }
 
             ?>
