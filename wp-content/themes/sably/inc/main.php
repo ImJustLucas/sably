@@ -89,8 +89,14 @@ function sably_scripts()
 	wp_enqueue_script('magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array(), null, true);
 	wp_enqueue_style('magnific-popup-style', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '');
 
+	//Micromodal
+	wp_enqueue_script('micromodal-js', get_template_directory_uri() . '/assets/js/micromodal.min.js', array(), null, true);
+	wp_enqueue_style('micromodal-style', get_template_directory_uri() . '/assets/css/micromodal-style.css', array(), '');
+
 	//Main js
-	wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+	wp_enqueue_script('mainJs', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+	//AJAX
+	wp_localize_script( 'mainJs', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 
 	wp_enqueue_style('sably-style-2', get_template_directory_uri() . '/assets/css/style.css', array(), '');
 	wp_enqueue_style('sably-style', get_stylesheet_uri(), array(), _S_VERSION);
