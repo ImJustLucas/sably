@@ -410,8 +410,8 @@ get_header();
                             <div class="row">
                                 <!-- TITLE SECTION-->
                                 <div class="input-area input-area-AddExperience">
-                                    <label for="title-AddExperience">Titre</label>
-                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                        <label for="title-AddExperience">Titre</label>
+                                        <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                                     <input type="text" name="title-AddExperience" id="title-AddExperience" placeholder="Ajoutez un titre">
                                 </div>
 

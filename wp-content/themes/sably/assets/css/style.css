@@ -848,7 +848,7 @@ form.formSlideEffect .textArea textarea:focus {
     justify-content: space-between;
   }
   .fa-arrow-right{
-    font-size: small;
+    font-size: 10px;
   }
   .showFormButton{
     font-size: 10px;
@@ -871,17 +871,48 @@ form.formSlideEffect .textArea textarea:focus {
     font-size: 2em;
   }
 }
+@media only screen and (max-width: 730px){
+  .introuvable {
+    font-size: 30px;
+  }
+}
 @media screen and (max-width:620px){
   .button-login{
     font-size: 10px;
   }
   .nav_logo .logoSably img {
-  width: 150%;
+    width: 150%;
+  }
 }
+@media screen and (max-width:470px){
+  .input-area-infoUser{
+    /* display: flex;
+    justify-content: space-between; */
+    font-size: 12px;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 8px;
+  }
+  
+  /* #infoUser {
+    margin-top: 0;
+    margin-bottom: 0;
+  } */
+  
 }
 @media screen and (max-width:465px){
   .titleSection{
     font-size: 1.5em;
+  }
+  /* .fa-arrow-right{
+    font-size: 10px;
+  } */
+}
+@media screen and (max-width:450px){
+  .introuvable {
+    font-size: 20px;
   }
 }
 @media screen and (max-width:410px){
@@ -903,6 +934,13 @@ form.formSlideEffect .textArea textarea:focus {
     font-size: 8px;
   }
 }
+
+@media screen and (max-width: 395px){
+ .row{
+    font-size: 8px;
+  }
+}
+
 @media screen and (max-width:350px){
   .header-wrap{
     display: flex;
@@ -916,5 +954,11 @@ form.formSlideEffect .textArea textarea:focus {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 290px){
+  .introuvable {
+    font-size: 18px;
   }
 }
