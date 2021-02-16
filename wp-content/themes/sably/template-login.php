@@ -13,7 +13,7 @@ global $wpdb;
 
 //CONNEXION :
 
-if (!empty($_POST['submitted'])) {
+if (!empty($_POST['submittedlogin'])) {
 
     $username = cleanXSS($_POST['username-login']);
     $password = cleanXSS($_POST['password-login']);
@@ -49,7 +49,6 @@ get_header();
 ?>
 
 <section id="intro">
-    <p>Se connecter</p>
     <?php
     if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
         <p class="welcome">Vous venez de valider votre compte</p>
@@ -58,37 +57,31 @@ get_header();
 
 <div class="wrap-sheet">
     <div id="sheet">
-        <form id="formInfoUser" method="post" action="">
-            <section id="connexionUser">
-                <div class="columnUser">
-                    <h2 class="titleSection">Connexion</h2>
+        <form id="formlogin" method="post" action="">
+            <section id="login">
+                <h2 class="titleSection">Connexion</h2>
 
-                    <div class="input-area-infoUser">
-                        <label for="name-infoUser">Username</label>
-                        <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="text" name="name-infoUser" id="name-infoUser" <?php if (!empty($current_user->last_name) && $current_user->last_name != '') {
-                                                                                        echo 'value="' . $current_user->last_name . '"';
-                                                                                    } else {
-                                                                                        echo 'placeholder="Doe"';
-                                                                                    } ?>>
-                    </div>
-                    <span class="error-infoUser error-name-infoUser"></span>
+                <div class="input-area-login">
+                    <label for="username-login">Username</label>
+                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                    <input type="text" name="username-login" id="username-login">
+                </div>
+                <span class="error-login error-username-login"></span>
 
-                    <div class="input-area-infoUser">
-                        <label for="newPassword-infoUser">Mot de passe</label>
-                        <i class="fas fa-arrow-right" style="color: #ffc045"></i>
-                        <input type="password" name="newPassword-infoUser" id="newPassword-infoUser">
-                    </div>
-                    <span class="error-infoUser error-newPassword-infoUser"></span>
+                <div class="input-area-login">
+                    <label for="password-login">Mot de passe</label>
+                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                    <input type="password" name="password-login" id="password-login">
+                </div>
+                <span class="error-login error-password-login"></span>
 
-                    <div class="submitButtonInfoUser">
-                        <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedInfoUser" value="Se connecter">
-                    </div>
+                <div class="submitButtonlogin">
+                    <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
+                </div>
 
-                    <div class="buttonForSignin">
-                        <p>Pas encore de compte ? Inscrivez-vous dès maintenant ! </p>
-                        <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> S'inscrire</a>
-                    </div>
+                <div class="buttonForSignin">
+                    <p>Pas encore de compte ? Inscrivez-vous dès maintenant ! </p>
+                    <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> S'inscrire</a>
                 </div>
             </section>
         </form>

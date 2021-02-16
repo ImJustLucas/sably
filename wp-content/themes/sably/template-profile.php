@@ -10,6 +10,10 @@ if(!is_user_logged_in()){
 }
 $errors = array();
 
+//---------------------------
+//Change personal data
+//---------------------------
+
 if(!empty($_POST['submittedInfoUser'])){
 
     $where = [ 'ID' => get_current_user_id()];
@@ -108,6 +112,181 @@ if(!empty($_POST['submittedInfoUser'])){
 
 }
 
+//---------------
+//Create CV
+//---------------
+if(!empty($_POST['submit_create_CV'])){
+    $data = ['id_user' => get_current_user_id()];
+    $wpdb->insert('sbl_cv', $data);
+
+    //ENVOIE MAIL
+}
+
+//----------------------
+//USER HAS CV  ?
+//----------------------
+$userHasCV = false;
+$idUser = get_current_user_id();
+$sql = "SELECT * FROM sbl_cv WHERE id_user = $idUser AND status = 1; ";
+$userCV = $wpdb->get_results($sql);
+$userCV = $userCV[0];
+if(!empty($userCV)){
+    $userHasCV = true;
+}
+//-----------------------
+//GET CV INFO
+//-----------------------
+
+if($userHasCV){
+
+    //Get experience
+    $sql = "SELECT * FROM sbl_experience WHERE id_cv = $userCV->id; ";
+    $userCvExperiences = $wpdb->get_results($sql);
+}
+
+//---------------------------
+//INSERT DATA INTO CV
+//---------------------------
+
+//ADD EXPERIENCE
+
+if(!empty($_POST['submitted-AddExperience'])){
+    //initialize array
+    $addExperience = array();
+    $addExperience['id_cv'] = $userCV->id;
+    //Clean XSS
+    $addExperience['title'] = cleanXSS($_POST['title-AddExperience']);
+    $addExperience['subtitle'] = cleanXSS($_POST['subtitle-AddExperience']);
+    $addExperience['description'] = cleanXSS($_POST['desc-AddExperience']);
+
+    //Check if text is long enough
+
+    $errors = validText($errors, $addExperience['title'] , 'title-AddExperience' , 2 , 100);
+    $errors = validText($errors, $addExperience['subtitle'] , 'subtitle-AddExperience' , 2 , 100);
+    $errors = validText($errors, $addExperience['description'] , 'desc-AddExperience' , 2 , 10000);
+
+    if(count($errors) == 0) {
+        $format = array('%s','%s','%s');
+        $wpdb->insert('sbl_experience', $addExperience, $format);
+    }
+}
+
+//ADD FORMATION
+
+if(!empty($_POST['submitted-addFormation'])){
+    //initialize array
+    $addFormation = array();
+    $addFormation['id_cv'] = $userCV->id;
+    //Clean XSS
+    $addFormation['title'] = cleanXSS($_POST['title-addFormation']);
+    $addFormation['subtitle'] = cleanXSS($_POST['subtitle-addFormation']);
+    $addFormation['description'] = cleanXSS($_POST['desc-addFormation']);
+
+    //Check if text is long enough
+
+    $errors = validText($errors, $addFormation['title'] , 'title-addFormation' , 2 , 100);
+    $errors = validText($errors, $addFormation['subtitle'] , 'subtitle-addFormation' , 2 , 100);
+    $errors = validText($errors, $addFormation['description'] , 'desc-addFormation' , 2 , 10000);
+
+    if(count($errors) == 0) {
+        $format = array('%s','%s','%s');
+        $wpdb->insert('sbl_formation', $addFormation, $format);
+    }
+}
+
+//ADD SKILL
+
+if(!empty($_POST['submitted-addSkill'])){
+    //initialize array
+    $addSkill = array();
+    $addSkill['id_cv'] = $userCV->id;
+    //Clean XSS
+    $addSkill['title'] = cleanXSS($_POST['title-addSkill']);
+    //Check if text is long enough
+
+    $errors = validText($errors, $addSkill['title'] , 'title-addSkill' , 2 , 100);
+
+    //optionnal option
+    if(!empty($_POST['subtitle-addSkill'])){
+        //Clean XSS
+        $addSkill['subtitle'] = cleanXSS($_POST['subtitle-addSkill']);
+
+        //Check if text is long enough
+        $errors = validText($errors, $addSkill['subtitle'] , 'subtitle-addSkill' , 2 , 100);
+    }
+
+    if(!empty($_POST['desc-addSkill'])){
+        //Clean XSS
+        $addSkill['description'] = cleanXSS($_POST['desc-addSkill']);
+
+        //Check if text is long enough
+        $errors = validText($errors, $addSkill['description'] , 'desc-addSkill' , 2 , 10000);
+    }
+
+    if(count($errors) == 0) {
+        $format = array('%s','%s','%s');
+        $wpdb->insert('sbl_skill', $addSkill, $format);
+    }
+}
+
+//ADD LOISIR
+
+if(!empty($_POST['submitted-addLoisir'])){
+    //initialize array
+    $addLoisir = array();
+    $addLoisir['id_cv'] = $userCV->id;
+
+    //required option 
+
+    //Clean XSS
+    $addLoisir['title'] = cleanXSS($_POST['title-addLoisir']);
+
+    //check is text is long enough
+    $errors = validText($errors, $addLoisir['title'] , 'title-addLoisir' , 2 , 100);
+
+    //optionnal option
+    if(!empty($_POST['subtitle-addLoisir'])){
+        //Clean XSS
+        $addLoisir['subtitle'] = cleanXSS($_POST['subtitle-addLoisir']);
+        //Check if text is long enough
+        $errors = validText($errors, $addLoisir['subtitle'] , 'subtitle-addLoisir' , 2 , 100);
+    }
+
+    if(count($errors) == 0) {
+        $format = array('%s','%s','%s');
+        $wpdb->insert('sbl_loisir', $addLoisir, $format);
+    }
+}
+
+//ADD REWARD
+
+if(!empty($_POST['submitted-addReward'])){
+    //initialize array
+    $addReward = array();
+    $addReward['id_cv'] = $userCV->id;
+    //Clean XSS
+    $addReward['title'] = cleanXSS($_POST['title-addReward']);
+    $addReward['date'] = cleanXSS($_POST['date-addReward']);
+    //Check if text is long enough
+
+    $errors = validText($errors, $addReward['title'] , 'title-addReward' , 2 , 100);
+    $errors = validText($errors, $addReward['date'] , 'date-addReward' , 2 , 30);
+
+    //optionnal option
+    if(!empty($_POST['desc-addReward'])){
+        //Clean XSS
+        $addReward['description'] = cleanXSS($_POST['desc-addReward']);
+
+        //Check if text is long enough
+        $errors = validText($errors, $addReward['description'] , 'desc-addReward' , 2 , 10000);
+    }
+
+    if(count($errors) == 0) {
+        $format = array('%s','%s','%s');
+        $wpdb->insert('sbl_reward', $addReward, $format);
+    }
+}
+
 get_header();
 ?>
 
@@ -122,7 +301,7 @@ get_header();
     <div id="sheet">
         <h2 class="titleSection">Mon profil</h2>
         <h3 class="featuredInformation">Informations complémentaires</h3>
-        <form id="formInfoUser" method="post" action="">
+        <form id="formInfoUser" method="post" action="<?php echo esc_url(home_url('profile'))?>">
             <section id="infoUser">
                 <div class="leftColumnUser">
 
@@ -200,7 +379,277 @@ get_header();
             </div>
         </form>
 
-        <section id="myCV"></section>
+        <section class="divider">
+            <div class="dividerHorizontale"></div>
+        </section>
+
+        <section id="myCV">
+            <h2 class="titleSection">Mon CV</h2>
+            <?php if($userHasCV) { ?>
+                <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p>
+
+                <section class="divider">
+                    <div class="dividerHorizontale"></div>
+                </section>
+
+                <!--  EXPERIENCES-->
+                <h3 class="titleCvSection">Mes expériences :</h3>
+                <section id="MyExperience">
+                    
+                    <!--LISTING DES EXPERIENCES-->
+
+                    <!-- AJOUTER DES EXPERIENCES-->
+                    <div class="addExperienceContainer formContainer">
+
+                        <div id="AddExperience-Button" class="showFormButton">
+                            Ajouter une expérience
+                        </div>
+
+                        <form action="<?php echo esc_url(home_url('profile'))?>" class="formSlideEffect hidden" method="post" id="formAddExperience">
+
+                            <div class="row">
+                                <!-- TITLE SECTION-->
+                                <div class="input-area input-area-AddExperience">
+                                    <label for="title-AddExperience">Titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="title-AddExperience" id="title-AddExperience" placeholder="Ajoutez un titre">
+                                </div>
+
+                                <div class="dividerUser"></div>
+
+                                <!-- SUBTITLE SECTION-->
+                                <div class="input-area input-area-AddExperience">
+                                    <label for="subtitle-AddExperience">Sous-titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="subtitle-AddExperience" id="subtitle-AddExperience" placeholder="Ajoutez un sous-titre">
+                                </div>
+
+                            </div>
+
+                            <div class="textArea">
+                                <div class="titleTextArea">Description</div>
+                                <div class="textContent">
+                                    <textarea name="desc-AddExperience" id="descExperience"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="submitButtonAddExperience">
+                                <input class="btn-submit-AddExperience" type="submit" name="submitted-AddExperience" value="Sauvegarder">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <section class="divider">
+                    <div class="dividerHorizontale"></div>
+                </section>
+                
+                <!--  FORMATION-->
+                <h3 class="titleCvSection">Ma Formation :</h3>
+                <section id="MyFormation">                    
+                    <!--LISTING DES FORMATIONS-->
+
+                    <!-- AJOUTER DES FORMATIONS-->
+                    <div class="addFormation-Container formContainer">
+
+                        <div id="AddFormation-Button" class="showFormButton">
+                            Ajouter une formation
+                        </div>
+
+                        <form action="<?php echo esc_url(home_url('profile'))?>" class="formSlideEffect hidden" method="post" id="formAddFormation">
+
+                            <div class="row">
+                                <!-- TITLE SECTION-->
+                                <div class="input-area input-area-addFormation">
+                                    <label for="title-addFormation">Titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="title-addFormation" id="title-addFormation" placeholder="Ajoutez un titre">
+                                </div>
+
+                                <div class="dividerUser"></div>
+
+                                <!-- SUBTITLE SECTION-->
+                                <div class="input-area input-area-addFormation">
+                                    <label for="subtitle-addFormation">Sous-titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="subtitle-addFormation" id="subtitle-addFormation" placeholder="Ajoutez un sous-titre">
+                                </div>
+
+                            </div>
+
+                            <div class="textArea">
+                                <div class="titleTextArea">Description</div>
+                                <div class="textContent">
+                                  <textarea name="desc-addFormation" id="descFormation"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="submitButtonAddFormation">
+                                <input class="btn-submit-addFormation" type="submit" name="submitted-addFormation" value="Sauvegarder">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="divider">
+                    <div class="dividerHorizontale"></div>
+                </section>
+                
+                <!--  SKILLS -->
+                <h3 class="titleCvSection">Mes compétences :</h3>
+                <section id="MySkill">
+                    
+                    <!--LISTING DES SKILLS-->
+
+                    <!-- AJOUTER DES SKILLS-->
+                    <div class="addSkillContainer formContainer">
+
+                        <div id="AddSkill-Button" class="showFormButton">
+                            Ajouter une compétence
+                        </div>
+
+                        <form action="<?php echo esc_url(home_url('profile'))?>" class="formSlideEffect hidden" method="post" id="formAddSkill">
+
+                            <div class="row">
+                                <!-- TITLE SECTION-->
+                                <div class="input-area input-area-addSkill">
+                                    <label for="title-addSkill">Titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="title-addSkill" id="title-addSkill" placeholder="Ajoutez un titre">
+                                </div>
+
+                                <div class="dividerUser"></div>
+
+                                <!-- SUBTITLE SECTION-->
+                                <div class="input-area input-area-addSkill">
+                                    <label for="subtitle-addSkill">Sous-titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="subtitle-addSkill" id="subtitle-addSkill" placeholder="Ajoutez un sous-titre (optionnel)">
+                                </div>
+
+                            </div>
+
+                            <div class="textArea">
+                                <div class="titleTextArea">Description (optionnel) :</div>
+                                <div class="textContent">
+                                    <textarea name="desc-addSkill" id="descSkill"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="submitButtonAddSkill">
+                                <input class="btn-submit-addSkill" type="submit" name="submitted-addSkill" value="Sauvegarder">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="divider">
+                    <div class="dividerHorizontale"></div>
+                </section>
+                
+                <!--  LOISIRS -->
+                <h3 class="titleCvSection">Mes loisirs :</h3>
+                <section id="MyLoisir">
+                    
+                    <!--LISTING DES LOISIRS-->
+
+                    <!-- AJOUTER DES LOISIRS-->
+                    <div class="addLoisirContainer formContainer">
+
+                        <div id="AddLoisir-Button" class="showFormButton">
+                            Ajouter un loisir
+                        </div>
+
+                        <form action="<?php echo esc_url(home_url('profile'))?>" class="formSlideEffect hidden" method="post" id="formAddLoisir">
+
+                            <div class="row">
+                                <!-- TITLE SECTION-->
+                                <div class="input-area input-area-addLoisir">
+                                    <label for="title-addLoisir">Titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="title-addLoisir" id="title-addLoisir" placeholder="Ajoutez un titre">
+                                </div>
+
+                                <div class="dividerUser"></div>
+
+                                <!-- SUBTITLE SECTION-->
+                                <div class="input-area input-area-addLoisir">
+                                    <label for="subtitle-addLoisir">Sous-titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="subtitle-addLoisir" id="subtitle-addLoisir" placeholder="Ajoutez un sous-titre (optionnel)">
+                                </div>
+
+                            </div>
+
+
+                            <div class="submitButtonAddLoisir">
+                                <input class="btn-submit-addLoisir" type="submit" name="submitted-addLoisir" value="Sauvegarder">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="divider">
+                    <div class="dividerHorizontale"></div>
+                </section>
+                
+                <!--  REWARDS -->
+                <h3 class="titleCvSection">Mes récompenses :</h3>
+                <section id="MyReward">
+                    
+                    <!--LISTING DES REWARDS-->
+
+                    <!-- AJOUTER DES REWARDS-->
+                    <div class="addRewardContainer formContainer">
+
+                        <div id="AddReward-Button" class="showFormButton">
+                            Ajouter une récompense
+                        </div>
+
+                        <form action="<?php echo esc_url(home_url('profile'))?>" class="formSlideEffect hidden" method="post" id="formAddReward">
+
+                            <div class="row">
+                                <!-- TITLE SECTION-->
+                                <div class="input-area input-area-addReward">
+                                    <label for="title-addReward">Titre</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="title-addReward" id="title-addReward" placeholder="Ajoutez un titre">
+                                </div>
+
+                                <div class="dividerUser"></div>
+
+                                <!-- DATE SECTION-->
+                                <div class="input-area input-area-addReward">
+                                    <label for="date-addReward">Date</label>
+                                    <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                    <input type="text" name="date-addReward" id="date-addReward" placeholder="Ajoutez une date">
+                                </div>
+
+                            </div>
+
+                            <div class="textArea">
+                                <div class="titleTextArea">Description (optionnel) :</div>
+                                <div class="textContent">
+                                    <textarea name="desc-addReward" id="descReward"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="submitButtonaddReward">
+                                <input class="btn-submit-addReward" type="submit" name="submitted-addReward" value="Sauvegarder">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+
+                <!-- if user dont have cv -->
+            <?php } else { ?>
+                <p>Vous n'avez toujours pas de CV ? Créez en un dès maintenant !</p>
+                <form id="formCreateCV" action="<?php echo esc_url(home_url('profile#myCV'))?>" method="post">
+                    <input type="submit" name="submit_create_CV" value="Créer mon CV">
+                </form>
+            <?php } ?>
+        </section>
     </div>
 </div>
 

@@ -22,13 +22,6 @@ $(document).ready(function () {
     }, 500);
   });
 
-  $(".button-contact").on("click", function () {
-    $("section#about").fadeOut("");
-    $("section#home").fadeOut("");
-    setTimeout(function () {
-      $("section#contact").fadeIn("");
-    }, 500);
-  });
   //--------------------
   //Popup plugin
   //--------------------
@@ -37,6 +30,28 @@ $(document).ready(function () {
     type: "iframe",
     src: "https://www.youtube.com/watch?v=oUhWsKMcoKY",
     // other options
+  });
+
+  //------------------
+  //PROFILE ADD DATA CV EFFECT
+  //------------------
+
+  $(".showFormButton").click(function () {
+    idButton = $(this).attr("id").split("-");
+    thisForm = "form#form" + idButton[0];
+    if ($(thisForm).is(":visible")) {
+      $(thisForm).slideToggle(500);
+    } else {
+      $(thisForm).slideDown(500);
+    }
+  });
+
+  $("input").focus(function () {
+    $(this).prev().addClass("animation");
+  });
+
+  $("input").focusout(function () {
+    $(this).prev().removeClass("animation");
   });
 
   //------------------
