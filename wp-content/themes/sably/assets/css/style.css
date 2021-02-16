@@ -672,6 +672,18 @@ form#formsignin input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+.buttonForSignin{
+  flex-direction: column;
+  align-items: center;
+  line-height: 28px;
+}
+
+.button-forgot {
+  color: var(--jaune);
+  font-weight: bold;
+}
+
 .button-signin {
   color: var(--jaune);
   font-weight: bold;
