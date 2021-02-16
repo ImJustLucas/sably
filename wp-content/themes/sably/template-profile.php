@@ -421,6 +421,83 @@ get_header();
             <?php if($userHasCV) { ?>
                 <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p>
 
+                <div class="infosCvUser">
+
+                    <?php if(!empty($current_user->last_name) && $current_user->last_name != '' && !empty($current_user->last_name) && $current_user->last_name != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Nom :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo ucfirst($current_user->last_name) . ' ' . ucfirst($current_user->first_name) ; ?>
+                            </div>
+                        </div>
+
+                    <?php } else { ?>
+
+                        <div class="infoCvContent"> 
+                            <div class="contentInfo">
+                                <?php echo $current_user->user_login ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->user_email) && $current_user->user_email != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Email :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->user_email ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->age) && $current_user->age != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Age :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->age ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->adresse) && $current_user->adresse != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Adresse :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->adresse ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->telephone) && $current_user->telephone != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Téléphone :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->telephone ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                </div>
+
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
