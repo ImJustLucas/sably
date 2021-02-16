@@ -252,7 +252,7 @@ if(!empty($_POST['submitted-addLoisir'])){
     $addLoisir = array();
     $addLoisir['id_cv'] = $userCV->id;
 
-    //required option 
+    //required option
 
     //Clean XSS
     $addLoisir['title'] = cleanXSS($_POST['title-addLoisir']);
@@ -303,7 +303,7 @@ if(!empty($_POST['submitted-addReward'])){
     }
 }
 
-//Delete data 
+//Delete data
 if(!empty($_POST['delete-data-cv'])){
 
     $id = cleanXSS($_POST['data-delete-type']);
@@ -428,7 +428,7 @@ get_header();
                 <!--  EXPERIENCES-->
                 <h3 class="titleCvSection">Mes expériences :</h3>
                 <section id="MyExperience">
-                    
+
                     <!--LISTING DES EXPERIENCES-->
                     <div class="listingExperience listing">
                         <?php foreach($userCvExperiences as $experience) { ?>
@@ -489,14 +489,14 @@ get_header();
                         </form>
                     </div>
                 </section>
-                
+
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  FORMATION-->
                 <h3 class="titleCvSection">Ma Formation :</h3>
-                <section id="MyFormation">    
+                <section id="MyFormation">
 
                     <!--LISTING DES FORMATIONS-->
                     <div class="listingFormation listing">
@@ -563,11 +563,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  SKILLS -->
                 <h3 class="titleCvSection">Mes compétences :</h3>
                 <section id="MySkill">
-                    
+
                     <!--LISTING DES SKILLS-->
                     <div class="listingSkill listing">
                         <?php foreach($userCvSkills as $skill) { ?>
@@ -637,11 +637,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  LOISIRS -->
                 <h3 class="titleCvSection">Mes loisirs :</h3>
                 <section id="MyLoisir">
-                    
+
                     <!--LISTING DES LOISIRS-->
                     <div class="listingLoisir listing">
                         <?php foreach($userCvLoisirs as $loisir) { ?>
@@ -700,11 +700,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  REWARDS -->
                 <h3 class="titleCvSection">Mes récompenses :</h3>
                 <section id="MyReward">
-                    
+
                     <!--LISTING DES REWARDS-->
                     <div class="listingReward listing">
                         <?php foreach($userCvRewards as $reward) { ?>

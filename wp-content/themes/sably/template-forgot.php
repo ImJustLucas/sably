@@ -20,7 +20,42 @@ if (!empty($_POST['submitted'])) {
 
     $errors = validMail($errors, $useremail, 'user-email');
     if(empty($errors)) {
-      echo 'bravo';
+      global $wpdb;
+      $wpdb_tablename = 'wp_sbl_users';
+      $sql = "SELECT ID FROM $wpdb_tablename WHERE user_email = %s";
+      $user = $wpdb->get_var($wpdb->prepare($sql, $useremail));
+
+      if(!empty($user)) {
+        $token = generateRandomString(120);
+        update_user_meta($user, 'token', $token);
+        $date = new DateTime("now");
+        update_user_meta($user, 'token_at', $date);
+
+
+
+        /*$wpdb_tablename = $wpdb_prefix . 'usermeta';
+        $sql = "SELECT meta_value FROM $wpdb_tablename WHERE meta_value = %s";
+        $result_usermeta = $wpdb->get_var($wpdb->prepare($sql, $token));*/
+
+
+        $link = '<a href="http://localhost' . dirname($_SERVER['PHP_SELF']) . '/newpass?id=' . $token . '">Lien</a>';
+
+        $date = new DateTime("now");
+        $date->add(new DateInterval('PT3M'));
+
+        $mailexpediteur = 'sably@laposte.net';
+        $passwordmail = 'fdsifjsdjifEDEDD@9fdsf89dsfdsf';
+        $mailrecepteur = 'sably@laposte.net';
+        $object = 'Création de votre compte';
+        $message = 'Veuillez cliquer sur ce ' . $link . ' pour demander un nouveau mot de passe<br>Attention, le lien expire le ' . $date->format('d-m-Y à H:i:s') . '';
+
+
+        sendMailer($mailexpediteur, $passwordmail, $mailrecepteur, $object, $message);
+
+      }
+      else {
+        $errors['user-email'] = 'Email non trouvé...';
+      }
     }
 
 }
