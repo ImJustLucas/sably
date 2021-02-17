@@ -2,7 +2,36 @@
 /*
 Template Name: recruitersingle
 */
+global $wpdb;
+// id user
+if (empty($_GET['id'])) {
+  $link = esc_url(home_url('404'));
+  header('Location: '.$link);
+}
+$get = explode("/", $_GET['id']);
+if(!empty($get[0])) {
+  $cvid = $get[0];
+}
+if(!empty($get[1])) {
+  $cvuser = $get[1];
+}
 
+
+if (!is_numeric($cvid)) {
+  die('CV introuvable');
+}
+if (!is_numeric($cvid)) {
+  die('Utilisateur introubable');
+}
+
+$wpdb_tablename = 'wp_sbl_usermeta';
+$sql = "SELECT * FROM $wpdb_tablename WHERE user_id = $cvuser AND meta_key = 'first_name'";
+$sql2 = "SELECT * FROM $wpdb_tablename WHERE user_id = $cvuser AND meta_key = 'last_name'";
+$user_prenom = $wpdb->get_results($sql);
+$user_nom = $wpdb->get_results($sql2);
+
+
+// HTML
 get_header();
 ?>
 
@@ -23,29 +52,7 @@ get_header();
     <div id="sheet">
       <div class="detail">
         <h2 class="titleSection">Detail CV</h2>
-        <?php
-        global $wpdb;
-        // id user
-        if (empty($_GET['id'])) {
-          die('404');
-        }
-        $get = explode("/", $_GET['id']);
-        $cvid = $get[0];
-        $cvuser = $get[1];
 
-        if (!is_numeric($cvid)) {
-          die('CV introuvable');
-        }
-        if (!is_numeric($cvid)) {
-          die('Utilisateur introubable');
-        }
-
-        $wpdb_tablename = 'wp_sbl_usermeta';
-        $sql = "SELECT * FROM $wpdb_tablename WHERE user_id = $cvuser AND meta_key = 'first_name'";
-        $sql2 = "SELECT * FROM $wpdb_tablename WHERE user_id = $cvuser AND meta_key = 'last_name'";
-        $user_prenom = $wpdb->get_results($sql);
-        $user_nom = $wpdb->get_results($sql2);
-        ?>
 
         <?php if (!empty($user_prenom[0]->meta_value) && $user_nom[0]->meta_value) { ?>
           <p><?= $user_prenom[0]->meta_value;  ?></p>

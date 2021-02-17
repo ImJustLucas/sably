@@ -10,7 +10,8 @@ if(!empty($_GET['id'])) {
   $token = $_GET['id'];
 }
 else {
-  die('404');
+  $link = esc_url(home_url('404'));
+  header('Location: '.$link.);
 }
 
 global $wpdb;
