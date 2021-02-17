@@ -597,6 +597,15 @@ form#formsignin input[type="submit"]:hover {
   flex-wrap: wrap;
 }
 
+.detail p{
+  line-height: 20px;
+}
+
+.detail h1{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 div.formContainer {
   width: 80%;
   align-self: center;
