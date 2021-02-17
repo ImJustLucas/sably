@@ -355,3 +355,91 @@ function hexatoIp($tableau_conv,$broke_ip)
   $ip = implode($array);
   return $ip;
 }
+
+
+
+
+
+
+function my_wp_signon( $credentials = array(), $secure_cookie = '' ) {
+    if ( empty( $credentials ) ) {
+        $credentials = array(); // Back-compat for plugins passing an empty string.
+
+        if ( ! empty( $_POST['log'] ) ) {
+            $credentials['user_login'] = wp_unslash( $_POST['log'] );
+        }
+        if ( ! empty( $_POST['pwd'] ) ) {
+            $credentials['user_password'] = $_POST['pwd'];
+        }
+        if ( ! empty( $_POST['rememberme'] ) ) {
+            $credentials['remember'] = $_POST['rememberme'];
+        }
+    }
+
+    if ( ! empty( $credentials['remember'] ) ) {
+        $credentials['remember'] = true;
+    } else {
+        $credentials['remember'] = false;
+    }
+
+    /**
+     * Fires before the user is authenticated.
+     *
+     * The variables passed to the callbacks are passed by reference,
+     * and can be modified by callback functions.
+     *
+     * @since 1.5.1
+     *
+     * @todo Decide whether to deprecate the wp_authenticate action.
+     *
+     * @param string $user_login    Username (passed by reference).
+     * @param string $user_password User password (passed by reference).
+     */
+    do_action_ref_array( 'wp_authenticate', array( &$credentials['user_login'], &$credentials['user_password'] ) );
+
+    if ( '' === $secure_cookie ) {
+        $secure_cookie = is_ssl();
+    }
+
+    /**
+     * Filters whether to use a secure sign-on cookie.
+     *
+     * @since 3.1.0
+     *
+     * @param bool  $secure_cookie Whether to use a secure sign-on cookie.
+     * @param array $credentials {
+     *     Array of entered sign-on data.
+     *
+     *     @type string $user_login    Username.
+     *     @type string $user_password Password entered.
+     *     @type bool   $remember      Whether to 'remember' the user. Increases the time
+     *                                 that the cookie will be kept. Default false.
+     * }
+     */
+    $secure_cookie = apply_filters( 'secure_signon_cookie', $secure_cookie, $credentials );
+
+    global $auth_secure_cookie; // XXX ugly hack to pass this to wp_authenticate_cookie().
+    $auth_secure_cookie = $secure_cookie;
+
+    add_filter( 'authenticate', 'wp_authenticate_cookie', 30, 3 );
+
+    $user = wp_authenticate( $credentials['user_login'], $credentials['user_password'] );
+
+    if ( is_wp_error( $user ) ) {
+        return $user;
+    }
+
+    wp_set_auth_cookie( $user->ID, $credentials['remember'], $secure_cookie );
+    /**
+     * Fires after the user has successfully logged in.
+     *
+     * @since 1.5.0
+     *
+     * @param string  $user_login Username.
+     * @param WP_User $user       WP_User object of the logged-in user.
+     */
+    do_action( 'wp_login', $user->user_login, $user );
+    
+    return $user;
+
+}
