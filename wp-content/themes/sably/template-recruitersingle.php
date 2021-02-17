@@ -55,8 +55,8 @@ get_header();
 
 
         <?php if (!empty($user_prenom[0]->meta_value) && $user_nom[0]->meta_value) { ?>
-          <p><?= $user_prenom[0]->meta_value;  ?></p>
-          <p><?= $user_nom[0]->meta_value;  ?></p>
+          <p class="nomcv"><?= $user_prenom[0]->meta_value;  ?></p>
+          <p class="nomcv"><?= $user_nom[0]->meta_value;  ?></p>
         <?php  } else { ?>
           <p><?php $wpdb_tablename = 'wp_sbl_users';
               $sql = "SELECT user_login FROM $wpdb_tablename WHERE ID = $cvuser";
