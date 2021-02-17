@@ -90,6 +90,7 @@ header a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 a.tabButton:hover {
@@ -150,8 +151,8 @@ a.tabButton:hover {
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
-  margin-top: 40px;
   text-transform: uppercase;
+  padding-top: 50px;
 }
 
 #intro .petite-boite, .titleWebSite {
@@ -640,7 +641,10 @@ form#formsignin input[type="submit"]:hover {
 .titleCvSection {
   font-size: 1.2em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .listing {
@@ -667,6 +671,16 @@ form#formsignin input[type="submit"]:hover {
 .parametreButton div:hover {
   cursor: pointer;
 }
+
+#myCV .titleSection{
+  margin-bottom: 15px;
+}
+
+.infoCvContent .titleInfo {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /*------------ADD DATA IN CV---------------*/
 
 #MyExperience,
@@ -680,6 +694,10 @@ form#formsignin input[type="submit"]:hover {
   flex-wrap: wrap;
 }
 
+.detail{
+  text-align: center;
+}
+
 .detail p{
   line-height: 20px;
 }
@@ -687,6 +705,17 @@ form#formsignin input[type="submit"]:hover {
 .detail h1{
   font-weight: bold;
   text-decoration: underline;
+}
+
+#recruiterBackground{
+  background-color: var(--vert);
+}
+
+.nomcv{
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 div.formContainer {
