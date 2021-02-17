@@ -90,7 +90,7 @@ header a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 a.tabButton:hover {
@@ -159,7 +159,10 @@ a.tabButton:hover {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
-
+.petite-boite-contact{
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
 #intro .logo-play .fas {
   background-color: var(--blanc);
   border-radius: 50%;
@@ -202,8 +205,8 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-
-form#formContact, form#formLogin, form#formSignin {
+form#formLogin,
+form#formSignin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,7 +220,8 @@ form#formContact, form#formLogin, form#formSignin {
   margin-bottom: 40px;
 }
 
-form#formContact input, form#formLogin input, form#formSignin input {
+form#formLogin input,
+form#formSignin input {
   margin: 20px 10px;
   padding-left: 20px;
   width: 300px;
@@ -232,7 +236,8 @@ form#formContact input, form#formLogin input, form#formSignin input {
   transition: 0.7s;
 }
 
-form#formContact textarea, form#formLogin textarea, form#formSignin textarea {
+form#formLogin textarea,
+form#formSignin textarea {
   width: 400px;
   height: 150px;
   border-radius: 10px;
@@ -248,7 +253,8 @@ form#formContact textarea, form#formLogin textarea, form#formSignin textarea {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form#formContact input[type="submit"], form#formLogin input[type="submit"], form#formSignin input[type="submit"] {
+form#formLogin input[type="submit"],
+form#formSignin input[type="submit"] {
   cursor: pointer;
   background-color: #ffc045;
   color: #fff;
@@ -256,7 +262,8 @@ form#formContact input[type="submit"], form#formLogin input[type="submit"], form
   border: none;
 }
 
-form#formContact input[type="submit"]:hover, form#formLogin input[type="submit"]:hover, form#formSignin input[type="submit"]:hover {
+form#formLogin input[type="submit"]:hover,
+form#formSignin input[type="submit"]:hover {
   background-color: #fff;
   color: #ffc045;
   border: 1px solid #ffc045;
@@ -486,23 +493,12 @@ section.divider {
 }
 
 #infoUser .leftColumnUser,
-#infoUser .rightColumnUser,
-#connexionUser .columnUser {
+#infoUser .rightColumnUser{
   width: 48%;
   display: flex;
   flex-direction: column;
 }
-#connexionUser {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-#connexionUser .columnUser {
-  display: flex;
-  justify-content: center;
-}
+
 .buttonForSignin {
   /* margin-top: 20px; */
   display: flex;
@@ -687,7 +683,8 @@ form#formsignin input[type="submit"]:hover {
 #MyFormation,
 #MySkill,
 #MyLoisir,
-#MyReward {
+#MyReward,
+#contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -752,6 +749,19 @@ form.formSlideEffect .row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+}
+
+form.formSlideEffect .row-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.submitButtonContact, .submitButtonAdd{
+  display: flex;
+  justify-content: center;
 }
 
 form.formSlideEffect i {
@@ -840,10 +850,6 @@ form.formSlideEffect .textArea textarea:focus {
   outline: none;
 }
 
-/* RESPONSIVE=============== */
-@media only screen and(max-width: 990px ) {
-}
-
 /*-----------KEY FRAME-----------*/
 
 @keyframes activeInput {
@@ -924,3 +930,226 @@ form.formSlideEffect .textArea textarea:focus {
 .hvr-underline-from-right:active:before {
   left: 0;
 }
+
+
+/* TABLEAU============================== */
+.table  {border-collapse:collapse;border-spacing:0;margin: 0 auto;margin-top: 50px;background-color: #1dd1a1;}
+.table td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.table .cellule{text-align:center;vertical-align:top}
+
+
+/* RESPONSIVE============================== */
+
+@media screen and (max-width:1200px) {
+  .singleContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #infoUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width:800px) {
+  .nav_buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .blocHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    line-height: 30px;
+    font-size: medium;
+  }
+  .input-area-contact{
+    font-size: .7em;
+  }
+  .petite-boite-contact{
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width:790px){
+  form#formInfoUser input{
+    display: flex;
+    justify-content: space-between;
+    font-size: .5em;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 10px;
+  }
+  #infoUser{
+    display: flex;
+    justify-content: space-between;
+  }
+  .fa-arrow-right{
+    font-size: 10px;
+  }
+  .showFormButton{
+    font-size: 10px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+  }
+  form.formSlideEffect .textArea .titleTextArea {
+    font-size: 1em;
+  }
+  #intro .petite-boite,
+  .titleWebSite {
+    font-size: 1.5em;
+    margin-bottom: 50px;
+  }
+  .titleSection{
+    font-size: 2em;
+  }
+  .submitButtonsignin{
+    font-size: 10px;
+  }
+  .submitButtonlogin{
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 730px){
+  .introuvable {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width:620px){
+  .button-login{
+    font-size: 10px;
+  }
+  .nav_logo .logoSably img {
+    width: 150%;
+  }
+  .petite-boite-contact{
+    font-size: 1.3em;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 13px;
+  }
+  .input-area-contact{
+    font-size: 7px;
+  }
+}
+@media screen and (max-width:470px){
+  .input-area-infoUser{
+    font-size: 12px;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 8px;
+  }
+  
+  /* #infoUser {
+    margin-top: 0;
+    margin-bottom: 0;
+  } */
+  
+}
+@media screen and (max-width:465px){
+  .titleSection{
+    font-size: 1.5em;
+  }
+  /* .fa-arrow-right{
+    font-size: 10px;
+  } */
+  .buttonForSignin{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width:450px){
+  .introuvable {
+    font-size: 20px;
+  }
+  .singleContent{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width:410px){
+  .nav_buttons{
+    margin: 20px 0 20px 0;
+  }
+  .button-home{
+    margin-bottom: 20px;
+  }
+  .button-logout{
+    margin-bottom: 20px;
+  }
+  #intro .petite-boite,
+  .titleWebSite {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+  .showFormButton{
+    font-size: 8px;
+  }
+  .petite-boite-contact{
+    font-size: 1.1em;
+  }
+  .input-area-contact{
+    font-size: 5px;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 10px;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 395px){
+ .row{
+    font-size: 8px;
+  }
+  /* .input-area-login{
+    margin-top: 50px;
+  } */
+}
+
+@media screen and (max-width:350px){
+  .header-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .image_off, .image_on {
+    display: none;
+  }
+  .infoUser{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 290px){
+  .introuvable {
+    font-size: 18px;
+  }
+}
+
+
