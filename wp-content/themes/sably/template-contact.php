@@ -33,33 +33,57 @@ get_header();
 
 
   <section id="intro">
-      <div class="petite-boite">
-          <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?> ! ", "Voici la liste des CVs", "Trouvez le bon candidat"]'></span>|</h1>
+      <div class="petite-boite-contact">
+          <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if(!empty($current_user->first_name) && $current_user->first_name != ''){ echo $current_user->first_name ;} else { echo $current_user->user_login ;}?> ! ", "Comment pouvons-nous vous aider ?", "Contactez-nous"]'></span>|</h1>
       </div>
-      <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
   </section>
 
   <div class="wrap-sheet">
       <div id="sheet" class="sheet">
           <section id="contact" class="tab tab-3">
               <h2 class="titleSection">Contact</h2>
-              <div class="form">
-                  <form id="formContact" action="" method="POST">
-                      <div class="inputs-container">
-                          <input class="input" type="text" name="lastname" placeholder="Nom" value="<?php if(!empty($_POST['lastname'])) {echo $_POST['lastname']; } ?>">
-                          <span class="error"><?php if(!empty($errors['lastname'])) { echo $errors['lastname'];} ?></span>
-                          <input class="input" type="text" name="firstname" placeholder="Prénom" value="<?php if(!empty($_POST['firstname'])) {echo $_POST['firstname']; } ?>">
-                          <span class="error"><?php if(!empty($errors['firstname'])) { echo $errors['firstname'];} ?></span>
-                      </div>
-                      <div class="inputs-container">
-                          <input class="input" type="mail" name="mail" placeholder="Mail" value="<?php if(!empty($_POST['mail'])) {echo $_POST['mail']; } ?>">
-                          <span class="error"><?php if(!empty($errors['mail'])) { echo $errors['mail'];} ?></span>
-                          <input class="input" type="text" name="subject" placeholder="Objet" value="<?php if(!empty($_POST['subject'])) {echo $_POST['subject']; } ?>">
-                          <span class="error"><?php if(!empty($errors['subject'])) { echo $errors['subject'];} ?></span>
-                      </div>
-                      <textarea class="text" name="message" placeholder="Message"><?php if(!empty($_POST['message'])) { echo $_POST['message'];} ?></textarea>
-                      <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message'];} ?></span>
-                      <input type="submit" name="submitted" class="btn btn-purple" value="Envoyer">
+              <div class="formContainer">
+                  <form id="formContact" action="" method="POST" class="formSlideEffect">
+                        <div class="row-contact"> 
+
+                            <div class="input-area input-area-contact">
+                                <label for="name-infoUser">nom</label>
+                                <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                <input class="input" type="text" name="lastname" placeholder="Nom" value="<?php if(!empty($_POST['lastname'])) {echo $_POST['lastname']; } ?>">
+                                <span class="error"><?php if(!empty($errors['lastname'])) { echo $errors['lastname'];} ?></span>
+                            </div>
+
+                            <div class="input-area input-area-contact"> 
+                                <label for="name-infoUser">prénom</label>
+                                <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                <input class="input" type="text" name="firstname" placeholder="Prénom" value="<?php if(!empty($_POST['firstname'])) {echo $_POST['firstname']; } ?>">
+                                <span class="error"><?php if(!empty($errors['firstname'])) { echo $errors['firstname'];} ?></span>
+                            </div>
+
+                            <div class="input-area input-area-contact">
+                                <label for="name-infoUser">mail</label>
+                                <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                <input class="input" type="mail" name="mail" placeholder="Mail" value="<?php if(!empty($_POST['mail'])) {echo $_POST['mail']; } ?>">
+                                <span class="error"><?php if(!empty($errors['mail'])) { echo $errors['mail'];} ?></span>
+                            </div>
+
+                            <div class="input-area input-area-contact">
+                                <label for="name-infoUser">objet</label>
+                                <i class="fas fa-arrow-right" style="color: #ffc045"></i>
+                                <input class="input" type="text" name="subject" placeholder="Objet" value="<?php if(!empty($_POST['subject'])) {echo $_POST['subject']; } ?>">
+                                <span class="error"><?php if(!empty($errors['subject'])) { echo $errors['subject'];} ?></span>
+                            </div>
+                        </div>
+                        <div class="textArea">
+                            <div class="titleTextArea">Message</div>
+                            <div class="textContent">
+                                <textarea id="message" class="text" name="message" placeholder=""><?php if(!empty($_POST['message'])) { echo $_POST['message'];} ?></textarea>
+                                <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message'];} ?></span>
+                            </div>
+                        </div>
+                        <div class="submitButtonContact">    
+                            <input type="submit" name="submitted" class="btn-submit-Contact" value="Envoyer">
+                        </div>
                   </form>
               </div>
 

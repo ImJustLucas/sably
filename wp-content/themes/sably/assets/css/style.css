@@ -255,7 +255,10 @@ a.tabButton:hover {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
-
+.petite-boite-contact{
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
 #intro .logo-play .fas {
   background-color: var(--blanc);
   border-radius: 50%;
@@ -297,7 +300,6 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-form#formContact,
 form#formLogin,
 form#formSignin {
   display: -webkit-box;
@@ -313,7 +315,6 @@ form#formSignin {
   margin-bottom: 40px;
 }
 
-form#formContact input,
 form#formLogin input,
 form#formSignin input {
   margin: 20px 10px;
@@ -330,7 +331,6 @@ form#formSignin input {
   transition: 0.7s;
 }
 
-form#formContact textarea,
 form#formLogin textarea,
 form#formSignin textarea {
   width: 400px;
@@ -348,7 +348,6 @@ form#formSignin textarea {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form#formContact input[type="submit"],
 form#formLogin input[type="submit"],
 form#formSignin input[type="submit"] {
   cursor: pointer;
@@ -358,7 +357,6 @@ form#formSignin input[type="submit"] {
   border: none;
 }
 
-form#formContact input[type="submit"]:hover,
 form#formLogin input[type="submit"]:hover,
 form#formSignin input[type="submit"]:hover {
   background-color: #fff;
@@ -553,23 +551,12 @@ section.divider {
 }
 
 #infoUser .leftColumnUser,
-#infoUser .rightColumnUser,
-#connexionUser .columnUser {
+#infoUser .rightColumnUser{
   width: 48%;
   display: flex;
   flex-direction: column;
 }
-#connexionUser {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-#connexionUser .columnUser {
-  display: flex;
-  justify-content: center;
-}
+
 .buttonForSignin {
   /* margin-top: 20px; */
   display: flex;
@@ -737,7 +724,8 @@ form#formsignin input[type="submit"]:hover {
 #MyFormation,
 #MySkill,
 #MyLoisir,
-#MyReward {
+#MyReward,
+#contact {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -778,6 +766,19 @@ form.formSlideEffect .row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+}
+
+form.formSlideEffect .row-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.submitButtonContact, .submitButtonAdd{
+  display: flex;
+  justify-content: center;
 }
 
 form.formSlideEffect i {
@@ -990,7 +991,12 @@ form.formSlideEffect .textArea textarea:focus {
     line-height: 30px;
     font-size: medium;
   }
-  
+  .input-area-contact{
+    font-size: .7em;
+  }
+  .petite-boite-contact{
+    font-size: 1.5em;
+  }
 }
 @media screen and (max-width:790px){
   form#formInfoUser input{
@@ -1019,8 +1025,8 @@ form.formSlideEffect .textArea textarea:focus {
     align-items: center;
     font-size: 10px;
   }
-    form.formSlideEffect .textArea .titleTextArea {
-      font-size: 1em;
+  form.formSlideEffect .textArea .titleTextArea {
+    font-size: 1em;
   }
   #intro .petite-boite,
   .titleWebSite {
@@ -1049,11 +1055,18 @@ form.formSlideEffect .textArea textarea:focus {
   .nav_logo .logoSably img {
     width: 150%;
   }
+  .petite-boite-contact{
+    font-size: 1.3em;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 13px;
+  }
+  .input-area-contact{
+    font-size: 7px;
+  }
 }
 @media screen and (max-width:470px){
   .input-area-infoUser{
-    /* display: flex;
-    justify-content: space-between; */
     font-size: 12px;
   }
   form#formInfoUser label,
@@ -1106,6 +1119,20 @@ form.formSlideEffect .textArea textarea:focus {
   .showFormButton{
     font-size: 8px;
   }
+  .petite-boite-contact{
+    font-size: 1.1em;
+  }
+  .input-area-contact,{
+    font-size: 5px;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 10px;
+  }
+  form#formInfoUser label,
+  #formlogin label,
+  #formsignin label{
+    font-size: 5px;
+  }
 }
 
 @media screen and (max-width: 395px){
@@ -1130,6 +1157,9 @@ form.formSlideEffect .textArea textarea:focus {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  .textArea, .submitButtonContact{
+    font-size: 10px;
   }
 }
 
