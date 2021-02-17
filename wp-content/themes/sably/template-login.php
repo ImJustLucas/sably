@@ -50,8 +50,14 @@ get_header();
 
 <section id="intro">
     <?php
-    if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
+    if (!empty($_GET['id'])) {
+      if ($_GET['id'] == 'new') { ?>
         <p class="welcome">Vous venez de valider votre compte</p>
+      <?php }
+      if($_GET['id'] == 'reset') { ?>
+        <p class="welcome">Mot de passe modifié avec succès</p>
+      <?php } ?>
+
     <?php } ?>
 </section>
 

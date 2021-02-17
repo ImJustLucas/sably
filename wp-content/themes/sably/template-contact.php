@@ -19,12 +19,12 @@ if(!empty($_POST['submitted'])) {
   $errors = validMail($errors,$mail,'mail');
 
   if(empty($errors)){
-    echo 'go to sql';
     global $wpdb;
     $table = $wpdb->prefix.'contact';
     $data = array('lastname' => $lastname, 'firstname' => $firstname, 'email' => $mail, 'subject' => $subject, 'message' => $message);
     $format = array('%s','%s','%s','%s','%s');
     $wpdb->insert($table,$data,$format);
+    $success = true;
   }
 }
 get_header();
@@ -42,7 +42,11 @@ get_header();
       <div id="sheet" class="sheet">
           <section id="contact" class="tab tab-3">
               <h2 class="titleSection">Contact</h2>
-              <div class="formContainer">
+              <?php if($success === true) { ?>
+                <p>Bravo</p>
+                <p><a href="<?php esc_url(home_url('login')); ?>">Envoyer un nouveau message</a></p>
+              <?php  } else { ?>
+                <div class="formContainer">
                   <form id="formContact" action="" method="POST" class="formSlideEffect">
                         <div class="row-contact"> 
 
@@ -86,7 +90,7 @@ get_header();
                         </div>
                   </form>
               </div>
-
+              <?php } ?>
           </section>
 
       </div>

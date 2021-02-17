@@ -9,6 +9,7 @@ global $post;
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../package/swiper-bundle.min.css">
 
 	<?php wp_head(); ?>
 </head>
@@ -43,7 +44,7 @@ global $post;
 						<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
 						<?php }
 						if(is_user_logged_in()){?>
-						<div><a class="tabButton button-logout" href="<?php echo wp_logout_url( home_url() ); ?>">Deconnexion</a></div>
+						<div><a class="tabButton button-logout" href="<?php echo wp_logout_url( home_url() ); ?>">Déconnexion</a></div>
 						<?php }; ?>
 					</div>
 					<div class="nav_login">

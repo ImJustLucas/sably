@@ -3,87 +3,7 @@
    License: none (public domain)
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -94,17 +14,7 @@ video {
 
 /* HTML5 display-role reset for older browsers */
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -112,20 +22,15 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -195,16 +100,16 @@ a.tabButton:hover {
 .nav_logo .logoSably img {
   width: 80%;
 }
+
 .nav_logo .logoSably img:hover {
   cursor: pointer;
 }
 
-.image_off,
-#home:hover .image_on {
+.image_off, #home:hover .image_on {
   display: none;
 }
-.image_on,
-#home:hover .image_off {
+
+.image_on, #home:hover .image_off {
   display: block;
 }
 
@@ -250,8 +155,7 @@ a.tabButton:hover {
   text-transform: uppercase;
 }
 
-#intro .petite-boite,
-.titleWebSite {
+#intro .petite-boite, .titleWebSite {
   font-size: 1.7em;
   margin-bottom: 50px;
 }
@@ -264,6 +168,7 @@ a.tabButton:hover {
   border-radius: 50%;
   padding: 20px;
 }
+
 #intro .logo-play .fas:hover {
   background-color: var(--blanc);
   border-radius: 50%;
@@ -373,13 +278,46 @@ form#formSignin input[type="submit"]:hover {
 }
 
 /* Tableau espace recruteur */
-.table  {border-collapse:collapse;border-spacing:0;margin: 0 auto;margin-top: 50px;background-color: #1dd1a1;}
-.table td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.table .cellule{text-align:center;vertical-align:top}
-.cellule a{font-weight: bold; color: black;}
+.table  {
+  border-collapse:collapse;
+  border-spacing:0;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #1dd1a1;
+}
+
+.table td{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+.table th{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+.table .cellule{
+  text-align:center;
+  vertical-align:top
+}
+
+.cellule a{
+  font-weight: bold;
+  color: black;
+}
 
 /* Modale et bouton supprimer */
 .modal__title{padding-top:5px;margin-left: 25px;}
@@ -408,6 +346,7 @@ form#formSignin input[type="submit"]:hover {
 
 
 /* Legal */
+
 #sheet .legal {
   line-height: 1.5em;
   margin-left: 5px;
@@ -522,6 +461,9 @@ footer {
 .page-content-404 div {
   width: 100%;
 }
+
+/* RECRUTER */
+
 /*INFO USER*/
 
 #infoUser {
@@ -562,6 +504,7 @@ section.divider {
   display: flex;
   justify-content: center;
 }
+
 .featuredInformation {
   text-align: center;
   margin-top: 40px;
@@ -686,6 +629,9 @@ form#formsignin input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+.infosCvUser{text-align: center; line-height: 30px;}
+
+
 /* -----------LISTING DATA CV--------------- */
 
 .titleCvSection {
@@ -730,6 +676,15 @@ form#formsignin input[type="submit"]:hover {
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.detail p{
+  line-height: 20px;
+}
+
+.detail h1{
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 div.formContainer {
