@@ -39,12 +39,12 @@ global $post;
 						<?php if($post->post_name === 'home') {?>
 						<div><a class="tabButton button-home" >Accueil</a></div>
 						<div><a class="tabButton button-about" >A propos</a></div>
-						<div><a class="tabButton button-contact" >Contact</a></div>
+						<div><a class="tabButton button-contact" href="SABLY/contact">Contact</a></div>
 						<?php } else {?>
 						<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
 						<?php }
 						if(is_user_logged_in()){?>
-						<div><a class="tabButton button-logout" href="<?php echo wp_logout_url( home_url() ); ?>">Deconnexion</a></div>
+						<div><a class="tabButton button-logout" href="<?php echo wp_logout_url( home_url() ); ?>">Déconnexion</a></div>
 						<?php }; ?>
 					</div>
 					<div class="nav_login">

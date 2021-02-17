@@ -269,6 +269,74 @@ form#formContact input[type="submit"]:hover, form#formLogin input[type="submit"]
   transition: 0.3s;
 }
 
+/* Tableau espace recruteur */
+.table  {
+  border-collapse:collapse;
+  border-spacing:0;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #1dd1a1;
+}
+
+.table td{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+.table th{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+
+.table .cellule{
+  text-align:center;
+  vertical-align:top
+}
+
+.cellule a{
+  font-weight: bold;
+  color: black;
+}
+
+/* Modale et bouton supprimer */
+.modal__title{padding-top:5px;margin-left: 25px;}
+
+.boutonsupprimer{
+  margin-left: 45px;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffc045;
+  border: #ffc045 1px solid;
+  border-radius: 30px;
+  color: #fff;
+  transition: all 0.4s;
+  padding: 10px 10px;}
+
+.boutonsupprimer:hover{
+  background-color: #fff;
+  color: var(--jaune);
+  font-weight: bold;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
 /* Legal */
 
 #sheet .legal {
@@ -539,6 +607,18 @@ form#formsignin input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+.buttonForSignin{
+  flex-direction: column;
+  align-items: center;
+  line-height: 28px;
+}
+
+.button-forgot {
+  color: var(--jaune);
+  font-weight: bold;
+}
+
 .button-signin {
   color: var(--jaune);
   font-weight: bold;
@@ -551,6 +631,9 @@ form#formsignin input[type="submit"]:hover {
 .souligne {
   text-decoration: underline;
 }
+
+.infosCvUser{text-align: center; line-height: 30px;}
+
 
 /* -----------LISTING DATA CV--------------- */
 
@@ -812,10 +895,3 @@ form.formSlideEffect .textArea textarea:focus {
 .hvr-underline-from-right:active:before {
   left: 0;
 }
-
-.table  {border-collapse:collapse;border-spacing:0;margin: 0 auto;margin-top: 50px;background-color: #1dd1a1;}
-.table td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.table .cellule{text-align:center;vertical-align:top}

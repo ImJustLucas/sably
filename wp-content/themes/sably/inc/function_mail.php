@@ -46,7 +46,6 @@ function sendMailer($mailexpediteur,$passwordmail,$mailrecepteur,$object,$messag
 
 
       $mail->send();
-      echo 'Message envoyé';
   } catch (Exception $e) {
       echo "Mail ne peut être envoyé, erreur : {$mail->ErrorInfo}";
   }

@@ -252,7 +252,7 @@ if(!empty($_POST['submitted-addLoisir'])){
     $addLoisir = array();
     $addLoisir['id_cv'] = $userCV->id;
 
-    //required option 
+    //required option
 
     //Clean XSS
     $addLoisir['title'] = cleanXSS($_POST['title-addLoisir']);
@@ -303,7 +303,7 @@ if(!empty($_POST['submitted-addReward'])){
     }
 }
 
-//Delete data 
+//Delete data
 if(!empty($_POST['delete-data-cv'])){
 
     $id = cleanXSS($_POST['data-delete-type']);
@@ -419,7 +419,83 @@ get_header();
         <section id="myCV">
             <h2 class="titleSection">Mon CV</h2>
             <?php if($userHasCV) { ?>
-                <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p>
+
+                <div class="infosCvUser">
+
+                    <?php if(!empty($current_user->last_name) && $current_user->last_name != '' && !empty($current_user->last_name) && $current_user->last_name != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Nom :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo ucfirst($current_user->last_name) . ' ' . ucfirst($current_user->first_name) ; ?>
+                            </div>
+                        </div>
+
+                    <?php } else { ?>
+
+                        <div class="infoCvContent"> 
+                            <div class="contentInfo">
+                                <?php echo $current_user->user_login ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->user_email) && $current_user->user_email != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Email :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->user_email ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->age) && $current_user->age != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Age :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->age ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->adresse) && $current_user->adresse != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Adresse :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->adresse ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if(!empty($current_user->telephone) && $current_user->telephone != ''){ ?>
+
+                        <div class="infoCvContent">
+                            <div class="titleInfo">
+                                Téléphone :
+                            </div>
+                            <div class="contentInfo">
+                                <?php echo $current_user->telephone ; ?>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                </div>
 
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
@@ -428,7 +504,7 @@ get_header();
                 <!--  EXPERIENCES-->
                 <h3 class="titleCvSection">Mes expériences :</h3>
                 <section id="MyExperience">
-                    
+
                     <!--LISTING DES EXPERIENCES-->
                     <div class="listingExperience listing">
                         <?php foreach($userCvExperiences as $experience) { ?>
@@ -489,14 +565,14 @@ get_header();
                         </form>
                     </div>
                 </section>
-                
+
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  FORMATION-->
                 <h3 class="titleCvSection">Ma Formation :</h3>
-                <section id="MyFormation">    
+                <section id="MyFormation">
 
                     <!--LISTING DES FORMATIONS-->
                     <div class="listingFormation listing">
@@ -563,11 +639,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  SKILLS -->
                 <h3 class="titleCvSection">Mes compétences :</h3>
                 <section id="MySkill">
-                    
+
                     <!--LISTING DES SKILLS-->
                     <div class="listingSkill listing">
                         <?php foreach($userCvSkills as $skill) { ?>
@@ -637,11 +713,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  LOISIRS -->
                 <h3 class="titleCvSection">Mes loisirs :</h3>
                 <section id="MyLoisir">
-                    
+
                     <!--LISTING DES LOISIRS-->
                     <div class="listingLoisir listing">
                         <?php foreach($userCvLoisirs as $loisir) { ?>
@@ -700,11 +776,11 @@ get_header();
                 <section class="divider">
                     <div class="dividerHorizontale"></div>
                 </section>
-                
+
                 <!--  REWARDS -->
                 <h3 class="titleCvSection">Mes récompenses :</h3>
                 <section id="MyReward">
-                    
+
                     <!--LISTING DES REWARDS-->
                     <div class="listingReward listing">
                         <?php foreach($userCvRewards as $reward) { ?>
