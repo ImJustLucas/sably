@@ -10,6 +10,7 @@ if (is_user_logged_in()) {
 require get_template_directory() . '/inc/function_mail.php';
 global $wpdb;
 $errors = array();
+$success = false;
 
 
 // Mot de passe oublié :
@@ -26,6 +27,7 @@ if (!empty($_POST['submitted'])) {
       $user = $wpdb->get_var($wpdb->prepare($sql, $useremail));
 
       if(!empty($user)) {
+        $success = true;
         $token = generateRandomString(120);
         update_user_meta($user, 'token', $token);
         $date = new DateTime("now");
@@ -65,9 +67,13 @@ get_header();
 
 <section id="intro">
     <?php
-    if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
-        <p class="welcome">Vous venez de valider votre compte</p>
+
+
+    if($success == true) { ?>
+      <p class="success">Un email vient de vous être envoyé.<br>Vous ne l'avez pas reçu ? Veuillez soumettre de nouveau le formulaire.</p>
     <?php } ?>
+
+
 </section>
 
 <div class="wrap-sheet">

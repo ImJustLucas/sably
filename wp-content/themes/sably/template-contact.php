@@ -25,6 +25,7 @@ if(!empty($_POST['submitted'])) {
     $data = array('lastname' => $lastname, 'firstname' => $firstname, 'email' => $mail, 'subject' => $subject, 'message' => $message);
     $format = array('%s','%s','%s','%s','%s');
     $wpdb->insert($table,$data,$format);
+    $success = true;
   }
 }
 get_header();
@@ -43,26 +44,30 @@ get_header();
       <div id="sheet" class="sheet">
           <section id="contact" class="tab tab-3">
               <h2 class="titleSection">Contact</h2>
-              <div class="form">
-                  <form id="formContact" action="" method="POST">
-                      <div class="inputs-container">
-                          <input class="input" type="text" name="lastname" placeholder="Nom" value="<?php if(!empty($_POST['lastname'])) {echo $_POST['lastname']; } ?>">
-                          <span class="error"><?php if(!empty($errors['lastname'])) { echo $errors['lastname'];} ?></span>
-                          <input class="input" type="text" name="firstname" placeholder="Prénom" value="<?php if(!empty($_POST['firstname'])) {echo $_POST['firstname']; } ?>">
-                          <span class="error"><?php if(!empty($errors['firstname'])) { echo $errors['firstname'];} ?></span>
-                      </div>
-                      <div class="inputs-container">
-                          <input class="input" type="mail" name="mail" placeholder="Mail" value="<?php if(!empty($_POST['mail'])) {echo $_POST['mail']; } ?>">
-                          <span class="error"><?php if(!empty($errors['mail'])) { echo $errors['mail'];} ?></span>
-                          <input class="input" type="text" name="subject" placeholder="Objet" value="<?php if(!empty($_POST['subject'])) {echo $_POST['subject']; } ?>">
-                          <span class="error"><?php if(!empty($errors['subject'])) { echo $errors['subject'];} ?></span>
-                      </div>
-                      <textarea class="text" name="message" placeholder="Message"><?php if(!empty($_POST['message'])) { echo $_POST['message'];} ?></textarea>
-                      <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message'];} ?></span>
-                      <input type="submit" name="submitted" class="btn btn-purple" value="Envoyer">
-                  </form>
-              </div>
-
+              <?php if($success === true) { ?>
+                <p>Bravo</p>
+                <p><a href="<?php esc_url(home_url('login')); ?>">Envoyer un nouveau message</a></p>
+              <?php  } else { ?>
+                <div class="form">
+                    <form id="formContact" action="" method="POST">
+                        <div class="inputs-container">
+                            <input class="input" type="text" name="lastname" placeholder="Nom" value="<?php if(!empty($_POST['lastname'])) {echo $_POST['lastname']; } ?>">
+                            <span class="error"><?php if(!empty($errors['lastname'])) { echo $errors['lastname'];} ?></span>
+                            <input class="input" type="text" name="firstname" placeholder="Prénom" value="<?php if(!empty($_POST['firstname'])) {echo $_POST['firstname']; } ?>">
+                            <span class="error"><?php if(!empty($errors['firstname'])) { echo $errors['firstname'];} ?></span>
+                        </div>
+                        <div class="inputs-container">
+                            <input class="input" type="mail" name="mail" placeholder="Mail" value="<?php if(!empty($_POST['mail'])) {echo $_POST['mail']; } ?>">
+                            <span class="error"><?php if(!empty($errors['mail'])) { echo $errors['mail'];} ?></span>
+                            <input class="input" type="text" name="subject" placeholder="Objet" value="<?php if(!empty($_POST['subject'])) {echo $_POST['subject']; } ?>">
+                            <span class="error"><?php if(!empty($errors['subject'])) { echo $errors['subject'];} ?></span>
+                        </div>
+                        <textarea class="text" name="message" placeholder="Message"><?php if(!empty($_POST['message'])) { echo $_POST['message'];} ?></textarea>
+                        <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message'];} ?></span>
+                        <input type="submit" name="submitted" class="btn btn-purple" value="Envoyer">
+                    </form>
+                </div>
+              <?php } ?>
           </section>
 
       </div>

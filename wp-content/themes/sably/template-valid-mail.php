@@ -45,7 +45,6 @@ if (!empty($_GET['id'])){
 
 
       $link = esc_url(home_url('login'));
-      echo $link;
       header('Location: '.$link.'?id=new');
       exit();
     }
