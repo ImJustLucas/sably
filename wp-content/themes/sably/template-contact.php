@@ -19,7 +19,6 @@ if(!empty($_POST['submitted'])) {
   $errors = validMail($errors,$mail,'mail');
 
   if(empty($errors)){
-    echo 'go to sql';
     global $wpdb;
     $table = $wpdb->prefix.'contact';
     $data = array('lastname' => $lastname, 'firstname' => $firstname, 'email' => $mail, 'subject' => $subject, 'message' => $message);

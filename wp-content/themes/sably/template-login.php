@@ -86,9 +86,8 @@ get_header();
                 </div>
 
                 <div class="buttonForSignin">
-                    <p>Pas encore de compte ? Inscrivez-vous dès maintenant ! </p>
-                    <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> S'inscrire</a>
-                    <a href="<?php echo esc_url(home_url('forgot')) ?>">Mot de passe oublié ?</a>
+                    <a href="<?php echo esc_url(home_url('forgot')) ?>" class="button-forgot">Mot de passe oublié ?</a>
+                    <p>Vous n'avez pas encore de compte ? <a href="<?php echo esc_url(home_url('signin')) ?>" class="button-signin"> Inscrivez-vous dès maintenant ! </a></p>
                 </div>
             </section>
         </form>
