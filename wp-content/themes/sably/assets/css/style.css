@@ -381,6 +381,7 @@ form#formSignin input[type="submit"]:hover {
 .table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 .table .cellule{text-align:center;vertical-align:top}
+.cellule a{font-weight: bold; color: black;}
 
 /* Modale et bouton supprimer */
 .modal__title{padding-top:5px;margin-left: 25px;}
@@ -673,6 +674,18 @@ form#formsignin input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+.buttonForSignin{
+  flex-direction: column;
+  align-items: center;
+  line-height: 28px;
+}
+
+.button-forgot {
+  color: var(--jaune);
+  font-weight: bold;
+}
+
 .button-signin {
   color: var(--jaune);
   font-weight: bold;
