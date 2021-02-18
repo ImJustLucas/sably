@@ -38,7 +38,7 @@ if(in_array( 'client', (array) $user->roles )){
 								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
 						</div>
 						<div class="nav_login">
-								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('Recrutement')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
+								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
 						</div>
 					</div>
 				</header><!-- #masthead -->
