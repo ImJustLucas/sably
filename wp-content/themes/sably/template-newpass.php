@@ -10,7 +10,8 @@ if(!empty($_GET['id'])) {
   $token = $_GET['id'];
 }
 else {
-  die('404');
+  $link = esc_url(home_url('404'));
+  header('Location: '.$link.);
 }
 
 global $wpdb;
@@ -19,9 +20,6 @@ $wpdb_tablename = 'wp_sbl_usermeta';
 $sql = "SELECT user_id FROM $wpdb_tablename WHERE meta_value = %s";
 $user = $wpdb->get_var($wpdb->prepare($sql, $token));
 
-if(empty($user)) {
-  die('404');
-}
 
 
 // Mot de passe oublié :
@@ -33,9 +31,35 @@ if (!empty($_POST['submitted'])) {
 
     $errors = validPass($errors,$password,'password',$password1,3,10);
     if(empty($errors)) {
+      // on enlève token
+      $wpdb->update(
+        'wp_sbl_usermeta',
+        array(
+            'meta_value' => ''
+        ),
+        array('meta_key' => 'token', 'meta_value' => $token),
+        array(
+            '%s'
+        ),
+        array('%s', '%s')
+      );
 
-      echo 'go';
+      // on change mot de passe
+      $password = password_hash($password, PASSWORD_DEFAULT);
+      $wpdb->update(
+        'wp_sbl_users',
+        array(
+            'user_pass' => $password
+        ),
+        array('ID' => $user),
+        array(
+            '%s'
+        ),
+        array('%d')
+      );
 
+      $link = esc_url(home_url('login'));
+      header('Location: '.$link.'?id=reset');
     }
 
 }

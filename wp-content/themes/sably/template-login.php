@@ -12,9 +12,10 @@ global $wpdb;
 
 
 //CONNEXION :
+$errors = array();
 
-if (!empty($_POST['submittedlogin'])) {
-
+if(!empty($_POST['username-login'] && $_POST['password-login']))
+{
     $username = cleanXSS($_POST['username-login']);
     $password = cleanXSS($_POST['password-login']);
 
@@ -23,28 +24,23 @@ if (!empty($_POST['submittedlogin'])) {
     $user_data['user_password'] = $password;
 
     $verify_user = wp_signon($user_data, true);
-
-
     if (!is_wp_error($verify_user)) {
-        $email = $verify_user->user_email;
-        $wpdb_prefix = $wpdb->prefix;
-        $wpdb_tablename = $wpdb_prefix . 'users';
-        $sql = "SELECT ID FROM $wpdb_tablename WHERE user_email = %s";
-        $id_user = $wpdb->get_var($wpdb->prepare($sql, $email));
-        $wpdb_tablename = $wpdb_prefix . 'usermeta';
-        $sql = "SELECT user_id FROM $wpdb_tablename WHERE user_id = %d AND meta_key = %s AND meta_value = %s";
-        $user_valid = $wpdb->get_var($wpdb->prepare($sql, $id_user, 'valid_mail', 'valid'));
         wp_redirect(site_url() . "/profile");
 
-        if (!empty($user_valid)) {
-            wp_redirect(site_url() . "/profile");
-        } else {
-            $_POST['error-login'] = 'Veuillez valider votre compte';
-        }
     } else {
-        $_POST['error-login'] = 'Identifiant ou mot de passe invalide';
+        $errors['error-login'] = 'Identifiant ou mot de passe invalide';
+
     }
+
 }
+else {
+    $errors['error-login'] = 'Veuillez renseigner les champs';
+}
+
+
+
+
+
 
 get_header();
 ?>
@@ -58,8 +54,14 @@ get_header();
     <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
 
     <?php
-    if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
+    if (!empty($_GET['id'])) {
+      if ($_GET['id'] == 'new') { ?>
         <p class="welcome">Vous venez de valider votre compte</p>
+      <?php }
+      if($_GET['id'] == 'reset') { ?>
+        <p class="welcome">Mot de passe modifié avec succès</p>
+      <?php } ?>
+
     <?php } ?>
 </section>
 
@@ -74,14 +76,12 @@ get_header();
                     <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                     <input type="text" name="username-login" id="username-login">
                 </div>
-                <span class="error-login error-username-login"></span>
-
                 <div class="input-area-login">
                     <label for="password-login">Mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                     <input type="password" name="password-login" id="password-login">
                 </div>
-                <span class="error-login error-password-login"></span>
+                <span class="error-login error-password-login"><?php if(!empty($errors['error-login'])) { echo $errors['error-login']; } ?></span>
 
                 <div class="submitButtonlogin">
                     <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
