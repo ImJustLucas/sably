@@ -11,7 +11,7 @@ if(!empty($_GET['id'])) {
 }
 else {
   $link = esc_url(home_url('404'));
-  header('Location: '.$link.);
+  header('Location: '.$link);
 }
 
 global $wpdb;

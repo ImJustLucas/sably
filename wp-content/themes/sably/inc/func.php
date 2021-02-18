@@ -408,7 +408,17 @@ function createCv($type, $current_user, $userCvExperiences, $userCvFormations, $
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     //Impression information Principale
-    $pdf->descriptionContent($current_user->last_name . ' ' . $current_user->first_name);
+    $pdf->titleContent(mb_strtoupper($current_user->last_name) . ' ' . ucfirst($current_user->first_name));
+    $pdf->descriptionContent('Email : ' . $current_user->user_email);
+    if(!empty($current_user->age)){
+    $pdf->descriptionContent('Age : ' . $current_user->age);
+    }
+    if(!empty($current_user->adresse)){
+      $pdf->descriptionContent('Adresse : ' . $current_user->adresse);
+    }
+    if(!empty($current_user->telephone)){
+      $pdf->descriptionContent('Téléphone : ' . $current_user->telephone);
+    }
     //Impression Formations
     $pdf->TitreSection('Experience');
     foreach($userCvExperiences as $experience){
