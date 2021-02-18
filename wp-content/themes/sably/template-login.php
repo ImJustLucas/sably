@@ -28,7 +28,7 @@ if(!empty($_POST['submittedlogin']))
         wp_get_current_user();
         if ($current_user->role === 'recruiter' ) {
             wp_redirect(site_url() . "/recruiter");
-        } elseif($current_user->role === 'profile' ){
+        } elseif($current_user->role === 'client' ){
             wp_redirect(site_url() . "/profile");
         }
 
