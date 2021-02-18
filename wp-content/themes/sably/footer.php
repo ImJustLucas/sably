@@ -67,7 +67,7 @@
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
         <main class="modal__content" id="modal-1-content">
-          <form method="post" action="<?php echo esc_url(home_url('recruitersingle?id=' . $cvid ))?>" id="formDownload">
+          <form method="post" action="<?php echo esc_url(home_url('recruitersingle?id='. $id .'&cvid=' . $cvid ))?>" id="formDownload">
             <input class="boutondownload" type="submit" name="download-cv-recruiter" value="Télécharger">
           </form>
         </main>
@@ -103,7 +103,7 @@
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
         </header>
         <main class="modal__content" id="modal-1-content">
-          <form method="post" action="<?php echo esc_url(home_url('recruitersingle' . $cvid))?>" id="formApercu">
+          <form method="post" action="<?php echo esc_url(home_url('recruitersingle?id='. $id .'&cvid=' . $cvid ))?>" id="formApercu">
             <input class="boutondownload" type="submit" name="apercu-cv-recruiter" value="Lancer l'aperçu">
           </form>
         </main>
