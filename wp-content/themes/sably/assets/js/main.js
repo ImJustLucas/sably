@@ -45,7 +45,7 @@ $(document).ready(function () {
 
   $(".logo-play a").magnificPopup({
     type: "iframe",
-    src: "https://www.youtube.com/watch?v=oUhWsKMcoKY",
+    src: "https://youtu.be/35WJCcbp6a0",
     // other options
   });
 
