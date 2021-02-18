@@ -38,6 +38,64 @@ $user_prenom = $wpdb->get_results($sql);
 $user_nom = $wpdb->get_results($sql2);
 
 
+
+
+  //DOWNLOAD CV
+if(!empty($_POST['download-cv'])){
+
+  //Get experience
+  $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
+  $userCvExperiences = $wpdb->get_results($sql);
+
+  //Get formation
+  $sql = "SELECT * FROM sbl_formation WHERE id_cv = $cvid AND status = 1;";
+  $userCvFormations = $wpdb->get_results($sql);
+
+  //Get skill
+  $sql = "SELECT * FROM sbl_skill WHERE id_cv = $cvid AND status = 1;";
+  $userCvSkills = $wpdb->get_results($sql);
+
+  //Get loisir
+  $sql = "SELECT * FROM sbl_loisir WHERE id_cv = $cvid AND status = 1;";
+  $userCvLoisirs = $wpdb->get_results($sql);
+
+  //Get reward
+  $sql = "SELECT * FROM sbl_reward WHERE id_cv = $cvid AND status = 1;";
+  $userCvRewards = $wpdb->get_results($sql);
+
+  createCv('D', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
+
+//Lancer un aperçu du CV
+
+if(!empty($_POST['apercu-cv'])){
+
+  //Get experience
+  $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
+  $userCvExperiences = $wpdb->get_results($sql);
+
+  //Get formation
+  $sql = "SELECT * FROM sbl_formation WHERE id_cv = $cvid AND status = 1;";
+  $userCvFormations = $wpdb->get_results($sql);
+
+  //Get skill
+  $sql = "SELECT * FROM sbl_skill WHERE id_cv = $cvid AND status = 1;";
+  $userCvSkills = $wpdb->get_results($sql);
+
+  //Get loisir
+  $sql = "SELECT * FROM sbl_loisir WHERE id_cv = $cvid AND status = 1;";
+  $userCvLoisirs = $wpdb->get_results($sql);
+
+  //Get reward
+  $sql = "SELECT * FROM sbl_reward WHERE id_cv = $cvid AND status = 1;";
+  $userCvRewards = $wpdb->get_results($sql);
+
+  createCv('I', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
+
+
 // HTML
 global $post; ?>
 
@@ -91,6 +149,16 @@ global $post; ?>
 
   <div class="wrap-sheet">
     <div id="sheet">
+
+    
+    <div class="optionCV">
+
+      <div class="parametreButton2">
+          <div class="apercuButton hvr-underline-from-left"><i class="far fa-eye"></i> Aperçu</div>
+          <div class="downloadButton hvr-underline-from-center"><i class="fas fa-file-download"></i> Télécharger</div>
+      </div>
+
+      </div>
       <div class="detail">
         <h2 class="titleSection">Detail CV</h2>
 
