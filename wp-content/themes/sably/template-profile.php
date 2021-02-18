@@ -338,7 +338,7 @@ if (!empty($_POST['delete-data-cv'])) {
 //DOWNLOAD CV
 if(!empty($_POST['download-cv'])){
 
-    createCv('D', $current_user, $userCvExperiences);
+    createCv('D', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
 
 }
 
@@ -346,7 +346,7 @@ if(!empty($_POST['download-cv'])){
 
 if(!empty($_POST['apercu-cv'])){
 
-    createCv('I', $current_user, $userCvExperiences);
+    createCv('I', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
 
 }
 get_header();
@@ -354,11 +354,7 @@ get_header();
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if (!empty($current_user->first_name) && $current_user->first_name != '') {
-                                                                                                    echo $current_user->first_name;
-                                                                                                } else {
-                                                                                                    echo $current_user->user_login;
-                                                                                                } ?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if (!empty($current_user->first_name) && $current_user->first_name != '') { echo $current_user->first_name;} else { echo $current_user->user_login;} ?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
     </div>
     <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
 </section>
