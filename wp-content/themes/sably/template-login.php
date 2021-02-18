@@ -54,7 +54,7 @@ get_header();
 <section id="intro">
 
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["Connectez vous dès maintenant ", "Simple et rapide ! ", "SABLY, meilleur outil du monde pro "]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["Connectez-vous dès maintenant ! ", "SABLY, la CVthèque numéro un ! ", "Simple et rapide ! "]'></span>|</h1>
     </div>
 
 
