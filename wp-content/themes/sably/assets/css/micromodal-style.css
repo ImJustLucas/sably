@@ -121,7 +121,20 @@
   border-radius: 30px;
   color: #fff;
 }
-
+.boutondownload{
+  margin-left: 85px;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffc045;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  transition: all 0.4s;
+  padding: 10px 10px;
+}
 /**************************\
     Demo Animation Style
   \**************************/
