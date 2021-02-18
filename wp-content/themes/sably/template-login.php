@@ -77,7 +77,7 @@ get_header();
                 <h2 class="titleSection">Connexion</h2>
 
                 <div class="input-area-login">
-                    <label for="username-login">Username</label>
+                    <label for="username-login">Pseudo ou Email</label>
                     <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                     <input type="text" name="username-login" id="username-login">
                 </div>

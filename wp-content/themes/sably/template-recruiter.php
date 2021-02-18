@@ -35,7 +35,7 @@ if(in_array( 'client', (array) $user->roles )){
 						<div class="nav_buttons">
 								<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
 								<div><a class="tabButton button-contact" href="<?php echo esc_url(home_url('contact')) ?>">Contact</a></div>
-								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
+								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a></div>
 						</div>
 						<div class="nav_login">
 								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
@@ -65,7 +65,7 @@ if(in_array( 'client', (array) $user->roles )){
       <?php
       global $wpdb;
       $wpdb_tablename = 'sbl_cv';
-      $sql = "SELECT * FROM $wpdb_tablename";
+      $sql = "SELECT * FROM $wpdb_tablename WHERE status = 1";
       $cvs = $wpdb->get_results($sql);
 
       ?>

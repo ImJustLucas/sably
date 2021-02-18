@@ -48,7 +48,7 @@ global $current_user;
 								<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
 							<?php }
 							if (is_user_logged_in()) { ?>
-								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
+								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a></div>
 							<?php }; ?>
 							<?php
         					$user = wp_get_current_user();?>
@@ -57,7 +57,7 @@ global $current_user;
 							<?php
 							if (is_user_logged_in() && (in_array( 'client', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ))) { ?>
 								<a class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
-							<?php } elseif(in_array( 'recruiter', (array) $user->roles ) && is_user_logged_in() ){ 
+							<?php } elseif(in_array( 'recruiter', (array) $user->roles ) && is_user_logged_in() ){
 										//if($current_user->roles[0] != '' && $current_user->roles[0] == 'recruiter'){ ?>
 									<a <?php if($post->post_name === 'home' || $post->post_name === 'contact'){ echo 'style="background-color: #ffc045;"'; } else {echo 'style="background-color: #1dd1a1;"';} ?> class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace recruteur</a>
 								<?php// }?>
