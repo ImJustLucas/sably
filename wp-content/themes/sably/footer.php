@@ -57,6 +57,24 @@
     </div>
   </div>
 
+  <div class="modal micromodal-slide" id="modal-download-recruiter" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-download-recruiter">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-download-recruiter">
+            Cliquez pour télécharger 
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <form method="post" action="<?php echo esc_url(home_url('recruiter'))?>" id="formDownload">
+            <input class="boutondownload" type="submit" name="download-cv-recruiter" value="Télécharger">
+          </form>
+        </main>
+      </div>
+    </div>
+  </div>
+
   <div class="modal micromodal-slide" id="modal-apercu" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-apercu">
@@ -69,6 +87,24 @@
         <main class="modal__content" id="modal-1-content">
           <form method="post" action="<?php echo esc_url(home_url('profile'))?>" id="formApercu">
             <input class="boutondownload" type="submit" name="apercu-cv" value="Lancer l'aperçu">
+          </form>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal micromodal-slide" id="modal-apercu-recruiter" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-apercu-recruiter">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-apercu-recruiter">
+            Cliquez pour lancer l'apperçu 
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <form method="post" action="<?php echo esc_url(home_url('recruiter'))?>" id="formApercu">
+            <input class="boutondownload" type="submit" name="apercu-cv-recruiter" value="Lancer l'aperçu">
           </form>
         </main>
       </div>
