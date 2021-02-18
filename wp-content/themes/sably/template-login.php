@@ -9,6 +9,7 @@ if (is_user_logged_in()) {
 
 require get_template_directory() . '/inc/function_mail.php';
 global $wpdb;
+global $current_user;
 
 
 //CONNEXION :
@@ -25,10 +26,11 @@ if(!empty($_POST['submittedlogin']))
 
     $verify_user = wp_signon($user_data, true);
     if (!is_wp_error($verify_user)) {
-        wp_get_current_user();
-        if ($current_user->role === 'recruiter' ) {
+        $user_meta=get_userdata($verify_user->ID);
+        $user_roles=$user_meta->roles;
+        if ($user_roles === 'recruiter' ) {
             wp_redirect(site_url() . "/recruiter");
-        } elseif($current_user->role === 'client' ){
+        } elseif($user_roles === 'client' ){
             wp_redirect(site_url() . "/profile");
         }
 
@@ -36,6 +38,7 @@ if(!empty($_POST['submittedlogin']))
         $errors['error-login'] = 'Identifiant ou mot de passe invalide';
 
     }
+
 
 }
 
