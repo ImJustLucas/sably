@@ -1293,6 +1293,14 @@ form.formSlideEffect .textArea textarea:focus {
   .introuvable {
     font-size: 30px;
   }
+  .infoCvContent .titleInfo, .contentInfo, .titleSection {
+    text-decoration: none;
+    font-size: .8em;
+  }
+  /* .infoCvContent{
+    display: flex;
+    justify-content: center;
+  } */
 }
 @media screen and (max-width: 620px) {
   .button-login {
@@ -1342,9 +1350,9 @@ form.formSlideEffect .textArea textarea:focus {
     text-decoration: none;
     font-size: .6em;
   }
-  .infoCvContent .titleInfo {
+  /* .infoCvContent .titleInfo {
     font-size: 13px;
-  }
+  } */
 }
 @media screen and (max-width: 450px) {
   .introuvable {
@@ -1387,6 +1395,9 @@ form.formSlideEffect .textArea textarea:focus {
   #formsignin label {
     font-size: 5px;
   }
+  .contentInfo{
+    margin-left: 10px;
+  }
 }
 
 @media screen and (max-width: 395px) {
@@ -1399,7 +1410,7 @@ form.formSlideEffect .textArea textarea:focus {
   .header-wrap {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
   }
   .image_off,
   .image_on {
@@ -1419,5 +1430,8 @@ form.formSlideEffect .textArea textarea:focus {
 @media screen and (max-width: 290px) {
   .introuvable {
     font-size: 18px;
+  }
+  .contentInfo{
+    margin-left: 20px;
   }
 }
