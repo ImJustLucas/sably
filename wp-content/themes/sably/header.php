@@ -48,11 +48,16 @@
 							if (is_user_logged_in()) { ?>
 								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
 							<?php }; ?>
+							<?php
+        					$user = wp_get_current_user();
+							if ( in_array( 'recruiter', (array) $user->roles ) ) { ?>
+								<div><a class="tabButton button-recruteur" href="<?php echo esc_url(home_url('recruiter')) ?>">Espace recruteur</a></div>
+							<?php }; ?>
 						</div>
 						<div class="nav_login">
 							<?php
 							if (is_user_logged_in()) { ?>
-								<a <?php if(get_page_template_slug() === 'recruiter') { echo 'style="background-color: #1dd1a1;"' ;} ?> class="tabButton button-recruteur" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace recruteur</a>
+								<a <?php if(get_page_template_slug() === 'recruiter') { echo 'style="background-color: #1dd1a1;"' ;} ?> class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
 							<?php } else {
 							?>
 								<a class="tabButton button-login" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription</a>
