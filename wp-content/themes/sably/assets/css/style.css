@@ -752,6 +752,11 @@ form#formsignin input[type="submit"]:hover {
   color: var(--error);
 }
 
+span.error {
+  align-self: center;
+  color: #e74c3c;
+}
+
 .souligne {
   text-decoration: underline;
 }
