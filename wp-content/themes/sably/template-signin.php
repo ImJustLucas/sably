@@ -124,10 +124,8 @@ get_header();
                         <input type="text" name="username-signin" id="username-signin" value="<?php if (!empty($_POST['username-signin'])) {
                             echo $_POST['username-signin'];
                         } ?>">
-                        <span class="error-username-signin"><?php if (!empty($errors['username-signin'])) {
-                            echo $errors['username-signin'];
-                        } ?></span>
                     </div>
+                    <span class="error error-username-signin"><?php if (!empty($errors['username-signin'])) { echo $errors['username-signin'];} ?></span>
 
                     <!-- EMAIL -->
                     <div class="input-area-signin">
@@ -136,20 +134,16 @@ get_header();
                         <input type="email" name="email-signin" id="email-signin" value="<?php if (!empty($_POST['email-signin'])) {
                             echo $_POST['email-signin'];
                         } ?>">
-                        <span class="error-email-signin"><?php if (!empty($errors['email-signin'])) {
-                            echo $errors['email-signin'];
-                        } ?></span>
                     </div>
+                    <span class="error error-email-signin"><?php if (!empty($errors['email-signin'])) {echo $errors['email-signin'];} ?></span>
 
                     <!-- MOT DE PASSE -->
                     <div class="input-area-signin">
                         <label for="password-signin">Mot de passe</label>
                         <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                         <input type="password" name="password-signin" id="password-signin">
-                        <span class="error-password-signin"><?php if (!empty($errors['password-signin'])) {
-                            echo $errors['password-signin'];
-                        } ?></span>
                     </div>
+                    <span class="error error-password-signin"><?php if (!empty($errors['password-signin'])) {echo $errors['password-signin'];} ?></span>
 
                     <!-- CONFIRAMATION DE MOT DE PASSE -->
                     <div class="input-area-signin">
