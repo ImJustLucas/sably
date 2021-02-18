@@ -38,9 +38,6 @@ if(!empty($_POST['submittedlogin']))
     }
 
 }
-else {
-    $errors['error-login'] = 'Veuillez renseigner les champs';
-}
 
 
 

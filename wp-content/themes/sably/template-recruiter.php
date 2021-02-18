@@ -2,6 +2,7 @@
 /*
 Template Name: Home recruiter
 */
+$user = wp_get_current_user();
 if(in_array( 'client', (array) $user->roles )){
   wp_redirect(site_url() . "/403");
 }
