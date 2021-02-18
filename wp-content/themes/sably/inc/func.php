@@ -355,3 +355,54 @@ function hexatoIp($tableau_conv,$broke_ip)
   $ip = implode($array);
   return $ip;
 }
+
+function createCv($type, $current_user, $userCvExperiences)
+{
+
+  class PDF extends FPDF
+  {
+
+    function TitreSection($text)
+    {
+      // Arial 12
+      $this->SetFont('Arial','',12);
+      $this->SetFillColor(255,255,255);
+      // Titre
+      $this->Cell(0,6,$text,0,1,'L',true);
+      // Saut de ligne
+      $this->Ln(4);
+    }
+
+    function titleContent($txt)
+    {
+      $txt = iconv('UTF-8', 'windows-1252', $txt);
+      $this->SetFont('Arial','',12);
+
+
+    }
+
+    function CorpsContent($txt)
+    {
+      $txt = iconv('UTF-8', 'windows-1252', $txt);
+      // Times 12
+      $this->SetFont('Times','',12);
+      // Sortie du texte justifié
+      $this->MultiCell(0,5,$txt);
+      // Saut de ligne
+      $this->Ln();
+    }
+  }
+
+    $pdf = new PDF();
+    $pdf->setTitle('CV de ' . $current_user->display_name);
+    $pdf->setAuthor($current_user->display_name);
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    $pdf->TitreSection('Experience');
+    foreach($userCvExperiences as $experience){
+      $pdf->CorpsContent($experience->title . ' -> ' . $experience->subtitle . '. Description :' . $experience->description);
+    }
+    $pdf->Output($type);
+
+};
+

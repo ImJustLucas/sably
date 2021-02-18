@@ -133,6 +133,18 @@ $userCV = $userCV[0];
 if(!empty($userCV)){
     $userHasCV = true;
 }
+
+//------------------------
+//delete CV
+//------------------------
+
+if(!empty($_POST['delete-cv'])){
+    $data = ['status' => '0'];
+    $where = ['id' => $userCV->id];
+    $wpdb->update('sbl_cv', $data, $where);
+    wp_redirect(site_url() . "/profile");
+}
+
 //-----------------------
 //GET CV INFO
 //-----------------------
@@ -184,6 +196,7 @@ if(!empty($_POST['submitted-AddExperience'])){
     if(count($errors) == 0) {
         $format = array('%s','%s','%s');
         $wpdb->insert('sbl_experience', $addExperience, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -207,6 +220,7 @@ if(!empty($_POST['submitted-addFormation'])){
     if(count($errors) == 0) {
         $format = array('%s','%s','%s');
         $wpdb->insert('sbl_formation', $addFormation, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -242,6 +256,7 @@ if(!empty($_POST['submitted-addSkill'])){
     if(count($errors) == 0) {
         $format = array('%s','%s','%s');
         $wpdb->insert('sbl_skill', $addSkill, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -271,6 +286,7 @@ if(!empty($_POST['submitted-addLoisir'])){
     if(count($errors) == 0) {
         $format = array('%s','%s','%s');
         $wpdb->insert('sbl_loisir', $addLoisir, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -300,6 +316,7 @@ if(!empty($_POST['submitted-addReward'])){
     if(count($errors) == 0) {
         $format = array('%s','%s','%s');
         $wpdb->insert('sbl_reward', $addReward, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -320,6 +337,20 @@ if(!empty($_POST['delete-data-cv'])){
 
 }
 
+//DOWNLOAD CV
+if(!empty($_POST['download-cv'])){
+
+    createCv('D', $current_user, $userCvExperiences);
+
+}
+
+//Lancer un aperçu du CV
+
+if(!empty($_POST['apercu-cv'])){
+
+    createCv('I', $current_user, $userCvExperiences);
+
+}
 get_header();
 ?>
 
@@ -419,7 +450,16 @@ get_header();
         <section id="myCV">
             <h2 class="titleSection">Mon CV</h2>
             <?php if($userHasCV) { ?>
-                <p>J'ai un CV, Les informations a propos de l'utilisateur seront ici</p>
+
+                <div class="optionCV">
+
+                    <div class="parametreButton2">
+                        <div class="apercuButton hvr-underline-from-left"><i class="far fa-eye"></i> Aperçu</div>
+                        <div class="downloadButton hvr-underline-from-center"><i class="fas fa-file-download"></i> Télécharger</div>
+                        <div class="deleteButtonCV hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                    </div>
+
+                </div>
 
                 <div class="infosCvUser">
 
@@ -849,9 +889,9 @@ get_header();
 
                 <!-- if user dont have cv -->
             <?php } else { ?>
-                <p>Vous n'avez toujours pas de CV ? Créez en un dès maintenant !</p>
+                <p class="uDontHaveCv">Vous n'avez toujours pas de CV ? Créez en un dès maintenant !</p>
                 <form id="formCreateCV" action="<?php echo esc_url(home_url('profile#myCV'))?>" method="post">
-                    <input type="submit" name="submit_create_CV" value="Créer mon CV">
+                    <input type="submit" id="submit_create_CV" name="submit_create_CV" value="Créer mon CV">
                 </form>
             <?php } ?>
         </section>

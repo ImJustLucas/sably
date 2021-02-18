@@ -374,18 +374,50 @@ form#formSignin input[type="submit"]:hover {
 }
 
 /* Tableau espace recruteur */
-.table  {border-collapse:collapse;border-spacing:0;margin: 0 auto;margin-top: 50px;background-color: #1dd1a1;}
-.table td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.table th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.table .cellule{text-align:center;vertical-align:top}
-.cellule a{font-weight: bold; color: black;}
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #1dd1a1;
+}
+.table td {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+.table th {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+.table .cellule {
+  text-align: center;
+  vertical-align: top;
+}
+.cellule a {
+  font-weight: bold;
+  color: black;
+}
 
 /* Modale et bouton supprimer */
-.modal__title{padding-top:5px;margin-left: 25px;}
+.modal__title {
+  padding-top: 5px;
+  margin-left: 25px;
+}
 
-.boutonsupprimer{
+.boutonsupprimer {
   margin-left: 45px;
   align-self: center;
   margin-top: 30px;
@@ -397,16 +429,16 @@ form#formSignin input[type="submit"]:hover {
   border-radius: 30px;
   color: #fff;
   transition: all 0.4s;
-  padding: 10px 10px;}
+  padding: 10px 10px;
+}
 
-.boutonsupprimer:hover{
+.boutonsupprimer:hover {
   background-color: #fff;
   color: var(--jaune);
   font-weight: bold;
   cursor: pointer;
   transform: scale(1.05);
 }
-
 
 /* Legal */
 #sheet .legal {
@@ -674,7 +706,7 @@ form#formsignin input[type="submit"]:hover {
   margin-bottom: 30px;
 }
 
-.buttonForSignin{
+.buttonForSignin {
   flex-direction: column;
   align-items: center;
   line-height: 28px;
@@ -814,7 +846,8 @@ form.formSlideEffect input:focus {
   outline: none;
 }
 
-form.formSlideEffect input[type="submit"] {
+form.formSlideEffect input[type="submit"],
+#formCreateCV input[type="submit"] {
   width: auto;
   margin-top: 30px;
   padding: 10px 10px;
@@ -826,7 +859,8 @@ form.formSlideEffect input[type="submit"] {
   transition: all 0.4s;
 }
 
-form.formSlideEffect input[type="submit"]:hover {
+form.formSlideEffect input[type="submit"]:hover,
+#formCreateCV input[type="submit"]:hover {
   background-color: #fff;
   color: var(--jaune);
   cursor: pointer;
@@ -863,6 +897,56 @@ form.formSlideEffect .textArea textarea {
 
 form.formSlideEffect .textArea textarea:focus {
   outline: none;
+}
+
+/*-----------CREATE CV--------*/
+
+.uDontHaveCv {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#formCreateCV {
+  display: flex;
+  justify-content: center;
+}
+
+.parametreButton2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.parametreButton2 div {
+  margin: 0 10px;
+  padding-bottom: 10px;
+}
+
+.parametreButton2 div:hover {
+  cursor: pointer;
+}
+
+.deleteCvInput {
+  color: #fff;
+  border-color: var(--error);
+  background-color: var(--error);
+}
+
+.deleteCvInput:hover {
+  color: var(--error);
+}
+
+.infoCvContent {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.infoCvContent .titleInfo {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 20%;
 }
 
 /* RESPONSIVE=============== */
@@ -902,7 +986,7 @@ form.formSlideEffect .textArea textarea:focus {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: var(--jaune);
+  background: var(--success);
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
@@ -948,4 +1032,37 @@ form.formSlideEffect .textArea textarea:focus {
 .hvr-underline-from-right:focus:before,
 .hvr-underline-from-right:active:before {
   left: 0;
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: var(--jaune);
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
 }

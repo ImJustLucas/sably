@@ -166,3 +166,15 @@ $("#deleteDataInCv").on("click", function () {
     action: "delete_data_CV",
   };
 });
+
+$(".deleteButtonCV").on("click", function () {
+  MicroModal.show("modal-deleteCv");
+});
+
+$(".downloadButton").on("click", function () {
+  MicroModal.show("modal-download");
+});
+
+$(".apercuButton").on("click", function () {
+  MicroModal.show("modal-apercu");
+});

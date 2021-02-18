@@ -34,6 +34,7 @@ if (!empty($_POST['submittedlogin'])) {
         $wpdb_tablename = $wpdb_prefix . 'usermeta';
         $sql = "SELECT user_id FROM $wpdb_tablename WHERE user_id = %d AND meta_key = %s AND meta_value = %s";
         $user_valid = $wpdb->get_var($wpdb->prepare($sql, $id_user, 'valid_mail', 'valid'));
+        wp_redirect(site_url() . "/profile");
 
         if (!empty($user_valid)) {
             wp_redirect(site_url() . "/profile");
@@ -49,6 +50,13 @@ get_header();
 ?>
 
 <section id="intro">
+
+    <div class="petite-boite">
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["Connectez vous dès maintenant ", "Simple et rapide ! ", "SABLY, meilleur outil du monde pro "]'></span>|</h1>
+    </div>
+
+    <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
+
     <?php
     if (!empty($_GET['id']) && $_GET['id'] == 'new') { ?>
         <p class="welcome">Vous venez de valider votre compte</p>
