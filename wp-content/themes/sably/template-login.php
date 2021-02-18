@@ -28,9 +28,10 @@ if(!empty($_POST['submittedlogin']))
     if (!is_wp_error($verify_user)) {
         $user_meta=get_userdata($verify_user->ID);
         $user_roles=$user_meta->roles;
-        if ($user_roles === 'recruiter' ) {
+        //die(debug($user_roles));
+        if ($user_roles[0] === 'recruiter' ) {
             wp_redirect(site_url() . "/recruiter");
-        } elseif($user_roles === 'client' ){
+        } elseif($user_roles[0] === 'client' || $user_roles[0] === 'administrator'){
             wp_redirect(site_url() . "/profile");
         }
 

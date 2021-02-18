@@ -1,4 +1,6 @@
-<?php global $post; ?>
+<?php global $post;
+global $current_user;
+?>
 <!doctype html>
 <html <?php echo language_attributes();?>>
 
@@ -12,7 +14,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); //die(debug($current_user->roles[0])) ?>>
 	<?php wp_body_open(); ?>
 	<?php if (get_page_template_slug() === 'recruiter' ) { ?>
 		<div class="wrap-recruiter">
@@ -57,9 +59,12 @@
 						<div class="nav_login">
 							<?php
 							if (is_user_logged_in()) { ?>
-								<a <?php if(get_page_template_slug() === 'recruiter') { echo 'style="background-color: #1dd1a1;"' ;} ?> class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
-							<?php } else {
-							?>
+								<a class="tabButton button-login" href="<?php echo esc_url(home_url('profile')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Mon profil</a>
+							<?php } elseif(!empty($current_user) && is_user_logged_in() ){ 
+										if($current_user->roles[0] != '' && $current_user->roles[0] == 'recruiter'){ ?>
+									<a style="background-color: #1dd1a1;"class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace recruteur</a>
+								<?php }?>
+							<?php } else { ?>
 								<a class="tabButton button-login" href="<?php echo esc_url(home_url('login')) ?>">Connexion/Inscription</a>
 							<?php }; ?>
 						</div>
