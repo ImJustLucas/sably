@@ -41,7 +41,7 @@ $user_nom = $wpdb->get_results($sql2);
 
 
   //DOWNLOAD CV
-if(!empty($_POST['download-cv'])){
+if(!empty($_POST['download-cv-recruiter'])){
 
   //Get experience
   $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
@@ -69,7 +69,7 @@ if(!empty($_POST['download-cv'])){
 
 //Lancer un aperçu du CV
 
-if(!empty($_POST['apercu-cv'])){
+if(!empty($_POST['apercu-cv-recruiter'])){
 
   //Get experience
   $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
@@ -153,7 +153,7 @@ global $post; ?>
     
     <div class="optionCV">
 
-      <div class="parametreButton2">
+      <div class="parametreButton3">
           <div class="apercuButton hvr-underline-from-left"><i class="far fa-eye"></i> Aperçu</div>
           <div class="downloadButton hvr-underline-from-center"><i class="fas fa-file-download"></i> Télécharger</div>
       </div>

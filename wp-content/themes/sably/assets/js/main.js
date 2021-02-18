@@ -167,14 +167,22 @@ $("#deleteDataInCv").on("click", function () {
   };
 });
 
-$(".deleteButtonCV").on("click", function () {
+$(".parametreButton2 .deleteButtonCV").on("click", function () {
   MicroModal.show("modal-deleteCv");
 });
 
-$(".downloadButton").on("click", function () {
+$(".parametreButton2 .downloadButton").on("click", function () {
   MicroModal.show("modal-download");
 });
 
-$(".apercuButton").on("click", function () {
+$(".parametreButton2 .apercuButton").on("click", function () {
   MicroModal.show("modal-apercu");
+});
+
+$(".parametreButton3 .downloadButton").on("click", function () {
+  MicroModal.show("modal-download-recruiter");
+});
+
+$(".parametreButton3 .apercuButton").on("click", function () {
+  MicroModal.show("modal-apercu-recruiter");
 });

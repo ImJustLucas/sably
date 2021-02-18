@@ -748,7 +748,8 @@ form#formsignin input[type="submit"]:hover {
 }
 
 .error-infoUser,
-.error, .error-login {
+.error,
+.error-login {
   color: var(--error);
   display: flex;
   justify-content: center;
@@ -1002,18 +1003,21 @@ form.formSlideEffect .textArea textarea:focus {
   justify-content: center;
 }
 
-.parametreButton2 {
+.parametreButton2,
+.parametreButton3 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.parametreButton2 div {
+.parametreButton2 div,
+.parametreButton3 div {
   margin: 0 10px;
   padding-bottom: 10px;
 }
 
-.parametreButton2 div:hover {
+.parametreButton2 div:hover,
+.parametreButton3 div:hover {
   cursor: pointer;
 }
 
@@ -1285,7 +1289,7 @@ form.formSlideEffect .textArea textarea:focus {
     text-decoration: none;
     font-size: 1em;
   }
-  .titleCvSection{
+  .titleCvSection {
     font-size: 15px;
   }
 }
@@ -1293,9 +1297,11 @@ form.formSlideEffect .textArea textarea:focus {
   .introuvable {
     font-size: 30px;
   }
-  .infoCvContent .titleInfo, .contentInfo, .titleSection {
+  .infoCvContent .titleInfo,
+  .contentInfo,
+  .titleSection {
     text-decoration: none;
-    font-size: .8em;
+    font-size: 0.8em;
   }
   /* .infoCvContent{
     display: flex;
@@ -1329,7 +1335,7 @@ form.formSlideEffect .textArea textarea:focus {
   #formsignin label {
     font-size: 8px;
   }
-  .infosCvUser{
+  .infosCvUser {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -1346,9 +1352,11 @@ form.formSlideEffect .textArea textarea:focus {
     display: flex;
     flex-direction: column;
   }
-  .infoCvContent .titleInfo, .contentInfo, .titleSection {
+  .infoCvContent .titleInfo,
+  .contentInfo,
+  .titleSection {
     text-decoration: none;
-    font-size: .6em;
+    font-size: 0.6em;
   }
   /* .infoCvContent .titleInfo {
     font-size: 13px;
@@ -1395,7 +1403,7 @@ form.formSlideEffect .textArea textarea:focus {
   #formsignin label {
     font-size: 5px;
   }
-  .contentInfo{
+  .contentInfo {
     margin-left: 10px;
   }
 }
@@ -1431,7 +1439,7 @@ form.formSlideEffect .textArea textarea:focus {
   .introuvable {
     font-size: 18px;
   }
-  .contentInfo{
+  .contentInfo {
     margin-left: 20px;
   }
 }
