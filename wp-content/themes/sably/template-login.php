@@ -78,12 +78,14 @@ get_header();
                     <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                     <input type="text" name="username-login" id="username-login">
                 </div>
+
+                <span class="error-login error error-password-login"><?php if(!empty($errors['error-login'])) { echo $errors['error-login']; } ?></span>
+
                 <div class="input-area-login">
                     <label for="password-login">Mot de passe</label>
                     <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                     <input type="password" name="password-login" id="password-login">
                 </div>
-                <span class="error-login error-password-login"><?php if(!empty($errors['error-login'])) { echo $errors['error-login']; } ?></span>
 
                 <div class="submitButtonlogin">
                     <input class="btn-submit-userInfo loginbutton" type="submit" name="submittedlogin" value="Se connecter">
