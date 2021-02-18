@@ -747,7 +747,8 @@ form#formsignin input[type="submit"]:hover {
   font-weight: bold;
 }
 
-.error-infoUser {
+.error-infoUser,
+.error {
   color: var(--error);
 }
 

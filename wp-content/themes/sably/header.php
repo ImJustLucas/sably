@@ -38,7 +38,7 @@
 							<?php } ?>
 						</div>
 						<div class="nav_buttons">
-							<?php if (get_page_template_slug() === 'home') { ?>
+							<?php if ($post->post_name === 'home') { ?>
 								<div><a class="tabButton button-home">Accueil</a></div>
 								<div><a class="tabButton button-about">A propos</a></div>
 								<div><a class="tabButton button-contact" href="<?php echo esc_url(home_url('contact')) ?>">Contact</a></div>
