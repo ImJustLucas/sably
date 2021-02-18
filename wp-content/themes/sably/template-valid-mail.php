@@ -49,7 +49,8 @@ if (!empty($_GET['id'])){
       exit();
     }
     else {
-      die('rate');
+      $link = esc_url(home_url('404'));
+      header('Location: '.$link);
     }
     /*else {
       get_header(); ?>
@@ -61,7 +62,8 @@ if (!empty($_GET['id'])){
     }*/
   }
   else {
-    die('404');
+    $link = esc_url(home_url('404'));
+    header('Location: '.$link);
   }
 
 

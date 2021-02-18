@@ -45,7 +45,7 @@ get_header();
                                                                                                 echo $current_user->user_login;
                                                                                               } ?> ! ", "Voici la liste des CVs", "Trouvez le bon candidat"]'></span>|</h1>
     </div>
-    <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
+    <p class="subTitleWebSite">Bienvenue sur votre espace recruteur</p>
   </section>
 
   <div class="wrap-sheet">
