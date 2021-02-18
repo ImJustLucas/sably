@@ -1197,6 +1197,14 @@ form.formSlideEffect .textArea textarea:focus {
   vertical-align: top;
 }
 
+
+
+/* SUCCESS==================================================== */
+.welcome, .success, .registok{
+  font-size: 1.3em;
+}
+
+
 /* RESPONSIVE============================== */
 
 @media screen and (max-width: 1200px) {
