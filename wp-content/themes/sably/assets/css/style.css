@@ -748,8 +748,11 @@ form#formsignin input[type="submit"]:hover {
 }
 
 .error-infoUser,
-.error {
+.error, .error-login {
   color: var(--error);
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 span.error {
@@ -1280,7 +1283,7 @@ form.formSlideEffect .textArea textarea:focus {
 
   .infoCvContent .titleInfo {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 1em;
   }
   .titleCvSection{
     font-size: 15px;
@@ -1318,11 +1321,6 @@ form.formSlideEffect .textArea textarea:focus {
   #formsignin label {
     font-size: 8px;
   }
-
-  /* #infoUser {
-    margin-top: 0;
-    margin-bottom: 0;
-  } */
   .infosCvUser{
     display: flex;
     flex-direction: column;
@@ -1340,9 +1338,9 @@ form.formSlideEffect .textArea textarea:focus {
     display: flex;
     flex-direction: column;
   }
-  .infoCvContent .titleInfo, .contentInfo {
+  .infoCvContent .titleInfo, .contentInfo, .titleSection {
     text-decoration: none;
-    font-size: 15px;
+    font-size: .6em;
   }
   .infoCvContent .titleInfo {
     font-size: 13px;
