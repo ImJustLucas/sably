@@ -1203,7 +1203,9 @@ form.formSlideEffect .textArea textarea:focus {
 .welcome, .success, .registok{
   font-size: 1.3em;
 }
-
+.subTitleWebSite{
+  font-weight: bold;
+}
 
 /* RESPONSIVE============================== */
 
