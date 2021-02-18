@@ -122,18 +122,25 @@
   color: #fff;
 }
 .boutondownload{
-  margin-left: 85px;
+  margin-left: 75px;
   align-self: center;
   margin-top: 30px;
   margin-bottom: 20px;
-  text-align: center;
+  /* text-align: center; */
   text-transform: uppercase;
   background-color: #ffc045;
-  border: none;
+  border: #ffc045 1px solid;
   border-radius: 30px;
   color: #fff;
   transition: all 0.4s;
   padding: 10px 10px;
+}
+.boutondownload:hover{
+  background-color: #fff;
+  color: var(--jaune);
+  font-weight: bold;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 /**************************\
     Demo Animation Style
