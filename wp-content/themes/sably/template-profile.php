@@ -133,8 +133,8 @@ $userHasCV = false;
 $idUser = get_current_user_id();
 $sql = "SELECT * FROM sbl_cv WHERE id_user = $idUser AND status = 1; ";
 $userCV = $wpdb->get_results($sql);
-$userCV = $userCV[0];
-if (!empty($userCV)) {
+if (!empty($userCV[0])) {
+    $userCV = $userCV[0];
     $userHasCV = true;
 }
 
