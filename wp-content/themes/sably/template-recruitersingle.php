@@ -2,13 +2,18 @@
 /*
 Template Name: recruitersingle
 */
+
+if(in_array( 'client', (array) $user->roles )){
+  wp_redirect(site_url() . "/profile");
+}
+
 global $wpdb;
 // id user
 if (empty($_GET['id'])) {
   $link = esc_url(home_url('404'));
   header('Location: '.$link);
 }
-$get = explode("/", $_GET['id']);
+$get = explode("@", $_GET['id']);
 if(!empty($get[0])) {
   $cvid = $get[0];
 }
@@ -16,6 +21,8 @@ if(!empty($get[1])) {
   $cvuser = $get[1];
 }
 
+$cvid = $_GET['cvid'];
+$cvuser = $_GET['id'];
 
 if (!is_numeric($cvid)) {
   die('CV introuvable');
@@ -32,8 +39,43 @@ $user_nom = $wpdb->get_results($sql2);
 
 
 // HTML
-get_header();
-?>
+global $post; ?>
+
+
+<!doctype html>
+<html <?php echo language_attributes();?>>
+
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+		<div class="wrap-recruiter">
+			<div id="page" class="site">
+				<header id="masthead" class="site-header">
+					<div class="header-wrap">
+						<div class="nav_logo">
+								<div class="logoSably tabButton button-home">
+									<a id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_bleu1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_bleu2.png" alt="logo" /></a>
+								</div>
+						</div>
+						<div class="nav_buttons">
+								<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
+								<div><a class="tabButton button-contact" href="<?php echo esc_url(home_url('contact')) ?>">Contact</a></div>
+								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
+						</div>
+						<div class="nav_login">
+								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('Recrutement')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
+						</div>
+					</div>
+				</header><!-- #masthead -->
 
 <div id="recruiterBackground">
 

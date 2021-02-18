@@ -27,7 +27,7 @@ if(!empty($_POST['submittedlogin']))
     if (!is_wp_error($verify_user)) {
         $user = wp_get_current_user();
         if ( in_array( 'recruiter', (array) $user->roles ) ) {
-            //wp_redirect(site_url() . "/recruiter");
+            wp_redirect(site_url() . "/recruiter");
         } elseif(in_array( 'client', (array) $user->roles )){
             wp_redirect(site_url() . "/profile");
         }

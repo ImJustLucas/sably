@@ -4,10 +4,15 @@ Template Name: profile
 */
 global $current_user;
 wp_get_current_user();
+$user = wp_get_current_user();
 
 if (!is_user_logged_in()) {
     wp_redirect(site_url() . "/login");
 }
+
+if(in_array( 'recruiter', (array) $user->roles )){
+    wp_redirect(site_url() . "/403");
+  }
 $errors = array();
 
 //---------------------------
