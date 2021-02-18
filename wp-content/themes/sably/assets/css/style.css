@@ -1318,6 +1318,11 @@ form.formSlideEffect .textArea textarea:focus {
     margin-top: 0;
     margin-bottom: 0;
   } */
+  .infosCvUser{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
 }
 @media screen and (max-width: 465px) {
   .titleSection {
