@@ -53,7 +53,6 @@ get_header();
         <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["Connectez vous dès maintenant ", "Simple et rapide ! ", "SABLY, meilleur outil du monde pro "]'></span>|</h1>
     </div>
 
-    <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
 
     <?php
     if (!empty($_GET['id'])) {

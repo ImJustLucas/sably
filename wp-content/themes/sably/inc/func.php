@@ -52,7 +52,7 @@ function validMail($errors,$value,$key){
 
   }
   else {
-    $errors[$key] = 'Veuillez renseigner ce champ';
+    $errors[$key] = 'Veuillez renseigner un email';
   }
 
   return $errors;

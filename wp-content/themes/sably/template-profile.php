@@ -361,7 +361,7 @@ get_header();
     <div class="petite-boite">
         <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if (!empty($current_user->first_name) && $current_user->first_name != '') { echo $current_user->first_name;} else { echo $current_user->user_login;} ?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
     </div>
-    <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
+    <p class="subTitleWebSite">Bienvenue sur votre espace candidat</p>
 </section>
 
 <div class="wrap-sheet">
