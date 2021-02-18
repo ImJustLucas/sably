@@ -25,7 +25,12 @@ if(!empty($_POST['submittedlogin']))
 
     $verify_user = wp_signon($user_data, true);
     if (!is_wp_error($verify_user)) {
-        wp_redirect(site_url() . "/profile");
+        $user = wp_get_current_user();
+        if ( in_array( 'recruiter', (array) $user->roles ) ) {
+            //wp_redirect(site_url() . "/recruiter");
+        } elseif(in_array( 'client', (array) $user->roles )){
+            wp_redirect(site_url() . "/profile");
+        }
 
     } else {
         $errors['error-login'] = 'Identifiant ou mot de passe invalide';
