@@ -303,7 +303,7 @@ a.tabButton:hover {
 }
 
 /* FORMULAIRE==================CONTACT */
-form#formLogin,
+/* form#formLogin, */
 form#formSignin {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,7 +318,7 @@ form#formSignin {
   margin-bottom: 40px;
 }
 
-form#formLogin input,
+/* form#formLogin input, */
 form#formSignin input {
   margin: 20px 10px;
   padding-left: 20px;
@@ -334,7 +334,7 @@ form#formSignin input {
   transition: 0.7s;
 }
 
-form#formLogin textarea,
+/* form#formLogin textarea, */
 form#formSignin textarea {
   width: 400px;
   height: 150px;
@@ -351,7 +351,7 @@ form#formSignin textarea {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-form#formLogin input[type="submit"],
+/* form#formLogin input[type="submit"], */
 form#formSignin input[type="submit"] {
   cursor: pointer;
   background-color: #ffc045;
@@ -360,7 +360,7 @@ form#formSignin input[type="submit"] {
   border: none;
 }
 
-form#formLogin input[type="submit"]:hover,
+/* form#formLogin input[type="submit"]:hover, */
 form#formSignin input[type="submit"]:hover {
   background-color: #fff;
   color: #ffc045;
