@@ -2,13 +2,18 @@
 /*
 Template Name: recruitersingle
 */
+$user = wp_get_current_user();
+if(in_array( 'client', (array) $user->roles )){
+  wp_redirect(site_url() . "/profile");
+}
+
 global $wpdb;
 // id user
 if (empty($_GET['id'])) {
   $link = esc_url(home_url('404'));
   header('Location: '.$link);
 }
-$get = explode("/", $_GET['id']);
+$get = explode("@", $_GET['id']);
 if(!empty($get[0])) {
   $cvid = $get[0];
 }
@@ -16,6 +21,8 @@ if(!empty($get[1])) {
   $cvuser = $get[1];
 }
 
+$cvid = $_GET['cvid'];
+$cvuser = $_GET['id'];
 
 if (!is_numeric($cvid)) {
   die('CV introuvable');
@@ -31,9 +38,102 @@ $user_prenom = $wpdb->get_results($sql);
 $user_nom = $wpdb->get_results($sql2);
 
 
+
+
+  //DOWNLOAD CV
+if(!empty($_POST['download-cv-recruiter'])){
+
+  //Get experience
+  $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
+  $userCvExperiences = $wpdb->get_results($sql);
+
+  //Get formation
+  $sql = "SELECT * FROM sbl_formation WHERE id_cv = $cvid AND status = 1;";
+  $userCvFormations = $wpdb->get_results($sql);
+
+  //Get skill
+  $sql = "SELECT * FROM sbl_skill WHERE id_cv = $cvid AND status = 1;";
+  $userCvSkills = $wpdb->get_results($sql);
+
+  //Get loisir
+  $sql = "SELECT * FROM sbl_loisir WHERE id_cv = $cvid AND status = 1;";
+  $userCvLoisirs = $wpdb->get_results($sql);
+
+  //Get reward
+  $sql = "SELECT * FROM sbl_reward WHERE id_cv = $cvid AND status = 1;";
+  $userCvRewards = $wpdb->get_results($sql);
+
+  createCv('D', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
+
+//Lancer un aperçu du CV
+
+if(!empty($_POST['apercu-cv-recruiter'])){
+
+  //Get experience
+  $sql = "SELECT * FROM sbl_experience WHERE id_cv = $cvid AND status = 1; ";
+  $userCvExperiences = $wpdb->get_results($sql);
+
+  //Get formation
+  $sql = "SELECT * FROM sbl_formation WHERE id_cv = $cvid AND status = 1;";
+  $userCvFormations = $wpdb->get_results($sql);
+
+  //Get skill
+  $sql = "SELECT * FROM sbl_skill WHERE id_cv = $cvid AND status = 1;";
+  $userCvSkills = $wpdb->get_results($sql);
+
+  //Get loisir
+  $sql = "SELECT * FROM sbl_loisir WHERE id_cv = $cvid AND status = 1;";
+  $userCvLoisirs = $wpdb->get_results($sql);
+
+  //Get reward
+  $sql = "SELECT * FROM sbl_reward WHERE id_cv = $cvid AND status = 1;";
+  $userCvRewards = $wpdb->get_results($sql);
+
+  createCv('I', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
+
+
 // HTML
-get_header();
-?>
+global $post; ?>
+
+
+<!doctype html>
+<html <?php echo language_attributes();?>>
+
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+		<div class="wrap-recruiter">
+			<div id="page" class="site">
+				<header id="masthead" class="site-header">
+					<div class="header-wrap">
+						<div class="nav_logo">
+								<div class="logoSably tabButton button-home">
+									<a id="home"><img class="image_on" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_bleu1.png" alt="logo" /><img class="image_off" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_bleu2.png" alt="logo" /></a>
+								</div>
+						</div>
+						<div class="nav_buttons">
+								<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
+								<div><a class="tabButton button-contact" href="<?php echo esc_url(home_url('contact')) ?>">Contact</a></div>
+								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
+						</div>
+						<div class="nav_login">
+								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
+						</div>
+					</div>
+				</header><!-- #masthead -->
 
 <div id="recruiterBackground">
 
@@ -45,11 +145,24 @@ get_header();
                                                                                                 echo $current_user->user_login;
                                                                                               } ?> ! ", "Voici la liste des CVs", "Trouvez le bon candidat"]'></span>|</h1>
     </div>
+
     <p class="subTitleWebSite">Bienvenue sur votre espace recruteur</p>
+
+
   </section>
 
   <div class="wrap-sheet">
     <div id="sheet">
+
+
+    <div class="optionCV">
+
+      <div class="parametreButton3">
+          <div class="apercuButton hvr-underline-from-left"><i class="far fa-eye"></i> Aperçu</div>
+          <div class="downloadButton hvr-underline-from-center"><i class="fas fa-file-download"></i> Télécharger</div>
+      </div>
+
+      </div>
       <div class="detail">
         <h2 class="titleSection">Detail CV</h2>
 

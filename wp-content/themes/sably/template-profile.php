@@ -4,10 +4,15 @@ Template Name: profile
 */
 global $current_user;
 wp_get_current_user();
+$user = wp_get_current_user();
 
 if (!is_user_logged_in()) {
     wp_redirect(site_url() . "/login");
 }
+
+if(in_array( 'recruiter', (array) $user->roles )){
+    wp_redirect(site_url() . "/403");
+  }
 $errors = array();
 
 //---------------------------
@@ -128,10 +133,22 @@ $userHasCV = false;
 $idUser = get_current_user_id();
 $sql = "SELECT * FROM sbl_cv WHERE id_user = $idUser AND status = 1; ";
 $userCV = $wpdb->get_results($sql);
-$userCV = $userCV[0];
-if (!empty($userCV)) {
+if (!empty($userCV[0])) {
+    $userCV = $userCV[0];
     $userHasCV = true;
 }
+
+//------------------------
+//delete CV
+//------------------------
+
+if(!empty($_POST['delete-cv'])){
+    $data = ['status' => '0'];
+    $where = ['id' => $userCV->id];
+    $wpdb->update('sbl_cv', $data, $where);
+    wp_redirect(site_url() . "/profile");
+}
+
 //-----------------------
 //GET CV INFO
 //-----------------------
@@ -183,6 +200,7 @@ if (!empty($_POST['submitted-AddExperience'])) {
     if (count($errors) == 0) {
         $format = array('%s', '%s', '%s');
         $wpdb->insert('sbl_experience', $addExperience, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -206,6 +224,7 @@ if (!empty($_POST['submitted-addFormation'])) {
     if (count($errors) == 0) {
         $format = array('%s', '%s', '%s');
         $wpdb->insert('sbl_formation', $addFormation, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -241,6 +260,7 @@ if (!empty($_POST['submitted-addSkill'])) {
     if (count($errors) == 0) {
         $format = array('%s', '%s', '%s');
         $wpdb->insert('sbl_skill', $addSkill, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -270,6 +290,7 @@ if (!empty($_POST['submitted-addLoisir'])) {
     if (count($errors) == 0) {
         $format = array('%s', '%s', '%s');
         $wpdb->insert('sbl_loisir', $addLoisir, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -299,6 +320,7 @@ if (!empty($_POST['submitted-addReward'])) {
     if (count($errors) == 0) {
         $format = array('%s', '%s', '%s');
         $wpdb->insert('sbl_reward', $addReward, $format);
+        wp_redirect(site_url() . "/profile");
     }
 }
 
@@ -318,18 +340,28 @@ if (!empty($_POST['delete-data-cv'])) {
     }
 }
 
+//DOWNLOAD CV
+if(!empty($_POST['download-cv'])){
+
+    createCv('D', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
+
+//Lancer un aperçu du CV
+
+if(!empty($_POST['apercu-cv'])){
+
+    createCv('I', $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards);
+
+}
 get_header();
 ?>
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if (!empty($current_user->first_name) && $current_user->first_name != '') {
-                                                                                                    echo $current_user->first_name;
-                                                                                                } else {
-                                                                                                    echo $current_user->user_login;
-                                                                                                } ?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["bonjour <?php if (!empty($current_user->first_name) && $current_user->first_name != '') { echo $current_user->first_name;} else { echo $current_user->user_login;} ?> ! ", "Voici votre profil ", "retrouvez votre cv plus bas "]'></span>|</h1>
     </div>
-    <p class="subTitleWebSite">Bienvenue sur votre espace membre</p>
+    <p class="subTitleWebSite">Bienvenue sur votre espace candidat</p>
 </section>
 
 <div class="wrap-sheet">
@@ -391,8 +423,7 @@ get_header();
                                                                                         echo 'placeholder="Votre age"';
                                                                                     } ?>>
                     </div>
-                    <span class="error-infoUser error-age-infoUser"><?php if (!empty($errors['age-infoUser']) && $errors['age-infoUser'] != '') {
-                                                                        echo $errors['age-infoUser'];
+                    <span class="error-infoUser error-age-infoUser"><?php if (!empty($errors['age-infoUser']) && $errors['age-infoUser'] != '') {                                                                       echo $errors['age-infoUser'];
                                                                     } ?></span>
 
 
@@ -459,6 +490,16 @@ get_header();
         <section id="myCV">
             <h2 class="titleSection">Mon CV</h2>
             <?php if($userHasCV) { ?>
+
+                <div class="optionCV">
+
+                    <div class="parametreButton2">
+                        <div class="apercuButton hvr-underline-from-left"><i class="far fa-eye"></i> Aperçu</div>
+                        <div class="downloadButton hvr-underline-from-center"><i class="fas fa-file-download"></i> Télécharger</div>
+                        <div class="deleteButtonCV hvr-underline-from-right"><i class="far fa-trash-alt"></i> Supprimer</div>
+                    </div>
+
+                </div>
 
                 <div class="infosCvUser">
 
@@ -888,9 +929,9 @@ get_header();
 
                 <!-- if user dont have cv -->
             <?php } else { ?>
-                <p>Vous n'avez toujours pas de CV ? Créez en un dès maintenant !</p>
-                <form id="formCreateCV" action="<?php echo esc_url(home_url('profile#myCV')) ?>" method="post">
-                    <input type="submit" name="submit_create_CV" value="Créer mon CV">
+                <p class="uDontHaveCv">Vous n'avez toujours pas de CV ? Créez en un dès maintenant !</p>
+                <form id="formCreateCV" action="<?php echo esc_url(home_url('profile#myCV'))?>" method="post">
+                    <input type="submit" id="submit_create_CV" name="submit_create_CV" value="Créer mon CV">
                 </form>
             <?php } ?>
         </section>

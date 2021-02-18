@@ -45,7 +45,7 @@ $(document).ready(function () {
 
   $(".logo-play a").magnificPopup({
     type: "iframe",
-    src: "https://www.youtube.com/watch?v=oUhWsKMcoKY",
+    src: "https://youtu.be/35WJCcbp6a0",
     // other options
   });
 
@@ -165,4 +165,24 @@ $("#deleteDataInCv").on("click", function () {
     typeData: $(this).attr("data-delete-type"),
     action: "delete_data_CV",
   };
+});
+
+$(".parametreButton2 .deleteButtonCV").on("click", function () {
+  MicroModal.show("modal-deleteCv");
+});
+
+$(".parametreButton2 .downloadButton").on("click", function () {
+  MicroModal.show("modal-download");
+});
+
+$(".parametreButton2 .apercuButton").on("click", function () {
+  MicroModal.show("modal-apercu");
+});
+
+$(".parametreButton3 .downloadButton").on("click", function () {
+  MicroModal.show("modal-download-recruiter");
+});
+
+$(".parametreButton3 .apercuButton").on("click", function () {
+  MicroModal.show("modal-apercu-recruiter");
 });

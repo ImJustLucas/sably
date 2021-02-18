@@ -52,7 +52,7 @@ function validMail($errors,$value,$key){
 
   }
   else {
-    $errors[$key] = 'Veuillez renseigner ce champ';
+    $errors[$key] = 'Veuillez renseigner un email';
   }
 
   return $errors;
@@ -355,3 +355,113 @@ function hexatoIp($tableau_conv,$broke_ip)
   $ip = implode($array);
   return $ip;
 }
+
+function createCv($type, $current_user, $userCvExperiences, $userCvFormations, $userCvSkills, $userCvLoisirs, $userCvRewards)
+{
+
+  class PDF extends FPDF
+  {
+
+    function TitreSection($text)
+    {
+      $text = iconv('UTF-8', 'windows-1252', $text);
+      // Arial 12
+      $this->SetFont('Arial','B',20);
+      $this->SetFillColor(255,255,255);
+      // Titre
+      $this->Cell(0,6,$text,0,1,'L',true);
+      // Saut de ligne
+      $this->Ln(4);
+    }
+
+    function titleContent($txt)
+    {
+      $txt = iconv('UTF-8', 'windows-1252', $txt);
+      $this->SetFont('Arial','B',14);
+      $this->MultiCell(0,5,$txt);
+      $this->Ln();
+    }
+
+    function subtitleContent($txt)
+    {
+      $txt = iconv('UTF-8', 'windows-1252', $txt);
+      // Times 12
+      $this->SetFont('Arial','I',12);
+      // Sortie du texte justifié
+      $this->MultiCell(0,5,$txt);
+      // Saut de ligne
+      $this->Ln();
+    }
+
+    function descriptionContent($txt)
+    {
+      $txt = iconv('UTF-8', 'windows-1252', $txt);
+      $this->SetFont('Arial','',12);
+      $this->MultiCell(0,5,$txt);
+      $this->Ln();
+    }
+  }
+
+    $pdf = new PDF();
+    $pdf->setTitle('CV de ' . $current_user->display_name);
+    $pdf->setAuthor($current_user->display_name);
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','B',16);
+    //Impression information Principale
+    $pdf->titleContent(mb_strtoupper($current_user->last_name) . ' ' . ucfirst($current_user->first_name));
+    $pdf->descriptionContent('Email : ' . $current_user->user_email);
+    if(!empty($current_user->age)){
+    $pdf->descriptionContent('Age : ' . $current_user->age);
+    }
+    if(!empty($current_user->adresse)){
+      $pdf->descriptionContent('Adresse : ' . $current_user->adresse);
+    }
+    if(!empty($current_user->telephone)){
+      $pdf->descriptionContent('Téléphone : ' . $current_user->telephone);
+    }
+    //Impression Formations
+    $pdf->TitreSection('Experience');
+    foreach($userCvExperiences as $experience){
+      $pdf->titleContent('- '.$experience->title);
+      $pdf->subtitleContent($experience->subtitle);
+      $pdf->descriptionContent($experience->description);
+    }
+    //Impression Formations
+    $pdf->TitreSection('Formation');
+    foreach($userCvFormations as $formation){
+      $pdf->titleContent('- '.$formation->title);
+      $pdf->subtitleContent($formation->subtitle);
+      $pdf->descriptionContent($formation->description);
+    }
+    //Impression skill
+    $pdf->TitreSection('Compétences');
+    foreach($userCvSkills as $skill){
+      $pdf->titleContent('- '.$skill->title);
+      if(!empty($skill->subtitle)){
+        $pdf->subtitleContent($skill->subtitle);
+      }
+      if(!empty($skill->description)){
+        $pdf->subtitleContent($skill->description);
+      }
+    }
+    //Impression loisir
+    $pdf->TitreSection('Loisir');
+    foreach($userCvLoisirs as $loisir){
+      $pdf->titleContent('- '.$loisir->title);
+      if(!empty($loisir->subtitle)){
+        $pdf->subtitleContent($loisir->subtitle);
+      }
+    }
+    //Impression reward
+    $pdf->TitreSection('Récompense');
+    foreach($userCvRewards as $reward){
+      $pdf->titleContent('- '.$reward->title);
+      $pdf->subtitleContent($reward->date);
+      if(!empty($reward->description)){
+        $pdf->subtitleContent($reward->description);
+      }
+    }
+    $pdf->Output($type);
+
+};
+
