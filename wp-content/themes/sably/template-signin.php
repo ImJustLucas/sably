@@ -70,6 +70,7 @@ if (!empty($_POST['submitted-reg'])) {
             update_user_meta($id, 'age', 'default');
             update_user_meta($id, 'adresse', 'default');
             update_user_meta($id, 'telephone', 'default');
+            update_user_meta($id, 'role', 'client');
 
 
             $wpdb_tablename = $wpdb_prefix . 'usermeta';

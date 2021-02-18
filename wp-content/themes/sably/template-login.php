@@ -25,10 +25,10 @@ if(!empty($_POST['submittedlogin']))
 
     $verify_user = wp_signon($user_data, true);
     if (!is_wp_error($verify_user)) {
-        $user = wp_get_current_user();
-        if ( in_array( 'recruiter', (array) $user->roles ) ) {
+        wp_get_current_user();
+        if ($current_user->role === 'recruiter' ) {
             wp_redirect(site_url() . "/recruiter");
-        } elseif(in_array( 'client', (array) $user->roles )){
+        } elseif($current_user->role === 'profile' ){
             wp_redirect(site_url() . "/profile");
         }
 
