@@ -14,7 +14,7 @@ global $wpdb;
 //CONNEXION :
 $errors = array();
 
-if(!empty($_POST['username-login'] && $_POST['password-login']))
+if(!empty($_POST['submittedlogin']))
 {
     $username = cleanXSS($_POST['username-login']);
     $password = cleanXSS($_POST['password-login']);
