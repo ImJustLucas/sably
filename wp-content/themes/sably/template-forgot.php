@@ -45,9 +45,9 @@ if (!empty($_POST['submitted'])) {
         $date = new DateTime("now");
         $date->add(new DateInterval('PT3M'));
 
-        $mailexpediteur = 'baz.martin42@gmail.com';
-        $passwordmail = '1624387860b1';
-        $mailrecepteur = 'baz.martin42@gmail.com';
+        $mailexpediteur = '';
+        $passwordmail = '';
+        $mailrecepteur = '';
         $object = 'Mot de passe oublié';
         $message = 'Veuillez cliquer sur ce ' . $link . ' pour demander un nouveau mot de passe<br>Attention, le lien expire le ' . $date->format('d-m-Y à H:i:s') . '';
 
