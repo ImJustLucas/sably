@@ -125,9 +125,9 @@ if (!empty($_POST['submit_create_CV'])) {
     $wpdb->insert('sbl_cv', $data);
 
     //ENVOIE MAIL//
-    $mailexpediteur = 'sably@laposte.net';
-    $passwordmail = 'fdsifjsdjifEDEDD@9fdsf89dsfdsf';
-    $mailrecepteur = 'sably@laposte.net';
+    $mailexpediteur = 'baz.martin42@gmail.com';
+    $passwordmail = '1624387860b1';
+    $mailrecepteur = 'baz.martin42@gmail.com';
     $object = 'Votre CV';
     $message = 'Bravo, vous venez de renseigner votre CV, il est disponible dans votre espace profil';
 

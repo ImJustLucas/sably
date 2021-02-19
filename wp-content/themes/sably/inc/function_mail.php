@@ -27,7 +27,7 @@ function sendMailer($mailexpediteur,$passwordmail,$mailrecepteur,$object,$messag
       $mail->isSMTP();
 
       //// Host gmail = 'smtp.gmail.com';
-      $mail->Host = 'smtp.laposte.net';
+      $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
       $mail->Username = $mailexpediteur;
       $mail->Password = $passwordmail;
