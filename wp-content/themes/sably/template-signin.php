@@ -108,7 +108,7 @@ get_header();
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["rejoingnez nous !", "tout est gratuit"]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["rejoingnez-nous !", "tout est gratuit !"]'></span>|</h1>
     </div>
     <!-- <p class="subTitleWebSite">Inscription sur SABLY</p> -->
 </section>
