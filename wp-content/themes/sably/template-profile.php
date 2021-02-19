@@ -2,6 +2,7 @@
 /*
 Template Name: profile
 */
+require get_template_directory() . '/inc/function_mail.php';
 global $current_user;
 wp_get_current_user();
 $user = wp_get_current_user();
@@ -123,7 +124,18 @@ if (!empty($_POST['submit_create_CV'])) {
     $data = ['id_user' => get_current_user_id()];
     $wpdb->insert('sbl_cv', $data);
 
-    //ENVOIE MAIL
+    //ENVOIE MAIL//
+    $mailexpediteur = 'sably@laposte.net';
+    $passwordmail = 'fdsifjsdjifEDEDD@9fdsf89dsfdsf';
+    $mailrecepteur = 'sably@laposte.net';
+    $object = 'Votre CV';
+    $message = 'Bravo, vous venez de renseigner votre CV, il est disponible dans votre espace profil';
+
+
+    sendMailer($mailexpediteur, $passwordmail, $mailrecepteur, $object, $message);
+
+
+    /// FIN ENVOIE MAIL //
 }
 
 //----------------------

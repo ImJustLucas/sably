@@ -48,7 +48,7 @@ get_header();
               <?php  } else { ?>
                 <div class="formContainer">
                   <form id="formContact" action="" method="POST" class="formSlideEffect">
-                        <div class="row-contact"> 
+                        <div class="row-contact">
 
                             <div class="input-area input-area-contact">
                                 <label for="name-infoUser">nom</label>
@@ -57,7 +57,7 @@ get_header();
                                 <span class="error"><?php if(!empty($errors['lastname'])) { echo $errors['lastname'];} ?></span>
                             </div>
 
-                            <div class="input-area input-area-contact"> 
+                            <div class="input-area input-area-contact">
                                 <label for="name-infoUser">prénom</label>
                                 <i class="fas fa-arrow-right" style="color: #ffc045"></i>
                                 <input class="input" type="text" name="firstname" placeholder="Prénom" value="<?php if(!empty($_POST['firstname'])) {echo $_POST['firstname']; } ?>">
@@ -85,7 +85,7 @@ get_header();
                                 <span class="error"><?php if(!empty($errors['message'])) { echo $errors['message'];} ?></span>
                             </div>
                         </div>
-                        <div class="submitButtonContact">    
+                        <div class="submitButtonContact">
                             <input type="submit" name="submitted" class="btn-submit-Contact" value="Envoyer">
                         </div>
                   </form>
