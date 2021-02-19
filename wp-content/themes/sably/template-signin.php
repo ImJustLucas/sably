@@ -9,6 +9,7 @@ if (is_user_logged_in()) {
 require get_template_directory() . '/inc/function_mail.php';
 global $wpdb;
 $errors = array();
+$success = false;
 
 // REGISTER PROCESS
 if (!empty($_POST['submitted-reg'])) {
@@ -17,7 +18,7 @@ if (!empty($_POST['submitted-reg'])) {
     $password = cleanXss($_POST['password-signin']);
     $password2 = cleanXss($_POST['password2-signin']);
 
-    $errors = validText($errors, $username, 'username-signin', 3, 10);
+    $errors = validText($errors, $username, 'username-signin', 2, 10);
     $errors = validMail($errors, $email, 'email-signin');
     $errors = validPass($errors, $password, 'password-signin', $password2, 3, 10);
 
@@ -32,6 +33,7 @@ if (!empty($_POST['submitted-reg'])) {
         $result_user = $wpdb->get_var($wpdb->prepare($sql, $email));
 
         if (empty($result_user)) {
+            $success = true;
             $userdata = array(
                 'ID'                    => 0,    //(int) User ID. If supplied, the user will be updated.
                 'user_pass'             => $password,   //(string) The plain-text user password.
@@ -106,13 +108,16 @@ get_header();
 
 <section id="intro">
     <div class="petite-boite">
-        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["rejoingnez nous !", "tout est gratuit"]'></span>|</h1>
+        <h1 class="titleWebSite"><span class="txt-type" data-wait="3000" data-words='["rejoingnez-nous !", "tout est gratuit !"]'></span>|</h1>
     </div>
     <!-- <p class="subTitleWebSite">Inscription sur SABLY</p> -->
 </section>
 
 <div class="wrap-sheet">
     <div id="sheet">
+      <?php if($success == true) { ?>
+        <p class="registok">Un email de confirmation vient de vous être envoyé.</p>
+      <?php } else { ?>
         <form id="formsignin" action="" method="post">
             <h2 class="titleSection">Inscription</h2>
             <section id="signin">
@@ -161,6 +166,8 @@ get_header();
                 </div>
             </section>
         </form>
+      <?php } ?>
+
         </section>
     </div>
 </div>

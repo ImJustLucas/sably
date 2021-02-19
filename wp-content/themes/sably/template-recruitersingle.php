@@ -127,7 +127,7 @@ global $post; ?>
 						<div class="nav_buttons">
 								<div><a class="tabButton button-home" href="<?php echo esc_url(home_url('home')) ?>">Accueil</a></div>
 								<div><a class="tabButton button-contact" href="<?php echo esc_url(home_url('contact')) ?>">Contact</a></div>
-								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Deconnexion</a></div>
+								<div><a class="tabButton button-logout" href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a></div>
 						</div>
 						<div class="nav_login">
 								<a style="background-color: #1dd1a1;" class="tabButton button-login" href="<?php echo esc_url(home_url('recruiter')) ?>"> <i class="fas fa-user" style="color: #fff;"></i> | Espace Recrutement</a>
@@ -143,7 +143,7 @@ global $post; ?>
                                                                                                 echo $current_user->first_name;
                                                                                               } else {
                                                                                                 echo $current_user->user_login;
-                                                                                              } ?> ! ", "Voici la liste des CVs", "Trouvez le bon candidat"]'></span>|</h1>
+                                                                                              } ?> ! ", "Voici la liste des CVs.", "Trouvez le bon candidat !"]'></span>|</h1>
     </div>
 
     <p class="subTitleWebSite">Bienvenue sur votre espace recruteur</p>

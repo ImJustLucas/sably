@@ -757,7 +757,7 @@ form#formsignin input[type="submit"]:hover {
 }
 
 span.error {
-  align-self: center;
+  margin-left: 20px;
   color: #e74c3c;
 }
 
@@ -1196,6 +1196,16 @@ form.formSlideEffect .textArea textarea:focus {
   vertical-align: top;
 }
 
+
+
+/* SUCCESS====================================================SUBTITLE */
+.welcome, .success, .registok{
+  font-size: 1.3em;
+}
+.subTitleWebSite{
+  font-weight: bold;
+}
+
 /* RESPONSIVE============================== */
 
 @media screen and (max-width: 1200px) {
@@ -1292,6 +1302,9 @@ form.formSlideEffect .textArea textarea:focus {
   .titleCvSection {
     font-size: 15px;
   }
+  .error .error-login{
+    font-size: 15px;
+  }
 }
 @media only screen and (max-width: 730px) {
   .introuvable {
@@ -1303,10 +1316,6 @@ form.formSlideEffect .textArea textarea:focus {
     text-decoration: none;
     font-size: 0.8em;
   }
-  /* .infoCvContent{
-    display: flex;
-    justify-content: center;
-  } */
 }
 @media screen and (max-width: 620px) {
   .button-login {
@@ -1323,7 +1332,10 @@ form.formSlideEffect .textArea textarea:focus {
     font-size: 13px;
   }
   .input-area-contact {
-    font-size: 7px;
+    font-size: .3em;
+  }
+  .error, .error-login{
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 470px) {
@@ -1392,7 +1404,7 @@ form.formSlideEffect .textArea textarea:focus {
     font-size: 1.1em;
   }
   .input-area-contact {
-    font-size: 5px;
+    font-size: .2em;
   }
   .textArea,
   .submitButtonContact {

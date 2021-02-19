@@ -48,7 +48,7 @@ if (!empty($_POST['submitted'])) {
         $mailexpediteur = 'sably@laposte.net';
         $passwordmail = 'fdsifjsdjifEDEDD@9fdsf89dsfdsf';
         $mailrecepteur = 'sably@laposte.net';
-        $object = 'Création de votre compte';
+        $object = 'Mot de passe oublié';
         $message = 'Veuillez cliquer sur ce ' . $link . ' pour demander un nouveau mot de passe<br>Attention, le lien expire le ' . $date->format('d-m-Y à H:i:s') . '';
 
 
